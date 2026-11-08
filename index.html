@@ -1,0 +1,2523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Unity Watch Nigeria | Stronger Together</title>
+
+  <meta name="description" content="Unity Watch Nigeria promotes peace, accountability, fairness, community development and a stronger, united Nigeria.">
+  <meta name="theme-color" content="#234735">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Supabase JavaScript library -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    :root {
+      --green: #315b43;
+      --deep-green: #234631;
+      --mid-green: #527b5d;
+      --gold: #b88a35;
+      --light-gold: #d8b85e;
+      --cream: #f5f2e9;
+      --white: #fffdf8;
+      --text: #293a30;
+      --muted: #657267;
+      --border: #dce5d9;
+      --rust: #a94f32;
+      --light-rust: #f5e7df;
+      --soft-green: #e5ede1;
+      --shadow: 0 14px 40px rgba(35, 70, 49, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Inter', Arial, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: 0 auto;
+    }
+
+    /* ANNOUNCEMENT STRIP */
+
+    .top-strip {
+      background: var(--deep-green);
+      color: #f8f1df;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 1.1px;
+    }
+
+    .top-strip span {
+      color: var(--light-gold);
+    }
+
+    /* HEADER - PRESERVED */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 253, 248, 0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-container {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--green);
+      color: var(--light-gold);
+      border: none;
+      border-bottom: 3px solid var(--gold);
+      display: grid;
+      place-items: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--deep-green);
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 4px;
+      color: var(--rust);
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 23px;
+    }
+
+    .nav-links > a:not(.nav-button) {
+      color: #47564b;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links > a:not(.nav-button):hover {
+      color: var(--rust);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 43px;
+      padding: 10px 17px;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .nav-button:hover,
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .nav-signin {
+      border: 1px solid var(--green);
+      color: var(--green);
+    }
+
+    .nav-signup {
+      background: var(--rust);
+      color: white;
+    }
+
+    .nav-signup:hover {
+      background: #883c25;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 45px;
+      height: 43px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--white);
+      color: var(--green);
+      cursor: pointer;
+      font-size: 1.55rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* HERO - SHORTER AND LIGHTER */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 54px 0 58px;
+
+      background:
+        radial-gradient(
+          circle at 88% 15%,
+          rgba(216, 184, 94, 0.18),
+          transparent 29%
+        ),
+        linear-gradient(
+          125deg,
+          #28513b 0%,
+          #376449 58%,
+          #477555 100%
+        );
+
+      color: var(--white);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(216, 184, 94, 0.18);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 420px;
+      height: 420px;
+      right: -150px;
+      top: -210px;
+    }
+
+    .hero::after {
+      width: 300px;
+      height: 300px;
+      right: -95px;
+      top: -150px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 55px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--light-gold);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      background: var(--light-gold);
+      border-radius: 2px;
+    }
+
+    .hero h1 {
+      max-width: 680px;
+      margin-bottom: 17px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: clamp(2.7rem, 5.2vw, 4.5rem);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--light-gold);
+      font-style: normal;
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: #e8eee7;
+      font-size: 0.96rem;
+      line-height: 1.8;
+      margin-bottom: 23px;
+    }
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      min-height: 47px;
+      padding: 12px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      font-size: 0.87rem;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-gold {
+      background: var(--light-gold);
+      color: var(--deep-green);
+    }
+
+    .btn-gold:hover {
+      background: #f0d58c;
+    }
+
+    .btn-outline-light {
+      border-color: rgba(255, 253, 248, 0.55);
+      color: var(--white);
+      background: transparent;
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-green:hover {
+      background: var(--deep-green);
+    }
+
+    .btn-rust {
+      background: var(--rust);
+      color: white;
+    }
+
+    .btn-rust:hover {
+      background: #883c25;
+    }
+
+    .btn-outline-green {
+      color: var(--green);
+      border-color: var(--green);
+      background: transparent;
+    }
+
+    .btn-outline-green:hover {
+      background: #e9eee6;
+    }
+
+    /* HERO INFORMATION CARD */
+
+    .hero-card {
+      position: relative;
+      padding: 29px;
+      border: 1px solid rgba(216, 184, 94, 0.42);
+      border-radius: 10px;
+      background: rgba(255, 253, 248, 0.075);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-card-label {
+      color: var(--light-gold);
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 12px;
+    }
+
+    .hero-card h2 {
+      color: var(--white);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.55rem;
+      line-height: 1.35;
+      font-weight: 800;
+      letter-spacing: -0.7px;
+      margin-bottom: 13px;
+    }
+
+    .hero-card p {
+      color: #e8eee7;
+      font-size: 0.87rem;
+      line-height: 1.8;
+      margin-bottom: 13px;
+    }
+
+    .hero-card .card-divider {
+      width: 52px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 17px 0;
+    }
+
+    .hero-card strong {
+      color: var(--light-gold);
+    }
+
+    /* FEATURED LOOPING VIDEO */
+
+    .featured-video-section {
+      padding: 48px 0 55px;
+      background: var(--cream);
+    }
+
+    .featured-video-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+
+    .featured-video-heading .section-kicker {
+      margin-bottom: 9px;
+    }
+
+    .featured-video-heading h2 {
+      color: var(--deep-green);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
+    }
+
+    .featured-video-heading p {
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.8;
+    }
+
+    .featured-video-box {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 9px;
+      border-radius: 12px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .featured-video-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      min-height: 230px;
+      overflow: hidden;
+      border-radius: 8px;
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(216, 184, 94, 0.15),
+          transparent 45%
+        ),
+        linear-gradient(135deg, #315b43, #234631);
+      display: grid;
+      place-items: center;
+    }
+
+    .featured-video-stage video {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #153526;
+    }
+
+    .featured-video-stage.has-video video {
+      display: block;
+    }
+
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      text-align: center;
+      color: white;
+    }
+
+    .featured-video-stage.has-video .video-placeholder {
+      display: none;
+    }
+
+    .video-play-symbol {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 50%;
+      color: var(--light-gold);
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .video-placeholder h3 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .video-placeholder p {
+      max-width: 450px;
+      color: #e3e9df;
+      font-size: 0.86rem;
+    }
+
+    .video-management {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 18px 12px 10px;
+    }
+
+    .video-select-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 43px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      background: var(--green);
+      color: white;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .video-select-label:hover {
+      background: var(--deep-green);
+    }
+
+    .video-select-label input {
+      display: none;
+    }
+
+    .video-reset-button {
+      min-height: 43px;
+      padding: 9px 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--white);
+      color: var(--deep-green);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .video-reset-button:hover {
+      background: var(--soft-green);
+    }
+
+    .video-status {
+      width: 100%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.6;
+    }
+
+    /* VIDEO PUBLISHING BUTTON */
+
+    .publish-video-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* SHARED SECTION STYLES */
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-white {
+      background: var(--white);
+    }
+
+    .section-green {
+      background: #e9eee6;
+    }
+
+    .section-heading {
+      max-width: 690px;
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: var(--rust);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 11px;
+    }
+
+    .section-heading h2,
+    .conversation-intro h2,
+    .spotlight-content h3,
+    .spotlight-art h3,
+    .conversation-panel h3,
+    .event-card h3,
+    .report-copy h2 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    .section-heading h2 {
+      color: var(--deep-green);
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.2;
+      margin-bottom: 17px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    .section-heading.centered {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* CATEGORY CARDS */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .category-card {
+      position: relative;
+      min-height: 245px;
+      padding: 27px 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .category-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--green);
+      border-radius: 9px 0 0 9px;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .category-number {
+      color: var(--gold);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 23px;
+    }
+
+    .category-card h3 {
+      color: var(--deep-green);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -0.35px;
+      line-height: 1.45;
+      margin-bottom: 11px;
+    }
+
+    .category-card p {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.8;
+      margin-bottom: 19px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--rust);
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-top: auto;
+    }
+
+    .text-link span {
+      transition: transform 0.2s ease;
+    }
+
+    .text-link:hover span {
+      transform: translateX(4px);
+    }
+
+    .section-action {
+      margin-top: 35px;
+      text-align: center;
+    }
+
+    /* SPOTLIGHT */
+
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      align-items: stretch;
+      gap: 35px;
+    }
+
+    .spotlight-art {
+      position: relative;
+      min-height: 350px;
+      overflow: hidden;
+      border-radius: 9px;
+      background:
+        radial-gradient(
+          circle at 70% 25%,
+          rgba(216, 184, 94, 0.3),
+          transparent 30%
+        ),
+        linear-gradient(145deg, #315b43, #153526);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+    }
+
+    .spotlight-art::before,
+    .spotlight-art::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(216, 184, 94, 0.28);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .spotlight-art::before {
+      width: 260px;
+      height: 260px;
+      top: -60px;
+      right: -65px;
+    }
+
+    .spotlight-art::after {
+      width: 190px;
+      height: 190px;
+      top: -25px;
+      right: -30px;
+    }
+
+    .spotlight-art-label {
+      position: relative;
+      z-index: 1;
+      color: var(--light-gold);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .spotlight-art h3 {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-size: 1.9rem;
+      line-height: 1.35;
+    }
+
+    .spotlight-content {
+      padding: 20px 0;
+      align-self: center;
+    }
+
+    .spotlight-content h3 {
+      color: var(--deep-green);
+      font-size: 1.4rem;
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+
+    .spotlight-content p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .notice-box {
+      background: var(--light-rust);
+      border-left: 3px solid var(--rust);
+      padding: 15px 17px;
+      margin: 23px 0;
+      color: #674638;
+      font-size: 0.84rem;
+      line-height: 1.8;
+    }
+
+    /* CURRENT CONVERSATIONS */
+
+    .conversation-intro {
+      max-width: 720px;
+      margin-bottom: 35px;
+    }
+
+    .conversation-intro h2 {
+      color: var(--deep-green);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 17px;
+    }
+
+    .conversation-intro p {
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .conversation-panel {
+      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .conversation-panel h3 {
+      color: var(--deep-green);
+      font-size: 1.25rem;
+      margin-bottom: 9px;
+    }
+
+    .conversation-panel p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    /* EVENTS */
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .event-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 24px;
+    }
+
+    .event-card .event-number {
+      display: inline-block;
+      color: var(--rust);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .event-card h3 {
+      color: var(--deep-green);
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 9px;
+    }
+
+    .event-card p {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    .events-note {
+      margin-top: 27px;
+      padding: 17px 20px;
+      background: #f1ead9;
+      border-left: 3px solid var(--gold);
+      color: #64563a;
+      font-size: 0.86rem;
+      line-height: 1.8;
+    }
+
+    /* REPORT SECTION */
+
+    .report-section {
+      padding: 75px 0;
+      background:
+        radial-gradient(
+          circle at 95% 0%,
+          rgba(216, 184, 94, 0.13),
+          transparent 30%
+        ),
+        var(--deep-green);
+      color: white;
+    }
+
+    .report-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 45px;
+    }
+
+    .report-copy {
+      max-width: 710px;
+    }
+
+    .report-copy .section-kicker {
+      color: var(--light-gold);
+    }
+
+    .report-copy h2 {
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 17px;
+    }
+
+    .report-copy p {
+      color: #e0e8df;
+      font-size: 0.94rem;
+      line-height: 1.9;
+    }
+
+    .report-action {
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      background: #10291d;
+      color: #e2e8df;
+      padding: 55px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 38px;
+    }
+
+    .footer-brand .brand-name {
+      color: white;
+    }
+
+    .footer-brand .brand-subtitle {
+      color: var(--light-gold);
+    }
+
+    .footer-description {
+      max-width: 360px;
+      margin-top: 19px;
+      color: #b9c7bb;
+      font-size: 0.86rem;
+      line-height: 1.9;
+    }
+
+    .footer-column h3 {
+      color: var(--light-gold);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 11px;
+    }
+
+    .footer-links a {
+      color: #cbd5cb;
+      font-size: 0.85rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--light-gold);
+    }
+
+    .footer-bottom {
+      padding-top: 21px;
+      border-top: 1px solid rgba(255, 255, 255, 0.13);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      color: #aebdb0;
+      font-size: 0.77rem;
+    }
+
+    .footer-bottom p {
+      line-height: 1.7;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+      .nav-container {
+        gap: 15px;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links > a:not(.nav-button) {
+        font-size: 0.78rem;
+      }
+
+      .nav-button {
+        padding: 9px 12px;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .category-grid,
+      .events-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-card {
+        padding: 27px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 760px) {
+      .top-strip {
+        font-size: 0.68rem;
+        letter-spacing: 0.5px;
+      }
+
+      .nav-container {
+        min-height: 72px;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+      }
+
+      .brand-name {
+        font-size: 12px;
+      }
+
+      .brand-subtitle {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 5% 20px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 25px rgba(21, 53, 38, 0.08);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links > a:not(.nav-button) {
+        display: block;
+        padding: 12px 3px;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eeeee6;
+      }
+
+      .nav-links .nav-button {
+        width: 100%;
+        margin-top: 10px;
+        min-height: 46px;
+      }
+
+      .hero {
+        padding: 43px 0 47px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 27px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        letter-spacing: -1.5px;
+      }
+
+      .hero-description {
+        font-size: 0.94rem;
+      }
+
+      .hero-card {
+        max-width: 560px;
+      }
+
+      .featured-video-section {
+        padding: 38px 0 43px;
+      }
+
+      .featured-video-stage {
+        aspect-ratio: 16 / 9;
+        min-height: 190px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .spotlight-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .spotlight-art {
+        min-height: 260px;
+      }
+
+      .spotlight-content {
+        padding: 0;
+      }
+
+      .conversation-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 26px;
+        gap: 22px;
+      }
+
+      .report-grid {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 25px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 39px 0 42px;
+      }
+
+      .eyebrow {
+        font-size: 0.63rem;
+        letter-spacing: 1px;
+        line-height: 1.7;
+      }
+
+      .hero h1 {
+        font-size: 2.45rem;
+        letter-spacing: -1.2px;
+      }
+
+      .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.85;
+      }
+
+      .button-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button-row .btn {
+        width: 100%;
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .hero-card h2 {
+        font-size: 1.35rem;
+      }
+
+      .featured-video-heading h2 {
+        font-size: 1.65rem;
+      }
+
+      .featured-video-stage {
+        min-height: 175px;
+      }
+
+      .video-management {
+        flex-direction: column;
+      }
+
+      .video-select-label,
+      .video-reset-button {
+        width: 100%;
+      }
+
+      .section-heading h2,
+      .conversation-intro h2,
+      .report-copy h2 {
+        font-size: 2rem;
+      }
+
+      .category-grid,
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        min-height: auto;
+        padding: 24px;
+      }
+
+      .spotlight-art {
+        min-height: 235px;
+        padding: 24px;
+      }
+
+      .spotlight-art h3 {
+        font-size: 1.5rem;
+      }
+
+      .spotlight-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .conversation-panel {
+        padding: 23px;
+      }
+
+      .conversation-panel .btn {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ACCESSIBILITY */
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP STRIP -->
+
+  <div class="top-strip">
+    One Nation <span>·</span> Many Voices <span>·</span> One Shared Future
+  </div>
+
+  <!-- HEADER - UNCHANGED -->
+
+  <header class="site-header">
+    <div class="container nav-container">
+
+      <a class="brand" href="index.html" aria-label="Unity Watch Nigeria homepage">
+        <div class="brand-mark" aria-hidden="true">U</div>
+
+        <div>
+          <div class="brand-name">Unity Watch Nigeria</div>
+          <span class="brand-subtitle">Stronger Together</span>
+        </div>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="mainNavigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="nav-links" id="mainNavigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="voices-of-unity.html">Voices of Unity</a>
+        <a href="#spotlight">Spotlight</a>
+        <a href="#events">Events</a>
+        <a class="nav-button nav-signin" href="signin.html">Sign In</a>
+        <a class="nav-button nav-signup" href="signup.html">Join Us</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            One Nation · Many Voices · Shared Future
+          </div>
+
+          <h1>
+            A United Nigeria <span>Starts With Us.</span>
+          </h1>
+
+          <p class="hero-description">
+            Every voice matters. Every community deserves respect.
+            Together, we can encourage fairness, promote peace,
+            strengthen accountability and help build a better future
+            for Nigeria.
+          </p>
+
+          <div class="button-row">
+            <a class="btn btn-gold" href="#community">
+              Explore Our Categories <span aria-hidden="true">→</span>
+            </a>
+
+            <a class="btn btn-outline-light" href="submit-evidence.html">
+              Report an Incident
+            </a>
+          </div>
+
+        </div>
+
+        <aside class="hero-card">
+
+          <div class="hero-card-label">Our Shared Responsibility</div>
+
+          <h2>Different Backgrounds. One Common Future.</h2>
+
+          <p>
+            Nigeria's strength lies in its people, cultures, ideas
+            and shared hopes. Our differences should never prevent
+            us from treating one another with dignity.
+          </p>
+
+          <div class="card-divider"></div>
+
+          <p>
+            <strong>Respect.</strong> <strong>Fairness.</strong>
+            <strong>Accountability.</strong>
+          </p>
+
+          <p>
+            These values can help us create safer communities and
+            a stronger sense of belonging for everyone.
+          </p>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- FEATURED LOOPING VIDEO -->
+
+    <section class="featured-video-section" id="featuredVideo">
+
+      <div class="container">
+
+        <div class="featured-video-heading">
+
+          <div class="section-kicker">Unity Watch Nigeria</div>
+
+          <h2>Our Stories. Our People. Our Shared Future.</h2>
+
+          <p>
+            Discover the voices, experiences and positive stories
+            that remind us of the strength we share as Nigerians.
+          </p>
+
+        </div>
+
+        <div class="featured-video-box">
+
+          <div class="featured-video-stage" id="featuredVideoStage">
+
+            <video
+              id="homepageVideo"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+            ></video>
+
+            <div class="video-placeholder">
+
+              <div class="video-play-symbol">▶️</div>
+
+              <h3>Featured Unity Video</h3>
+
+              <p>
+                Your selected video will appear here and play
+                automatically, silently and continuously.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- Admin-only video publishing controls -->
+
+          <div class="video-management" id="videoManagement">
+
+            <label class="video-select-label">
+              Select a Video
+              <input
+                type="file"
+                id="homepageVideoInput"
+                accept="video/mp4,video/webm,video/quicktime"
+              >
+            </label>
+
+            <button
+              class="btn btn-green publish-video-button"
+              id="publishHomepageVideo"
+              type="button"
+              disabled
+            >
+              Publish Video
+            </button>
+
+            <button
+              class="video-reset-button"
+              id="resetHomepageVideo"
+              type="button"
+            >
+              Cancel Preview
+            </button>
+
+          </div>
+
+          <p class="video-status" id="videoStatus" aria-live="polite">
+            Loading featured video...
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- COMMUNITY CATEGORIES -->
+
+    <section class="section" id="community">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-kicker">Explore Our Work</div>
+
+          <h2>Every Issue Deserves a Voice.</h2>
+
+          <p>
+            Explore the issues affecting our communities, discover
+            opportunities for positive change, and learn how people
+            can contribute to a more peaceful and responsible society.
+          </p>
+        </div>
+
+        <div class="category-grid">
+
+          <article class="category-card">
+            <div class="category-number">01</div>
+            <h3>Ethnic Hate &amp; Discrimination</h3>
+            <p>
+              Encourage respect across ethnic communities and
+              challenge prejudice, unfair treatment and harmful stereotypes.
+            </p>
+            <a class="text-link" href="ethnic-hate.html">
+              Explore this category <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-number">02</div>
+            <h3>Religious Extremism</h3>
+            <p>
+              Promote peaceful coexistence, responsible dialogue
+              and respect for people of different beliefs.
+            </p>
+            <a class="text-link" href="religious-extremism.html">
+              Explore this category <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-number">03</div>
+            <h3>Voices of Unity</h3>
+            <p>
+              Discover stories, perspectives and positive efforts
+              that bring Nigerians together.
+            </p>
+            <a class="text-link" href="voices-of-unity.html">
+              Discover the voices <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-number">04</div>
+            <h3>Abuse &amp; Harm</h3>
+            <p>
+              Create awareness about harmful behaviour and encourage
+              responsible reporting and community support.
+            </p>
+            <a class="text-link" href="abuse-and-harm.html">
+              Explore this category <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-number">05</div>
+            <h3>Jobs, Skills &amp; Opportunities</h3>
+            <p>
+              Highlight opportunities for learning, personal development,
+              employment and community progress.
+            </p>
+            <a class="text-link" href="jobs-skills.html">
+              Explore opportunities <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-number">06</div>
+            <h3>Positive Values &amp; Community</h3>
+            <p>
+              Celebrate cooperation, compassion, responsible citizenship
+              and the everyday actions that strengthen society.
+            </p>
+            <a class="text-link" href="categories.html">
+              Explore more <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+
+        <div class="section-action">
+          <a class="btn btn-green" href="categories.html">
+            View All Categories <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NIGERIAN SPOTLIGHT -->
+
+    <section class="section section-white" id="spotlight">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-kicker">Nigerian Spotlight</div>
+
+          <h2>Recognising People and Stories That Matter.</h2>
+
+          <p>
+            Every community has people whose actions deserve attention.
+            We aim to highlight meaningful contributions, important
+            developments and stories that encourage reflection.
+          </p>
+        </div>
+
+        <div class="spotlight-grid">
+
+          <div class="spotlight-art">
+            <div class="spotlight-art-label">Stories That Matter</div>
+            <h3>The People<br>Shaping Our Future.</h3>
+          </div>
+
+          <div class="spotlight-content">
+
+            <div class="section-kicker">Community Recognition</div>
+
+            <h3>The Person Everyone Is Talking About</h3>
+
+            <p>
+              Who is making a positive difference? Which actions are
+              helping communities grow? Our spotlight is an opportunity
+              to examine people, ideas and events that matter to Nigerians.
+            </p>
+
+            <h3>Unity Champion of the Month</h3>
+
+            <p>
+              We also aim to recognise individuals whose efforts promote
+              cooperation, fairness, peaceful coexistence and community
+              development.
+            </p>
+
+            <div class="notice-box">
+              Responsible reporting matters. Claims should be assessed
+              carefully, reliable sources considered, and allegations
+              clearly distinguished from established facts.
+            </div>
+
+            <a class="btn btn-outline-green" href="voices-of-unity.html">
+              Explore Voices of Unity <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CURRENT CONVERSATIONS -->
+
+    <section class="section section-green" id="happening">
+      <div class="container">
+
+        <div class="conversation-intro">
+          <div class="section-kicker">Current Conversations</div>
+
+          <h2>What's Happening in Our Communities?</h2>
+
+          <p>
+            Important conversations deserve thoughtful participation.
+            We want to encourage people to raise concerns responsibly,
+            share perspectives and contribute to solutions rather than
+            deepen division.
+          </p>
+        </div>
+
+        <div class="conversation-panel">
+
+          <div>
+            <h3>Your Perspective Can Make a Difference.</h3>
+
+            <p>
+              Explore community issues, learn about the work of Unity
+              Watch Nigeria and discover ways to contribute to a more
+              informed and united society.
+            </p>
+          </div>
+
+          <a class="btn btn-green" href="contact.html">
+            Get Involved <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS AND OPPORTUNITIES -->
+
+    <section class="section" id="events">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-kicker">Events &amp; Opportunities</div>
+
+          <h2>Creating Space for Positive Change.</h2>
+
+          <p>
+            From youth development to community discussions, meaningful
+            progress begins when people come together to exchange ideas
+            and work towards shared goals.
+          </p>
+        </div>
+
+        <div class="events-grid">
+
+          <article class="event-card">
+            <div class="event-number">01</div>
+            <h3>Peace &amp; Unity Programmes</h3>
+            <p>
+              Activities and discussions that encourage peaceful
+              relationships and mutual understanding.
+            </p>
+          </article>
+
+          <article class="event-card">
+            <div class="event-number">02</div>
+            <h3>Youth Development</h3>
+            <p>
+              Opportunities to encourage young people to participate
+              positively in their communities.
+            </p>
+          </article>
+
+          <article class="event-card">
+            <div class="event-number">03</div>
+            <h3>Skills Workshops</h3>
+            <p>
+              Learning and development activities that can help
+              individuals strengthen useful skills.
+            </p>
+          </article>
+
+          <article class="event-card">
+            <div class="event-number">04</div>
+            <h3>Creative &amp; Music Activities</h3>
+            <p>
+              Explore how creative expression can encourage connection,
+              shared experiences and cultural appreciation.
+            </p>
+          </article>
+
+          <article class="event-card">
+            <div class="event-number">05</div>
+            <h3>Community Discussions</h3>
+            <p>
+              Thoughtful conversations about shared challenges,
+              responsibilities and possible solutions.
+            </p>
+          </article>
+
+          <article class="event-card">
+            <div class="event-number">06</div>
+            <h3>Education &amp; Opportunity</h3>
+            <p>
+              Highlighting learning resources and opportunities that
+              can support personal and community development.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="events-note">
+          <strong>Event information:</strong> These are areas of interest,
+          not confirmed event announcements. Specific dates, locations
+          and registration details should be published when an event
+          has been confirmed.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REPORT AN INCIDENT -->
+
+    <section class="report-section" id="report">
+      <div class="container report-grid">
+
+        <div class="report-copy">
+          <div class="section-kicker">Speak Responsibly</div>
+
+          <h2>See Something That Needs Attention?</h2>
+
+          <p>
+            If you have information about an incident affecting a
+            community, you can use our reporting page to submit details
+            for review. Please share information responsibly and avoid
+            publishing private information unnecessarily.
+          </p>
+        </div>
+
+        <div class="report-action">
+          <a class="btn btn-gold" href="submit-evidence.html">
+            Submit Evidence <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a class="brand" href="index.html">
+            <div class="brand-mark" aria-hidden="true">U</div>
+
+            <div>
+              <div class="brand-name">Unity Watch Nigeria</div>
+              <span class="brand-subtitle">Stronger Together</span>
+            </div>
+          </a>
+
+          <p class="footer-description">
+            Promoting peace, accountability, fairness and community
+            development through responsible awareness and a shared
+            commitment to a stronger Nigeria.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="categories.html">Categories</a>
+            <a href="voices-of-unity.html">Voices of Unity</a>
+            <a href="jobs-skills.html">Jobs &amp; Skills</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Information</h3>
+
+          <div class="footer-links">
+            <a href="policy.html">Our Policy</a>
+            <a href="submit-evidence.html">Report an Incident</a>
+            <a href="ethnic-hate.html">Ethnic Hate Records</a>
+            <a href="abuse-and-harm.html">Abuse &amp; Harm</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="currentYear"></span> Unity Watch Nigeria.
+          All rights reserved.
+        </p>
+
+        <p>Respect. Equality. Justice. Unity.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // SUPABASE CONFIGURATION
+
+    const SUPABASE_URL =
+      "https://akeuqofykmhzhetpaxdd.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_1gdEBPvJW6x2ZsMQNCgKDw_SP3R5Njp";
+
+    const ADMIN_USER_ID = "900441a0-12e6-416e-8301-ab495375b61b";
+
+    const VIDEO_BUCKET = "featured-videos";
+
+    const VIDEO_FILE_PATH = "homepage-featured-video";
+
+    const MAX_VIDEO_SIZE = 50 * 1024 * 1024;
+
+    const supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+    // AUTOMATICALLY UPDATE THE COPYRIGHT YEAR.
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+
+    // MOBILE NAVIGATION MENU.
+
+    const menuToggle = document.getElementById("menuToggle");
+
+    const mainNavigation =
+      document.getElementById("mainNavigation");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen = mainNavigation.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+
+    });
+
+
+    // CLOSE THE MOBILE MENU AFTER SELECTING A LINK.
+
+    mainNavigation.querySelectorAll("a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        mainNavigation.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.setAttribute(
+          "aria-label",
+          "Open navigation menu"
+        );
+
+        menuToggle.textContent = "☰";
+
+      });
+
+    });
+
+
+    // RESET THE MOBILE MENU WHEN RETURNING TO DESKTOP WIDTH.
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 760) {
+
+        mainNavigation.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.setAttribute(
+          "aria-label",
+          "Open navigation menu"
+        );
+
+        menuToggle.textContent = "☰";
+
+      }
+
+    });
+
+
+    // HOMEPAGE FEATURED VIDEO ELEMENTS.
+
+    const homepageVideoInput =
+      document.getElementById("homepageVideoInput");
+
+    const homepageVideo =
+      document.getElementById("homepageVideo");
+
+    const featuredVideoStage =
+      document.getElementById("featuredVideoStage");
+
+    const videoStatus =
+      document.getElementById("videoStatus");
+
+    const resetHomepageVideo =
+      document.getElementById("resetHomepageVideo");
+
+    const publishHomepageVideo =
+      document.getElementById("publishHomepageVideo");
+
+    const videoManagement =
+      document.getElementById("videoManagement");
+
+    videoManagement.style.display = "none";
+
+
+    // KEEP TRACK OF THE SELECTED LOCAL VIDEO PREVIEW.
+
+    let selectedVideoURL = null;
+
+    let selectedVideoFile = null;
+
+    let publishedVideoURL = null;
+
+
+    // DISPLAY STATUS MESSAGES.
+
+    function showVideoStatus(message) {
+      videoStatus.textContent = message;
+    }
+
+
+    // RELEASE THE TEMPORARY LOCAL VIDEO PREVIEW.
+
+    function clearLocalPreview() {
+
+      if (selectedVideoURL) {
+
+        URL.revokeObjectURL(selectedVideoURL);
+
+        selectedVideoURL = null;
+
+      }
+
+      selectedVideoFile = null;
+
+      homepageVideoInput.value = "";
+
+      publishHomepageVideo.disabled = true;
+
+    }
+
+
+    // LOAD THE PUBLICLY PUBLISHED VIDEO FROM SUPABASE.
+
+    async function checkAdminAccess() {
+
+  // KEEP THE VIDEO CONTROLS HIDDEN UNTIL ADMIN ACCESS IS CONFIRMED.
+  videoManagement.style.display = "none";
+
+  const { data, error } =
+    await supabaseClient.auth.getSession();
+
+  if (error) {
+    
+    videoManagement.style.display = "none";
+
+    publishHomepageVideo.disabled = true;
+
+    showVideoStatus(
+      "Upload controls are available, but we could not verify your administrator login."
+    );
+
+    return false;
+
+  }
+
+  const session = data.session;
+
+  if (!session || !session.user) {
+
+    videoManagement.style.display = "none";
+
+    publishHomepageVideo.disabled = true;
+
+    showVideoStatus(
+      "You can select and preview a video. Sign in with the administrator account to publish it."
+    );
+
+    return false;
+
+  }
+  
+  const isAdmin =
+    session.user.id === ADMIN_USER_ID;
+
+  if (!isAdmin) {
+
+    videoManagement.style.display = "none";
+
+    publishHomepageVideo.disabled = true;
+
+    showVideoStatus(
+      "You are signed in, but this account is not authorised to publish videos."
+    );
+
+    return false;
+
+  }
+
+  videoManagement.style.display = "flex";
+
+  showVideoStatus(
+    "Administrator recognised. You can select and publish a featured video."
+  );
+
+  return true;
+
+}
+
+
+// UPDATE NAVIGATION BASED ON LOGIN STATUS
+
+async function updateLoginNavigation() {
+
+  const { data, error } =
+    await supabaseClient.auth.getSession();
+
+  const signInLink =
+    document.querySelector(".nav-signin");
+
+  const signUpLink =
+    document.querySelector(".nav-signup");
+
+  if (!signInLink || !signUpLink) {
+    return;
+  }
+
+  if (error || !data.session) {
+
+    signInLink.textContent = "Sign In";
+    signInLink.href = "signin.html";
+
+    signUpLink.textContent = "Join Us";
+    signUpLink.href = "signup.html";
+
+    return;
+  }
+
+  // A user is signed in
+
+  signInLink.textContent = "Account";
+  signInLink.href = "#";
+
+  signUpLink.textContent = "Sign Out";
+  signUpLink.href = "#";
+
+  signUpLink.onclick = async function(event) {
+
+    event.preventDefault();
+
+    await supabaseClient.auth.signOut();
+
+    window.location.reload();
+
+  };
+
+}
+
+// Run the navigation check when the homepage loads
+
+updateLoginNavigation();
+
+    // SELECT AND PREVIEW A VIDEO BEFORE PUBLISHING.
+
+    homepageVideoInput.addEventListener("change", function () {
+
+      const file = this.files[0];
+
+      if (!file) {
+        return;
+      }
+
+      if (!file.type.startsWith("video/")) {
+
+        showVideoStatus(
+          "Please select a valid video file."
+        );
+
+        this.value = "";
+
+        return;
+
+      }
+
+      if (file.size > MAX_VIDEO_SIZE) {
+
+        showVideoStatus(
+          "This video is larger than 50MB. Please select a smaller video."
+        );
+
+        this.value = "";
+
+        return;
+
+      }
+
+      if (selectedVideoURL) {
+
+        URL.revokeObjectURL(selectedVideoURL);
+
+      }
+
+      selectedVideoFile = file;
+
+      selectedVideoURL = URL.createObjectURL(file);
+
+      homepageVideo.src = selectedVideoURL;
+
+      featuredVideoStage.classList.add("has-video");
+
+      homepageVideo.muted = true;
+
+      homepageVideo.loop = true;
+
+      homepageVideo.autoplay = true;
+
+      homepageVideo.playsInline = true;
+
+      homepageVideo.controls = true;
+
+      homepageVideo.load();
+
+      homepageVideo.play().catch(function () {
+        showVideoStatus(
+          "Video selected. Press the play button if automatic playback is blocked by your browser."
+        );
+      });
+
+      publishHomepageVideo.disabled = false;
+
+      showVideoStatus(
+        "Previewing: " + file.name +
+        ". Click Publish Video when you are ready to make it visible to everyone."
+      );
+
+    });
+
+    // LOAD THE CURRENTLY PUBLISHED FEATURED VIDEO.
+
+async function loadPublishedVideo() {
+
+  try {
+
+    const { data } = supabaseClient.storage
+      .from(VIDEO_BUCKET)
+      .getPublicUrl(VIDEO_FILE_PATH);
+
+    if (!data || !data.publicUrl) {
+
+      publishedVideoURL = null;
+
+      homepageVideo.pause();
+      homepageVideo.removeAttribute("src");
+      homepageVideo.load();
+
+      featuredVideoStage.classList.remove("has-video");
+
+      showVideoStatus(
+        "No featured video has been published yet."
+      );
+
+      return;
+
+    }
+
+    /*
+      Add a changing value to the public URL so the browser
+      does not keep loading an older cached version of the
+      same Supabase storage file.
+    */
+
+    const freshVideoURL =
+      data.publicUrl + "?v=" + Date.now();
+
+    publishedVideoURL = freshVideoURL;
+
+    homepageVideo.pause();
+    homepageVideo.removeAttribute("src");
+    homepageVideo.load();
+
+    homepageVideo.src = freshVideoURL;
+
+    homepageVideo.load();
+
+    featuredVideoStage.classList.add("has-video");
+
+    homepageVideo
+      .play()
+      .catch(function () {
+        console.log(
+          "Autoplay was prevented by the browser."
+        );
+      });
+
+    showVideoStatus(
+      "Featured video loaded successfully."
+    );
+
+  } catch (error) {
+
+    console.error(
+      "Featured video loading error:",
+      error
+    );
+
+    publishedVideoURL = null;
+
+    showVideoStatus(
+      "Unable to load the published featured video."
+    );
+
+  }
+
+}
+
+    // PUBLISH THE SELECTED VIDEO TO SUPABASE STORAGE.
+
+    publishHomepageVideo.addEventListener("click", async function () {
+
+      if (!selectedVideoFile) {
+
+        showVideoStatus(
+          "Please select a video before publishing."
+        );
+
+        return;
+
+      }
+
+      const isAdmin = await checkAdminAccess();
+
+      if (!isAdmin) {
+
+        showVideoStatus(
+          "You must be signed in with the authorised administrator account to publish a video."
+        );
+
+        return;
+
+      }
+
+      publishHomepageVideo.disabled = true;
+
+      publishHomepageVideo.textContent = "Publishing...";
+
+      showVideoStatus(
+        "Uploading your video to Unity Watch Nigeria. Please wait..."
+      );
+
+      try {
+
+        const { error } = await supabaseClient.storage
+          .from(VIDEO_BUCKET)
+          .upload(
+            VIDEO_FILE_PATH,
+            selectedVideoFile,
+            {
+              cacheControl: "0",
+              upsert: true,
+              contentType: selectedVideoFile.type
+            }
+          );
+
+        if (error) {
+          throw error;
+        }
+
+        clearLocalPreview();
+
+        await loadPublishedVideo();
+
+        showVideoStatus(
+          "Success! Your video has been published and is now available to visitors."
+        );
+
+      } catch (error) {
+
+        console.error("Featured video upload error:", error);
+
+        showVideoStatus(
+          "Video publishing failed: " + error.message
+        );
+
+        publishHomepageVideo.disabled = false;
+
+      } finally {
+
+        publishHomepageVideo.textContent = "Publish Video";
+
+      }
+
+    });
+
+
+    // CANCEL THE PREVIEW AND RETURN TO THE CURRENTLY PUBLISHED VIDEO.
+
+    resetHomepageVideo.addEventListener("click", async function () {
+
+      clearLocalPreview();
+
+      if (publishedVideoURL) {
+
+        await loadPublishedVideo();
+
+      } else {
+
+        homepageVideo.pause();
+
+        homepageVideo.removeAttribute("src");
+
+        homepageVideo.load();
+
+        featuredVideoStage.classList.remove("has-video");
+
+        showVideoStatus(
+          "Select a video from your computer to preview it."
+        );
+
+      }
+
+    });
+
+
+    // INITIALISE THE HOMEPAGE VIDEO.
+
+    async function initialiseFeaturedVideo() {
+
+      await loadPublishedVideo();
+
+      await checkAdminAccess();
+
+    }
+
+
+   // CHECK LOGIN AND ADMIN ACCESS AGAIN WHEN AUTHENTICATION CHANGES.
+
+supabaseClient.auth.onAuthStateChange(function (event, session) {
+
+  setTimeout(function () {
+
+    updateLoginNavigation();
+
+    checkAdminAccess();
+
+  }, 0);
+
+});
+
+
+    // START THE HOMEPAGE VIDEO SYSTEM.
+
+    initialiseFeaturedVideo();
+
+  </script>
+
+</body>
+</html>

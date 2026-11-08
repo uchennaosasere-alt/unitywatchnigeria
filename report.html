@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report an Incident | Unity Watch Nigeria</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f5eb;
+            color: #183c2e;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #183c2e;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #e6c46a;
+        }
+
+        .main-nav {
+            background: white;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px 10px;
+            border-bottom: 3px solid #b88a35;
+        }
+
+        .main-nav a {
+            color: #183c2e;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 14px;
+            border-radius: 6px;
+        }
+
+        .main-nav a:hover {
+            background: #e9dfc8;
+        }
+
+        .hero {
+            background: #e9dfc8;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .form-container {
+            max-width: 650px;
+            margin: 35px auto;
+            padding: 0 18px;
+        }
+
+        form {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            border-top: 5px solid #b88a35;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        label {
+            display: block;
+            margin: 18px 0 8px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 14px;
+            background: #176b45;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #105236;
+        }
+
+        .notice {
+            font-size: 13px;
+            color: #555555;
+            margin-top: 18px;
+        }
+
+        footer {
+            background: #183c2e;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer strong {
+            color: #e6c46a;
+        }
+
+        @media (max-width: 500px) {
+            .hero h2 {
+                font-size: 25px;
+            }
+
+            form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Unity Watch Nigeria</h1>
+        <p>Stronger Together</p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="policy.html">Our Policy</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Report an Incident</h2>
+
+        <p>
+            Help promote fairness, dignity and peaceful coexistence.
+            Provide a clear and truthful account of the incident
+            you wish to report.
+        </p>
+    </section>
+
+    <main class="form-container">
+
+        <form id="incidentForm">
+
+            <label for="incidentType">Type of Incident</label>
+
+            <select id="incidentType" name="incidentType" required>
+                <option value="">Select an incident type</option>
+                <option value="ethnic-discrimination">
+                    Ethnic Hate &amp; Discrimination
+                </option>
+                <option value="religious-extremism">
+                    Religious Extremism
+                </option>
+                <option value="abuse">
+                    Abuse &amp; Harm
+                </option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="incidentLocation">
+                Location of Incident
+            </label>
+
+            <input
+                type="text"
+                id="incidentLocation"
+                name="incidentLocation"
+                placeholder="Enter the town or state"
+                required
+            >
+
+            <label for="incidentDescription">
+                Describe What Happened
+            </label>
+
+            <textarea
+                id="incidentDescription"
+                name="incidentDescription"
+                rows="6"
+                placeholder="Describe what happened, including relevant details..."
+                required
+            ></textarea>
+
+            <label for="contactDetails">
+                Contact Details (Optional)
+            </label>
+
+            <input
+                type="text"
+                id="contactDetails"
+                name="contactDetails"
+                placeholder="Email address or phone number"
+            >
+
+            <button type="submit">Submit Report</button>
+
+            <p class="notice">
+                Please provide truthful information. Avoid including
+                unnecessary personal information about yourself or
+                other people.
+            </p>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p><strong>Report. Support. Build.</strong></p>
+        <p>Together for a Safer Nigeria</p>
+        <p>&copy; 2026 Unity Watch Nigeria</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,2338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Religious Extremism Records | Unity Watch Nigeria</title>
+
+    <meta name="description" content="Unity Watch Nigeria documents reviewed information relating to religious extremism, intimidation, and religiously motivated violence while promoting fairness, accountability, and peaceful coexistence.">
+
+    <!-- Homepage fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #176b45;
+            --dark-green: #0b3526;
+            --light-green: #eaf5ee;
+            --gold: #d9ad52;
+            --background: #f5f7f5;
+            --text: #202923;
+            --muted: #66736b;
+            --white: #ffffff;
+            --border: #e0e7e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ==========================================
+           HOMEPAGE-STYLE HEADER
+           ========================================== */
+
+        .top-strip {
+            background: #234631;
+            color: #f8f1df;
+            text-align: center;
+            padding: 8px 15px;
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 1.1px;
+        }
+
+        .top-strip span {
+            color: #d8b85e;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 253, 248, 0.97);
+            border-bottom: 1px solid #dce5d9;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-container {
+            width: min(1160px, 90%);
+            min-height: 82px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            color: #234631;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: #315b43;
+            color: #d8b85e;
+            border-bottom: 3px solid #b88a35;
+            display: grid;
+            place-items: center;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 21px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .brand-name {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.3;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            color: #234631;
+        }
+
+        .brand-subtitle {
+            display: block;
+            margin-top: 4px;
+            color: #a94f32;
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 23px;
+        }
+
+        .nav-links a {
+            color: #47564b;
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #a94f32;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 45px;
+            height: 43px;
+            border: 1px solid #dce5d9;
+            border-radius: 6px;
+            background: #fffdf8;
+            color: #315b43;
+            cursor: pointer;
+            font-size: 1.55rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ==========================================
+           EXISTING PAGE STYLES
+           ========================================== */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 85px 7% 115px;
+            color: var(--white);
+            background:
+                radial-gradient(circle at 85% 25%, rgba(217, 173, 82, 0.22), transparent 23%),
+                linear-gradient(125deg, #0b3526 0%, #176b45 65%, #124b34 100%);
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 430px;
+            height: 430px;
+            right: -110px;
+            top: -160px;
+        }
+
+        .hero::after {
+            width: 300px;
+            height: 300px;
+            right: -45px;
+            top: -95px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 790px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.12;
+            margin-bottom: 23px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #e0eee5;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 800;
+            transition: 0.2s ease;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--dark-green);
+        }
+
+        .btn-gold:hover {
+            background: #edc976;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            width: 86%;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: -48px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(11, 53, 38, 0.06);
+        }
+
+        .stat-card h3 {
+            color: var(--green);
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .stat-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 28px;
+        }
+
+        .section-heading .eyebrow {
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            color: var(--dark-green);
+            font-size: clamp(27px, 3vw, 36px);
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            max-width: 760px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .filter-panel {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 22px;
+            margin-bottom: 25px;
+        }
+
+        .filter-panel label {
+            display: block;
+            color: var(--dark-green);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .filter-controls {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+        }
+
+        .filter-controls input,
+        .filter-controls select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            background: #fff;
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        .filter-controls input:focus,
+        .filter-controls select:focus {
+            outline: 2px solid rgba(23, 107, 69, 0.2);
+            border-color: var(--green);
+        }
+
+        .record-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .record-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--green);
+            border-radius: 7px;
+            padding: 25px;
+        }
+
+        .record-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .record-id {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .record-status {
+            background: var(--light-green);
+            color: var(--green);
+            border-radius: 20px;
+            padding: 5px 11px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .record-status.status-under-review {
+            background: #fff3d9;
+            color: #805b12;
+        }
+
+        .record-status.status-verified {
+            background: var(--light-green);
+            color: var(--green);
+        }
+
+        .record-status.status-rejected {
+            background: #fde8e7;
+            color: #9b2923;
+        }
+
+        .record-card h3 {
+            color: var(--dark-green);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .record-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .record-meta {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+        }
+
+        .record-meta strong {
+            display: block;
+            color: var(--dark-green);
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .record-meta span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .record-media {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .media-item {
+            min-width: 0;
+        }
+
+        .media-item img,
+        .media-item video {
+            display: block;
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #e5ebe6;
+        }
+
+        .gallery-image {
+            cursor: zoom-in;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .gallery-image:hover {
+            opacity: 0.92;
+            transform: scale(1.01);
+        }
+
+        .media-open-button {
+            display: inline-block;
+            margin-top: 7px;
+            padding: 7px 11px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            background: var(--light-green);
+            color: var(--dark-green);
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .media-open-button:hover {
+            background: #d9eadf;
+        }
+
+        /* ==========================================
+           NEW PUBLIC VIDEO EVIDENCE SECTION
+           ========================================== */
+
+        .video-evidence-section {
+            padding: 70px 0;
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .video-evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .public-video-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(11, 53, 38, 0.05);
+        }
+
+        .public-video-card video {
+            display: block;
+            width: 100%;
+            max-height: 340px;
+            background: #10251b;
+        }
+
+        .public-video-info {
+            padding: 18px;
+        }
+
+        .public-video-info h3 {
+            color: var(--dark-green);
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .public-video-info p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .video-record-label {
+            display: inline-block;
+            margin-top: 7px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: var(--light-green);
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .video-notice {
+            margin-top: 25px;
+            padding: 17px 20px;
+            background: #fff9eb;
+            border-left: 4px solid var(--gold);
+            border-radius: 4px;
+            color: #62502a;
+            font-size: 13px;
+        }
+
+        .video-empty-state {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 45px 25px;
+            text-align: center;
+        }
+
+        .video-empty-state h3 {
+            color: var(--dark-green);
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .video-empty-state p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Full-screen gallery and video viewer */
+
+        .media-viewer {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.94);
+            align-items: center;
+            justify-content: center;
+            padding: 65px 65px 35px;
+        }
+
+        .media-viewer.is-open {
+            display: flex;
+        }
+
+        .media-viewer-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-viewer-content img,
+        .media-viewer-content video {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .viewer-close,
+        .viewer-arrow {
+            position: absolute;
+            border: 0;
+            color: white;
+            background: rgba(255, 255, 255, 0.16);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .viewer-close {
+            top: 16px;
+            right: 20px;
+            width: 43px;
+            height: 43px;
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        .viewer-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            font-size: 28px;
+        }
+
+        .viewer-prev {
+            left: 12px;
+        }
+
+        .viewer-next {
+            right: 12px;
+        }
+
+        .viewer-close:hover,
+        .viewer-arrow:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .viewer-counter {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 13px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        .loading-message {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .empty-state {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 45px 25px;
+            text-align: center;
+        }
+
+        .empty-state h3 {
+            color: var(--dark-green);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .empty-state p {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 650px;
+            margin: 0 auto 20px;
+        }
+
+        .empty-symbol {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: var(--light-green);
+            color: var(--green);
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .evidence-section {
+            background: var(--light-green);
+            padding: 65px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 35px;
+            align-items: start;
+        }
+
+        .evidence-copy h2 {
+            color: var(--dark-green);
+            font-size: 32px;
+            line-height: 1.25;
+            margin-bottom: 17px;
+        }
+
+        .evidence-copy p {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .guidelines {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .guidelines h3 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            font-size: 19px;
+        }
+
+        .guidelines ul {
+            padding-left: 20px;
+        }
+
+        .guidelines li {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 11px;
+        }
+
+        .notice {
+            background: #fff9eb;
+            border-left: 4px solid var(--gold);
+            padding: 17px 20px;
+            margin-top: 25px;
+            border-radius: 4px;
+            color: #62502a;
+            font-size: 13px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: #d9e7dd;
+            padding: 35px 7%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .footer-brand {
+            color: var(--white);
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        .footer-content p {
+            font-size: 12px;
+            color: #c3d5c9;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #e4eee7;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ==========================================
+           MOBILE RESPONSIVENESS
+           ========================================== */
+
+        @media (max-width: 760px) {
+
+            .nav-container {
+                min-height: 72px;
+            }
+
+            .brand-mark {
+                width: 40px;
+                height: 40px;
+                font-size: 19px;
+            }
+
+            .brand-name {
+                font-size: 12px;
+            }
+
+            .brand-subtitle {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+                flex-shrink: 0;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 5% 20px;
+                background: #fffdf8;
+                border-bottom: 1px solid #dce5d9;
+                box-shadow: 0 15px 25px rgba(21, 53, 38, 0.08);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 3px;
+                font-size: 0.9rem;
+                border-bottom: 1px solid #eeeee6;
+            }
+
+            .hero {
+                padding: 65px 7% 90px;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                margin-top: -35px;
+                gap: 12px;
+            }
+
+            .filter-controls {
+                grid-template-columns: 1fr;
+            }
+
+            .record-meta {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .evidence-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .video-evidence-section {
+                padding: 50px 0;
+            }
+
+            .video-evidence-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .media-viewer {
+                padding: 65px 12px 45px;
+            }
+
+            .viewer-prev {
+                left: 5px;
+            }
+
+            .viewer-next {
+                right: 5px;
+            }
+
+            .viewer-arrow {
+                width: 38px;
+                height: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HOMEPAGE-STYLE HEADER WITH RELIGIOUS EXTREMISM NAVIGATION -->
+
+    <div class="top-strip">
+        One Nation <span>·</span> Many Voices <span>·</span> One Shared Future
+    </div>
+
+    <header class="site-header">
+        <div class="nav-container">
+
+            <a class="brand" href="index.html" aria-label="Unity Watch Nigeria homepage">
+
+                <div class="brand-mark" aria-hidden="true">U</div>
+
+                <div>
+                    <div class="brand-name">Unity Watch Nigeria</div>
+                    <span class="brand-subtitle">Stronger Together</span>
+                </div>
+
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+            >☰</button>
+
+            <nav class="nav-links" id="mainNavigation" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="#records">Records</a>
+                <a href="#evidence">Submit Evidence</a>
+                <a href="about.html">About</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <header class="hero">
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Accountability • Peace • National Unity
+            </div>
+
+            <h1>
+                Religious Extremism
+                <span>Records</span>
+            </h1>
+
+            <p>
+                A dedicated space for documenting reviewed information
+                concerning religiously motivated intimidation, threats,
+                incitement, and violence in Nigeria. Our aim is to promote
+                accountability, protect communities, and support peaceful
+                coexistence without unfairly blaming entire religious groups.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#records" class="btn btn-gold">
+                    Explore Records
+                </a>
+
+                <a href="submit-evidence.html" class="btn btn-outline">
+                    Report a Concern
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <section class="stats" aria-label="Portal information">
+
+                <div class="stat-card">
+                    <h3>Verified Information</h3>
+                    <p>
+                        Records should be supported by credible evidence
+                        and reviewed before publication.
+                    </p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Fair Documentation</h3>
+                    <p>
+                        Allegations must be distinguished from established
+                        facts, and corrections must be possible.
+                    </p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Peaceful Coexistence</h3>
+                    <p>
+                        The focus is on harmful conduct, not on condemning
+                        people because of their religion.
+                    </p>
+                </div>
+
+            </section>
+        </div>
+
+        <section class="section" id="records">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Public Documentation</div>
+
+                    <h2>Religious Extremism Records</h2>
+
+                    <p>
+                        This section is intended for responsibly reviewed
+                        records relating to religiously motivated threats,
+                        intimidation, incitement, and violence. Information
+                        should not be treated as established fact merely
+                        because someone has made an allegation.
+                    </p>
+                </div>
+
+                <div class="filter-panel">
+                    <div class="filter-controls">
+
+                        <div>
+                            <label for="recordSearch">
+                                Search records
+                            </label>
+
+                            <input
+                                type="search"
+                                id="recordSearch"
+                                placeholder="Search by title, location or record ID..."
+                            >
+                        </div>
+
+                        <div>
+                            <label for="recordStatus">
+                                Review status
+                            </label>
+
+                            <select id="recordStatus">
+                                <option value="all">All statuses</option>
+                                <option value="verified">Verified</option>
+                                <option value="under-review">Under review</option>
+                                <option value="rejected">Rejected</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="record-list" id="recordList">
+
+                    <div class="loading-message" id="loadingMessage">
+                        Loading public records...
+                    </div>
+
+                </div>
+
+                <div class="empty-state" id="emptyState" style="display: none;">
+
+                    <div class="empty-symbol">i</div>
+
+                    <h3>No Published Records Yet</h3>
+
+                    <p>
+                        There are currently no reviewed records published
+                        in this section. Records will appear here when
+                        relevant information has been assessed and
+                        approved for publication.
+                    </p>
+
+                    <a href="submit-evidence.html" class="btn btn-gold">
+                        Report a Concern
+                    </a>
+
+                </div>
+
+                <div class="notice">
+                    <strong>Important:</strong>
+                    A report or allegation is not proof of wrongdoing.
+                    Information must be assessed fairly, and no individual
+                    or community should be labelled extremist solely because
+                    of religious identity, belief, or peaceful expression.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             NEW VISIBLE VIDEO EVIDENCE SECTION
+             ========================================== -->
+
+        <section class="video-evidence-section" id="video-evidence">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">Public Media Evidence</div>
+
+                    <h2>Video Evidence</h2>
+
+                    <p>
+                        This section displays video evidence associated
+                        with publicly available Religious Extremism records.
+                        Videos are displayed here only when they are
+                        available for public viewing.
+                    </p>
+
+                </div>
+
+                <div id="videoEvidenceList">
+
+                    <div class="loading-message">
+                        Checking for available video evidence...
+                    </div>
+
+                </div>
+
+                <div class="video-notice">
+                    <strong>Review and privacy:</strong>
+                    Submitted videos are not automatically made public.
+                    Evidence may remain under review and will only be
+                    displayed here when it is approved for public viewing.
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="evidence-section" id="evidence">
+            <div class="container">
+
+                <div class="evidence-grid">
+
+                    <div class="evidence-copy">
+                        <div class="eyebrow">Responsible Reporting</div>
+
+                        <h2>Help Build a More Accountable Society</h2>
+
+                        <p>
+                            Credible documentation can help the public
+                            understand incidents involving religiously
+                            motivated threats or violence. Reports should
+                            be factual, relevant, and submitted responsibly.
+                        </p>
+
+                        <p>
+                            If you have information about a concern, use
+                            the reporting page to find the available
+                            reporting options. Do not put yourself in
+                            danger to obtain evidence.
+                        </p>
+
+                        <a href="submit-evidence.html" class="btn btn-gold">
+                            Go to Reporting Page
+                        </a>
+                    </div>
+
+                    <div class="guidelines">
+                        <h3>Before Submitting Information</h3>
+
+                        <ul>
+                            <li>
+                                Provide only information you believe to
+                                be accurate and relevant.
+                            </li>
+
+                            <li>
+                                Clearly distinguish what you personally
+                                witnessed from what you heard from others.
+                            </li>
+
+                            <li>
+                                Include dates and locations where safe
+                                and appropriate.
+                            </li>
+
+                            <li>
+                                Do not publish private addresses, personal
+                                phone numbers, or other sensitive details.
+                            </li>
+
+                            <li>
+                                Do not submit threats, fabricated evidence,
+                                or material intended to incite hatred.
+                            </li>
+
+                            <li>
+                                Allow allegations to be reviewed fairly
+                                before presenting them as established facts.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+
+            <div>
+                <div class="footer-brand">
+                    UNITY WATCH <span>NIGERIA</span>
+                </div>
+
+                <p>
+                    Promoting accountability, dignity, and peaceful coexistence.
+                </p>
+
+                <p>
+                    &copy; <span id="currentYear"></span>
+                    Unity Watch Nigeria.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="policy.html">Our Policy</a>
+                <a href="contact.html">Contact</a>
+                <a href="submit-evidence.html">Report a Concern</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Full-screen photo gallery and video viewer -->
+    <div
+        class="media-viewer"
+        id="mediaViewer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Evidence media viewer"
+        aria-hidden="true"
+    >
+        <button type="button" class="viewer-close" id="viewerClose" aria-label="Close viewer">&times;</button>
+
+        <button type="button" class="viewer-arrow viewer-prev" id="viewerPrev" aria-label="Previous media">
+            &#10094;
+        </button>
+
+        <div class="media-viewer-content" id="mediaViewerContent"></div>
+
+        <button type="button" class="viewer-arrow viewer-next" id="viewerNext" aria-label="Next media">
+            &#10095;
+        </button>
+
+        <div class="viewer-counter" id="viewerCounter"></div>
+    </div>
+
+    <!-- Supabase library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+
+        // ==========================================
+        // SUPABASE CONNECTION
+        // Keep your existing publishable key here.
+        // Do not put a Supabase secret key in this page.
+        // ==========================================
+
+       window.supabaseClient = window.supabase.createClient(
+            "https://akeuqofykmhzhetpaxdd.supabase.co",
+            "sb_publishable_1gdEBPvJW6x2ZsMQNCgKDw_SP3R5Njp"
+        );
+
+
+        // ==========================================
+        // PAGE ELEMENTS
+        // ==========================================
+
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        const recordList = document.getElementById("recordList");
+        const emptyState = document.getElementById("emptyState");
+        const searchInput = document.getElementById("recordSearch");
+        const statusFilter = document.getElementById("recordStatus");
+
+        const videoEvidenceList =
+            document.getElementById("videoEvidenceList");
+
+        const mediaViewer = document.getElementById("mediaViewer");
+        const mediaViewerContent = document.getElementById("mediaViewerContent");
+        const viewerClose = document.getElementById("viewerClose");
+        const viewerPrev = document.getElementById("viewerPrev");
+        const viewerNext = document.getElementById("viewerNext");
+        const viewerCounter = document.getElementById("viewerCounter");
+
+        let allRecords = [];
+        let galleryItems = [];
+        let currentGalleryIndex = 0;
+
+        // Reuse media requests so the same video is not requested twice.
+        const mediaRequestCache = new Map();
+
+
+        // ==========================================
+        // MOBILE NAVIGATION MENU
+        // ==========================================
+
+        const menuToggle = document.getElementById("menuToggle");
+        const mainNavigation = document.getElementById("mainNavigation");
+
+        menuToggle.addEventListener("click", function () {
+
+            const isOpen = mainNavigation.classList.toggle("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+
+            menuToggle.textContent = isOpen ? "×" : "☰";
+
+        });
+
+        mainNavigation.querySelectorAll("a").forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                mainNavigation.classList.remove("open");
+
+                menuToggle.setAttribute("aria-expanded", "false");
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                menuToggle.textContent = "☰";
+
+            });
+
+        });
+
+
+        // ==========================================
+        // SAFELY DISPLAY DATABASE TEXT
+        // ==========================================
+
+        function escapeHTML(value) {
+            return String(value ?? "").replace(/[&<>"']/g, function(character) {
+                return {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#039;"
+                }[character];
+            });
+        }
+
+
+        // ==========================================
+        // FORMAT DATES
+        // ==========================================
+
+        function formatDate(value) {
+            if (!value) {
+                return "Not provided";
+            }
+
+            const date = new Date(value);
+
+            if (isNaN(date.getTime())) {
+                return "Not provided";
+            }
+
+            return date.toLocaleDateString("en-NG", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+
+        // ==========================================
+        // CHECK MEDIA URL
+        // ==========================================
+
+        function safeMediaURL(value) {
+            try {
+                const url = new URL(value);
+
+                if (url.protocol !== "https:") {
+                    return "";
+                }
+
+                return url.href;
+
+            } catch (error) {
+                return "";
+            }
+        }
+
+
+        // ==========================================
+        // LOAD PHOTOS OR VIDEOS
+        // USING THE EXISTING EDGE FUNCTION
+        // ==========================================
+
+        async function loadMedia(reportId, mediaType) {
+
+            const cacheKey = reportId + "-" + mediaType;
+
+            if (mediaRequestCache.has(cacheKey)) {
+                return mediaRequestCache.get(cacheKey);
+            }
+
+            const mediaPromise = (async function() {
+
+                try {
+
+                    const { data, error } =
+                        await window.supabaseClient.functions.invoke(
+                            "public-evidence-media",
+                            {
+                                body: {
+                                    report_id: reportId,
+                                    media_type: mediaType
+                                }
+                            }
+                        );
+
+                    if (error) {
+
+                        console.warn(
+                            "Could not load " + mediaType + ":",
+                            error
+                        );
+
+                        return null;
+                    }
+
+                    return data && Array.isArray(data.media)
+                        ? data.media
+                        : [];
+
+                } catch (error) {
+
+                    console.warn("Media loading error:", error);
+
+                    return null;
+                }
+
+            })();
+
+            mediaRequestCache.set(cacheKey, mediaPromise);
+
+            return mediaPromise;
+        }
+
+
+        // ==========================================
+        // OPEN AND CLOSE THE MEDIA VIEWER
+        // ==========================================
+
+        function openMediaViewer(items, startIndex) {
+            if (!items || items.length === 0) {
+                return;
+            }
+
+            galleryItems = items;
+            currentGalleryIndex = startIndex;
+
+            renderViewerItem();
+
+            mediaViewer.classList.add("is-open");
+            mediaViewer.setAttribute("aria-hidden", "false");
+
+            document.body.style.overflow = "hidden";
+
+            viewerClose.focus();
+        }
+
+
+        function closeMediaViewer() {
+            mediaViewer.classList.remove("is-open");
+            mediaViewer.setAttribute("aria-hidden", "true");
+
+            // Stop any video that was playing in the viewer.
+            mediaViewerContent.innerHTML = "";
+
+            document.body.style.overflow = "";
+
+            galleryItems = [];
+            currentGalleryIndex = 0;
+        }
+
+
+        function renderViewerItem() {
+            if (!galleryItems.length) {
+                return;
+            }
+
+            const item = galleryItems[currentGalleryIndex];
+            const mediaURL = safeMediaURL(item.url);
+
+            if (!mediaURL) {
+                closeMediaViewer();
+                return;
+            }
+
+            if (item.type === "video") {
+
+                mediaViewerContent.innerHTML = `
+                    <video controls autoplay playsinline preload="metadata">
+                        <source src="${escapeHTML(mediaURL)}">
+                        Your browser does not support video playback.
+                    </video>
+                `;
+
+            } else {
+
+                mediaViewerContent.innerHTML = `
+                    <img
+                        src="${escapeHTML(mediaURL)}"
+                        alt="Enlarged submitted evidence photograph"
+                    >
+                `;
+
+            }
+
+            viewerCounter.textContent =
+                (currentGalleryIndex + 1) + " of " + galleryItems.length;
+
+            const hasMultiple = galleryItems.length > 1;
+
+            viewerPrev.style.display = hasMultiple ? "flex" : "none";
+            viewerNext.style.display = hasMultiple ? "flex" : "none";
+        }
+
+
+        function showPreviousMedia() {
+            if (!galleryItems.length) {
+                return;
+            }
+
+            currentGalleryIndex =
+                (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
+
+            renderViewerItem();
+        }
+
+
+        function showNextMedia() {
+            if (!galleryItems.length) {
+                return;
+            }
+
+            currentGalleryIndex =
+                (currentGalleryIndex + 1) % galleryItems.length;
+
+            renderViewerItem();
+        }
+
+
+        viewerClose.addEventListener("click", closeMediaViewer);
+        viewerPrev.addEventListener("click", showPreviousMedia);
+        viewerNext.addEventListener("click", showNextMedia);
+
+
+        mediaViewer.addEventListener("click", function(event) {
+            if (event.target === mediaViewer) {
+                closeMediaViewer();
+            }
+        });
+
+
+        document.addEventListener("keydown", function(event) {
+            if (!mediaViewer.classList.contains("is-open")) {
+                return;
+            }
+
+            if (event.key === "Escape") {
+                closeMediaViewer();
+            }
+
+            if (event.key === "ArrowLeft") {
+                showPreviousMedia();
+            }
+
+            if (event.key === "ArrowRight") {
+                showNextMedia();
+            }
+        });
+
+
+        // ==========================================
+        // DISPLAY PHOTOS AND VIDEOS INSIDE RECORDS
+        // ==========================================
+
+        function createMediaHTML(photos, videos) {
+
+            const photoItems = (photos || [])
+                .map(function(item) {
+                    const url = safeMediaURL(item.url);
+
+                    return url
+                        ? { url: url, type: "photo" }
+                        : null;
+                })
+                .filter(Boolean);
+
+
+            const videoItems = (videos || [])
+                .map(function(item) {
+                    const url = safeMediaURL(item.url);
+
+                    return url
+                        ? { url: url, type: "video" }
+                        : null;
+                })
+                .filter(Boolean);
+
+
+            const allMedia = photoItems.concat(videoItems);
+
+            if (allMedia.length === 0) {
+                return "";
+            }
+
+
+            const galleryId =
+                "gallery-" + Math.random().toString(36).slice(2);
+
+
+            let html =
+                '<div class="record-media" data-gallery-id="' + galleryId + '">';
+
+
+            photoItems.forEach(function(item, index) {
+
+                html += `
+                    <div class="media-item">
+
+                        <img
+                            class="gallery-image"
+                            src="${escapeHTML(item.url)}"
+                            alt="Submitted evidence photograph"
+                            loading="lazy"
+                            data-gallery-id="${galleryId}"
+                            data-media-index="${index}"
+                            tabindex="0"
+                            role="button"
+                            aria-label="Open photograph in gallery"
+                        >
+
+                        <button
+                            type="button"
+                            class="media-open-button"
+                            data-gallery-id="${galleryId}"
+                            data-media-index="${index}"
+                        >
+                            Enlarge photo
+                        </button>
+
+                    </div>
+                `;
+
+            });
+
+
+            videoItems.forEach(function(item, index) {
+
+                const combinedIndex = photoItems.length + index;
+
+                html += `
+                    <div class="media-item">
+
+                        <video controls playsinline preload="metadata">
+                            <source src="${escapeHTML(item.url)}">
+                            Your browser does not support video playback.
+                        </video>
+
+                        <button
+                            type="button"
+                            class="media-open-button"
+                            data-gallery-id="${galleryId}"
+                            data-media-index="${combinedIndex}"
+                        >
+                            Open video larger
+                        </button>
+
+                    </div>
+                `;
+
+            });
+
+
+            html += "</div>";
+
+
+            // Store this record's media set for the viewer.
+            window.recordGalleries = window.recordGalleries || {};
+
+            window.recordGalleries[galleryId] = allMedia;
+
+
+            return html;
+        }
+
+
+        // ==========================================
+        // OPEN MEDIA WHEN CLICKED
+        // ==========================================
+
+        function handleMediaClick(event) {
+
+            const trigger = event.target.closest(
+                ".gallery-image, .media-open-button"
+            );
+
+            if (!trigger) {
+                return;
+            }
+
+            const galleryId = trigger.dataset.galleryId;
+
+            const mediaIndex =
+                Number(trigger.dataset.mediaIndex);
+
+            const items =
+                window.recordGalleries &&
+                window.recordGalleries[galleryId];
+
+            if (items) {
+                openMediaViewer(items, mediaIndex);
+            }
+
+        }
+
+
+        recordList.addEventListener("click", handleMediaClick);
+        videoEvidenceList.addEventListener("click", handleMediaClick);
+
+
+        function handleMediaKeyboard(event) {
+
+            if (
+                event.target.classList.contains("gallery-image") &&
+                (event.key === "Enter" || event.key === " ")
+            ) {
+
+                event.preventDefault();
+
+                const galleryId =
+                    event.target.dataset.galleryId;
+
+                const mediaIndex =
+                    Number(event.target.dataset.mediaIndex);
+
+                const items =
+                    window.recordGalleries &&
+                    window.recordGalleries[galleryId];
+
+                if (items) {
+                    openMediaViewer(items, mediaIndex);
+                }
+
+            }
+
+        }
+
+
+        recordList.addEventListener("keydown", handleMediaKeyboard);
+        videoEvidenceList.addEventListener("keydown", handleMediaKeyboard);
+
+
+        // ==========================================
+        // CREATE A PUBLIC RECORD CARD
+        // ==========================================
+
+        async function createRecordCard(report) {
+
+            const photos = await loadMedia(report.id, "photos");
+
+            const videos = await loadMedia(report.id, "videos");
+
+            const status = report.status || "Under Review";
+
+            const statusClass = status
+                .toLowerCase()
+                .replace(/\s+/g, "-");
+
+            const title =
+                report.incident_title || "Untitled report";
+
+            const location =
+                report.location || "Location not provided";
+
+            const description =
+                report.description || "No description provided.";
+
+            const date = formatDate(
+                report.incident_date || report.created_at
+            );
+
+
+            return `
+                <article
+                    class="record-card"
+                    data-status="${escapeHTML(statusClass)}"
+                >
+
+                    <div class="record-top">
+
+                        <span class="record-id">
+                            RECORD #${escapeHTML(report.id)}
+                        </span>
+
+                        <span class="record-status status-${escapeHTML(statusClass)}">
+                            ${escapeHTML(status)}
+                        </span>
+
+                    </div>
+
+                    <h3>${escapeHTML(title)}</h3>
+
+                    <p>${escapeHTML(description)}</p>
+
+                    ${createMediaHTML(photos, videos)}
+
+                    <div class="record-meta">
+
+                        <div>
+                            <strong>Location</strong>
+                            <span>${escapeHTML(location)}</span>
+                        </div>
+
+                        <div>
+                            <strong>Incident Date</strong>
+                            <span>${escapeHTML(date)}</span>
+                        </div>
+
+                        <div>
+                            <strong>Review Status</strong>
+                            <span>${escapeHTML(status)}</span>
+                        </div>
+
+                    </div>
+
+                </article>
+            `;
+        }
+
+
+        // ==========================================
+        // NEW: LOAD PUBLIC VIDEO EVIDENCE SECTION
+        // ==========================================
+
+        async function loadPublicVideoEvidence(records) {
+
+            videoEvidenceList.innerHTML = `
+                <div class="loading-message">
+                    Checking for available video evidence...
+                </div>
+            `;
+
+
+            if (!records || records.length === 0) {
+
+                videoEvidenceList.innerHTML = `
+                    <div class="video-empty-state">
+
+                        <h3>No Video Evidence Available Yet</h3>
+
+                        <p>
+                            No publicly available video evidence has been
+                            published in this section yet. Videos submitted
+                            to Unity Watch Nigeria may still be awaiting
+                            review and approval.
+                        </p>
+
+                    </div>
+                `;
+
+                return;
+            }
+
+
+            try {
+
+                const results = await Promise.all(
+
+                    records.map(async function(report) {
+
+                        const videos = await loadMedia(
+                            report.id,
+                            "videos"
+                        );
+
+                        return {
+                            report: report,
+                            videos: videos
+                        };
+
+                    })
+
+                );
+
+
+                const failedRequests = results.filter(function(result) {
+                    return result.videos === null;
+                });
+
+
+                const availableVideos = [];
+
+
+                results.forEach(function(result) {
+
+                    if (!Array.isArray(result.videos)) {
+                        return;
+                    }
+
+                    result.videos.forEach(function(video) {
+
+                        const url = safeMediaURL(video.url);
+
+                        if (url) {
+
+                            availableVideos.push({
+                                url: url,
+                                report: result.report
+                            });
+
+                        }
+
+                    });
+
+                });
+
+
+                if (availableVideos.length === 0) {
+
+                    if (failedRequests.length === results.length) {
+
+                        videoEvidenceList.innerHTML = `
+                            <div class="video-empty-state">
+
+                                <h3>Video Evidence Temporarily Unavailable</h3>
+
+                                <p>
+                                    We could not retrieve video evidence
+                                    at this time. Please try again later.
+                                </p>
+
+                            </div>
+                        `;
+
+                        return;
+                    }
+
+
+                    videoEvidenceList.innerHTML = `
+                        <div class="video-empty-state">
+
+                            <h3>No Video Evidence Available Yet</h3>
+
+                            <p>
+                                No publicly available video evidence has
+                                been published in this section yet.
+
+                                Submitted videos may still be under review.
+                                Videos will appear here when they are
+                                approved for public viewing.
+                            </p>
+
+                        </div>
+                    `;
+
+                    return;
+                }
+
+
+                let html = '<div class="video-evidence-grid">';
+
+
+                availableVideos.forEach(function(item, index) {
+
+                    const report = item.report;
+
+                    const title =
+                        report.incident_title || "Untitled report";
+
+                    const status =
+                        report.status || "Under Review";
+
+                    const galleryId =
+                        "public-video-" +
+                        Math.random().toString(36).slice(2);
+
+                    const videoMedia = [{
+                        url: item.url,
+                        type: "video"
+                    }];
+
+                    window.recordGalleries =
+                        window.recordGalleries || {};
+
+                    window.recordGalleries[galleryId] = videoMedia;
+
+
+                    html += `
+                        <article class="public-video-card">
+
+                            <video
+                                controls
+                                playsinline
+                                preload="metadata"
+                                aria-label="Video evidence for ${escapeHTML(title)}"
+                            >
+                                <source src="${escapeHTML(item.url)}">
+                                Your browser does not support video playback.
+                            </video>
+
+                            <div class="public-video-info">
+
+                                <h3>${escapeHTML(title)}</h3>
+
+                                <p>
+                                    Record #${escapeHTML(report.id)}
+                                </p>
+
+                                <p>
+                                    Location:
+                                    ${escapeHTML(report.location || "Not provided")}
+                                </p>
+
+                                <span class="video-record-label">
+                                    ${escapeHTML(status)}
+                                </span>
+
+                                <div>
+                                    <button
+                                        type="button"
+                                        class="media-open-button"
+                                        data-gallery-id="${galleryId}"
+                                        data-media-index="0"
+                                    >
+                                        Open video larger
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+                    `;
+
+                });
+
+
+                html += "</div>";
+
+
+                if (failedRequests.length > 0) {
+
+                    html += `
+                        <div class="video-notice">
+                            Some video evidence could not be retrieved
+                            at this time. Please try again later.
+                        </div>
+                    `;
+
+                }
+
+
+                videoEvidenceList.innerHTML = html;
+
+
+            } catch (error) {
+
+                console.error(
+                    "Public video evidence error:",
+                    error
+                );
+
+                videoEvidenceList.innerHTML = `
+                    <div class="video-empty-state">
+
+                        <h3>Video Evidence Temporarily Unavailable</h3>
+
+                        <p>
+                            We could not load the video evidence section
+                            at this time. Please try again later.
+                        </p>
+
+                    </div>
+                `;
+
+            }
+
+        }
+
+
+        // ==========================================
+        // SEARCH AND FILTER RECORDS
+        // ==========================================
+
+        function filterRecords() {
+
+            const searchTerm =
+                searchInput.value.toLowerCase().trim();
+
+            const selectedStatus = statusFilter.value;
+
+            const recordCards =
+                recordList.querySelectorAll(".record-card");
+
+            let visibleRecords = 0;
+
+
+            recordCards.forEach(function(card) {
+
+                const searchableText =
+                    card.textContent.toLowerCase();
+
+                const cardStatus =
+                    card.dataset.status || "";
+
+                const matchesSearch =
+                    searchableText.includes(searchTerm);
+
+                const matchesStatus =
+                    selectedStatus === "all" ||
+                    cardStatus === selectedStatus;
+
+
+                if (matchesSearch && matchesStatus) {
+
+                    card.style.display = "";
+
+                    visibleRecords++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            emptyState.style.display =
+                visibleRecords === 0 ? "block" : "none";
+        }
+
+
+        // ==========================================
+        // LOAD RELIGIOUS EXTREMISM RECORDS
+        // FROM THE EXISTING SUPABASE VIEW
+        // ==========================================
+
+        async function loadReligiousExtremismReports() {
+
+            recordList.innerHTML = `
+                <div class="loading-message">
+                    Loading public records...
+                </div>
+            `;
+
+            emptyState.style.display = "none";
+
+            window.recordGalleries = {};
+
+            mediaRequestCache.clear();
+
+
+            const { data, error } = await window.supabaseClient
+                .from("public_religious_extremism_reports")
+                .select("*")
+                .order("created_at", { ascending: false });
+
+
+            if (error) {
+
+                console.error("Supabase error:", error);
+
+                recordList.innerHTML = `
+                    <div class="loading-message">
+                        We could not load the records at this time.
+                        Please try again later.
+                    </div>
+                `;
+
+                videoEvidenceList.innerHTML = `
+                    <div class="video-empty-state">
+
+                        <h3>Video Evidence Temporarily Unavailable</h3>
+
+                        <p>
+                            We could not retrieve the public records
+                            needed to check for video evidence.
+                            Please try again later.
+                        </p>
+
+                    </div>
+                `;
+
+                return;
+            }
+
+
+            allRecords = data || [];
+
+
+            // Load the dedicated video section.
+            // This section is displayed even when there are no records.
+            const videoLoadingPromise =
+                loadPublicVideoEvidence(allRecords);
+
+
+            if (allRecords.length === 0) {
+
+                recordList.innerHTML = "";
+
+                emptyState.style.display = "block";
+
+                await videoLoadingPromise;
+
+                return;
+            }
+
+
+            try {
+
+                const cards = await Promise.all(
+                    allRecords.map(function(report) {
+                        return createRecordCard(report);
+                    })
+                );
+
+                recordList.innerHTML = cards.join("");
+
+                filterRecords();
+
+                await videoLoadingPromise;
+
+            } catch (error) {
+
+                console.error("Record display error:", error);
+
+                recordList.innerHTML = `
+                    <div class="loading-message">
+                        Something went wrong while displaying the records.
+                        Please try again later.
+                    </div>
+                `;
+            }
+        }
+
+
+        // ==========================================
+        // FILTER EVENT LISTENERS
+        // ==========================================
+
+        searchInput.addEventListener(
+            "input",
+            filterRecords
+        );
+
+        statusFilter.addEventListener(
+            "change",
+            filterRecords
+        );
+
+
+        // ==========================================
+        // START THE PAGE
+        // ==========================================
+
+        loadReligiousExtremismReports();
+
+    </script>
+
+</body>
+</html>

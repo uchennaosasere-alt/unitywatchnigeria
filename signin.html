@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sign In | Unity Watch Nigeria</title>
+
+<style>
+:root {
+ --green: #174b35;
+ --deep-green: #103b2a;
+ --cream: #f5f0e5;
+ --white: #fffdf8;
+ --orange: #bd613b;
+ --gold: #c7a54b;
+ --text: #24352b;
+ --muted: #69756b;
+}
+
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ background: var(--cream);
+ color: var(--text);
+ min-height: 100vh;
+}
+
+header {
+ width: 100%;
+ padding: 22px 6%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 20px;
+ border-bottom: 1px solid #ded4bd;
+ background: var(--white);
+}
+
+/* Header branding - matched to index.html */
+
+.brand {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ flex-shrink: 0;
+ color: inherit;
+ text-decoration: none;
+}
+
+.brand-mark {
+ width: 44px;
+ height: 44px;
+ flex-shrink: 0;
+ border-radius: 10px;
+ background: #315b43;
+ color: #d8b85e;
+ border: none;
+ border-bottom: 3px solid #b88a35;
+ display: grid;
+ place-items: center;
+ font-family: 'Montserrat', Arial, sans-serif;
+ font-size: 21px;
+ font-weight: 900;
+ line-height: 1;
+}
+
+.brand-name {
+ font-family: 'Montserrat', Arial, sans-serif;
+ font-size: 15px;
+ line-height: 1.3;
+ font-weight: 800;
+ letter-spacing: -0.4px;
+ color: #234631;
+}
+
+.brand-subtitle {
+ display: block;
+ margin-top: 4px;
+ color: #a94f32;
+ font-family: 'Inter', Arial, sans-serif;
+ font-size: 10px;
+ font-weight: 600;
+ letter-spacing: 1.5px;
+ text-transform: uppercase;
+}
+
+.home-link {
+ color: var(--green);
+ text-decoration: none;
+ font-size: 14px;
+ font-weight: bold;
+}
+
+main {
+ width: 100%;
+ padding: 45px 6%;
+}
+
+.auth-layout {
+ max-width: 1150px;
+ margin: auto;
+ display: grid;
+ grid-template-columns: 1.15fr 0.85fr;
+ background: var(--white);
+ border: 1px solid #e0d5bd;
+ box-shadow: 0 15px 40px rgba(31, 54, 38, 0.08);
+ min-height: 490px;
+}
+
+.signin-form-panel {
+ padding: 48px;
+ border-right: 1px solid #e6ddca;
+}
+
+.eyebrow {
+ color: var(--orange);
+ text-transform: uppercase;
+ font-size: 11px;
+ letter-spacing: 3px;
+ font-weight: bold;
+ margin-bottom: 18px;
+}
+
+h1 {
+ font-family: Georgia, "Times New Roman", serif;
+ font-size: clamp(30px, 4vw, 43px);
+ color: var(--green);
+ line-height: 1.15;
+ margin-bottom: 15px;
+}
+
+.intro {
+ max-width: 440px;
+ font-size: 14px;
+ line-height: 1.8;
+ color: var(--muted);
+ margin-bottom: 28px;
+}
+
+.gold-line {
+ width: 65px;
+ height: 4px;
+ background: var(--gold);
+ margin-bottom: 28px;
+}
+
+.field {
+ margin-bottom: 20px;
+}
+
+label {
+ display: block;
+ margin-bottom: 8px;
+ color: var(--green);
+ font-size: 12px;
+ font-weight: bold;
+}
+
+input {
+ width: 100%;
+ padding: 14px;
+ border: 1px solid #d7d8c9;
+ background: #fffefa;
+ color: var(--text);
+ font-size: 14px;
+ border-radius: 3px;
+ outline: none;
+}
+
+input:focus {
+ border-color: var(--green);
+ box-shadow: 0 0 0 2px rgba(23, 75, 53, 0.08);
+}
+
+.forgot-password {
+ display: block;
+ text-align: right;
+ margin-top: -7px;
+ margin-bottom: 23px;
+ color: var(--orange);
+ text-decoration: none;
+ font-size: 12px;
+}
+
+.primary-button {
+ width: 100%;
+ padding: 15px;
+ background: var(--green);
+ color: white;
+ border: none;
+ border-radius: 3px;
+ font-weight: bold;
+ font-size: 13px;
+ letter-spacing: 1px;
+ cursor: pointer;
+}
+
+.primary-button:hover {
+ background: var(--deep-green);
+}
+
+.primary-button:disabled {
+ opacity: 0.65;
+ cursor: not-allowed;
+}
+
+.auth-message {
+ display: none;
+ margin-top: 16px;
+ padding: 12px;
+ border-radius: 4px;
+ font-size: 13px;
+ line-height: 1.6;
+}
+
+.auth-message.error {
+ display: block;
+ color: #8b2f24;
+ background: #f9e7e3;
+ border: 1px solid #e8c5bd;
+}
+
+.auth-message.success {
+ display: block;
+ color: #174b35;
+ background: #e7f1e7;
+ border: 1px solid #c7ddc8;
+}
+
+.signup-note {
+ margin-top: 22px;
+ font-size: 13px;
+ color: var(--muted);
+ text-align: center;
+}
+
+.signup-note a {
+ color: var(--orange);
+ text-decoration: none;
+ font-weight: bold;
+}
+
+/* Welcome panel */
+
+.welcome-panel {
+ background: #eae4d5;
+ padding: 48px 38px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ position: relative;
+ overflow: hidden;
+}
+
+.welcome-panel::before {
+ content: "";
+ position: absolute;
+ top: -85px;
+ right: -85px;
+ width: 220px;
+ height: 220px;
+ border: 30px solid rgba(189, 97, 59, 0.10);
+ border-radius: 50%;
+}
+
+.welcome-panel::after {
+ content: "";
+ position: absolute;
+ bottom: -95px;
+ left: -85px;
+ width: 200px;
+ height: 200px;
+ border: 25px solid rgba(23, 75, 53, 0.08);
+ transform: rotate(35deg);
+}
+
+.welcome-content {
+ position: relative;
+ z-index: 1;
+}
+
+.welcome-panel h2 {
+ font-family: Georgia, "Times New Roman", serif;
+ color: var(--green);
+ font-size: 32px;
+ margin-bottom: 16px;
+}
+
+.welcome-panel p {
+ font-size: 14px;
+ color: #626e62;
+ line-height: 1.8;
+ margin-bottom: 25px;
+}
+
+.outline-button {
+ display: inline-block;
+ text-align: center;
+ padding: 14px 25px;
+ border: 1px solid var(--green);
+ color: var(--green);
+ text-decoration: none;
+ font-weight: bold;
+ font-size: 13px;
+ letter-spacing: 1px;
+}
+
+.outline-button:hover {
+ background: var(--green);
+ color: white;
+}
+
+.member-note {
+ margin-top: 30px;
+ padding-top: 18px;
+ border-top: 1px solid #d2c9b6;
+ color: #69756b;
+ font-size: 12px;
+ line-height: 1.8;
+}
+
+footer {
+ text-align: center;
+ padding: 22px;
+ color: #73796e;
+ font-size: 12px;
+}
+
+@media (max-width: 760px) {
+ header {
+ padding: 20px 5%;
+ }
+
+ .brand-name {
+ font-size: 13px;
+ }
+
+ .brand-subtitle {
+ font-size: 8px;
+ letter-spacing: 1.2px;
+ }
+
+ main {
+ padding: 25px 5%;
+ }
+
+ .auth-layout {
+ grid-template-columns: 1fr;
+ }
+
+ .signin-form-panel {
+ padding: 30px 24px;
+ border-right: none;
+ border-bottom: 1px solid #e6ddca;
+ }
+
+ .welcome-panel {
+ padding: 35px 24px;
+ min-height: 270px;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <a class="brand" href="index.html" aria-label="Unity Watch Nigeria homepage">
+ <div class="brand-mark" aria-hidden="true">U</div>
+
+ <div>
+ <div class="brand-name">Unity Watch Nigeria</div>
+ <span class="brand-subtitle">Stronger Together</span>
+ </div>
+ </a>
+
+ <a class="home-link" href="index.html">← Back to Home</a>
+</header>
+
+<main>
+ <div class="auth-layout">
+
+ <section class="signin-form-panel">
+ <div class="eyebrow">Member access</div>
+
+ <h1>Welcome<br>back.</h1>
+
+ <div class="gold-line"></div>
+
+ <p class="intro">
+ Sign in to your Unity Watch Nigeria account to continue
+ participating in our community and supporting accountability.
+ </p>
+
+ <form id="signinForm">
+
+ <div class="field">
+ <label for="email">EMAIL ADDRESS</label>
+ <input
+ type="email"
+ id="email"
+ name="email"
+ placeholder="you@example.com"
+ autocomplete="email"
+ required
+ >
+ </div>
+
+ <div class="field">
+ <label for="password">PASSWORD</label>
+ <input
+ type="password"
+ id="password"
+ name="password"
+ placeholder="Enter your password"
+ autocomplete="current-password"
+ required
+ >
+ </div>
+
+ <a class="forgot-password" href="#" id="forgotPassword">
+ Forgot your password?
+ </a>
+
+ <button class="primary-button" id="signinButton" type="submit">
+ SIGN IN →
+ </button>
+
+ <div
+ class="auth-message"
+ id="authMessage"
+ role="status"
+ aria-live="polite"
+ ></div>
+
+ </form>
+
+ <div class="signup-note">
+ New to our community?
+ <a href="signup.html">Create an account</a>
+ </div>
+ </section>
+
+ <aside class="welcome-panel">
+ <div class="welcome-content">
+
+ <div class="eyebrow">People · Unity · Justice</div>
+
+ <h2>Your voice<br>matters.</h2>
+
+ <p>
+ Every voice has a place in building a fairer society.
+ Together, we can encourage transparency, protect dignity
+ and strengthen unity across Nigeria.
+ </p>
+
+ <a class="outline-button" href="signup.html">
+ JOIN OUR COMMUNITY →
+ </a>
+
+ <div class="member-note">
+ Unity begins when we listen, understand and stand
+ together for what is right.
+ </div>
+
+ </div>
+ </aside>
+
+ </div>
+</main>
+
+<footer>
+ &copy; 2026 Unity Watch Nigeria. People · Unity · Justice.
+</footer>
+
+<!-- SUPABASE AUTHENTICATION -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL = "https://akeuqofykmhzhetpaxdd.supabase.co";
+
+const SUPABASE_ANON_KEY =
+ "sb_publishable_1gdEBPvJW6x2ZsMQNCgKDw_SP3R5Njp";
+
+const supabaseClient = window.supabase.createClient(
+ SUPABASE_URL,
+ SUPABASE_ANON_KEY
+);
+
+const signinForm = document.getElementById("signinForm");
+const signinButton = document.getElementById("signinButton");
+const authMessage = document.getElementById("authMessage");
+
+function showMessage(message, type) {
+ authMessage.textContent = message;
+ authMessage.className = "auth-message " + type;
+}
+
+// SIGN IN
+
+signinForm.addEventListener("submit", async function(event) {
+
+ event.preventDefault();
+
+ const email = document.getElementById("email").value.trim();
+ const password = document.getElementById("password").value;
+
+ signinButton.disabled = true;
+ signinButton.textContent = "SIGNING IN...";
+
+ showMessage("Checking your account...", "success");
+
+ try {
+
+ const { data, error } =
+ await supabaseClient.auth.signInWithPassword({
+ email: email,
+ password: password
+ });
+
+ if (error) {
+ throw error;
+ }
+
+ showMessage(
+ "Sign-in successful. Taking you to the homepage...",
+ "success"
+ );
+
+ window.location.replace("index.html");
+
+ } catch (error) {
+
+ showMessage(
+ error.message || "Unable to sign in. Please try again.",
+ "error"
+ );
+
+ signinButton.disabled = false;
+ signinButton.textContent = "SIGN IN →";
+ }
+
+});
+
+// PASSWORD RECOVERY
+
+document.getElementById("forgotPassword").addEventListener(
+ "click",
+ async function(event) {
+
+ event.preventDefault();
+
+ const email = document.getElementById("email").value.trim();
+
+ if (!email) {
+ showMessage(
+ "Please enter your email address first, then click Forgot your password.",
+ "error"
+ );
+ document.getElementById("email").focus();
+ return;
+ }
+
+ showMessage("Sending password recovery email...", "success");
+
+ try {
+
+ const { error } =
+ await supabaseClient.auth.resetPasswordForEmail(email, {
+ redirectTo: window.location.origin +
+ window.location.pathname
+ });
+
+ if (error) {
+ throw error;
+ }
+
+ showMessage(
+ "If an account exists for that email, a password recovery email has been sent. Please check your inbox.",
+ "success"
+ );
+
+ } catch (error) {
+
+ showMessage(
+ error.message || "Password recovery could not be started.",
+ "error"
+ );
+
+ }
+
+ }
+);
+
+</script>
+
+</body>
+</html>

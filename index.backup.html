@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unity Watch Nigeria | Stronger Together</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --green: #183c2e;
+            --deep-green: #102c22;
+            --gold: #b88a35;
+            --light-gold: #e6c46a;
+            --cream: #f8f5eb;
+            --white: #ffffff;
+            --text: #26372f;
+            --muted: #68746d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* EXISTING BANNER */
+
+        .banner {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: var(--green);
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* HEADER */
+
+        header {
+            background: linear-gradient(135deg, var(--deep-green), var(--green));
+            color: var(--white);
+            text-align: center;
+            padding: 27px 18px 30px;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        header h1 {
+            font-size: clamp(25px, 4vw, 38px);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: var(--light-gold);
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* NAVIGATION */
+
+        .main-nav {
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 13px 12px;
+            border-bottom: 1px solid #e5ddcb;
+        }
+
+        .main-nav a {
+            color: var(--green);
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: 0.25s;
+        }
+
+        .main-nav a:hover {
+            background: var(--green);
+            color: var(--white);
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 75px 20px 80px;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(184, 138, 53, 0.15), transparent 32%),
+                radial-gradient(circle at 90% 80%, rgba(24, 60, 46, 0.12), transparent 35%),
+                linear-gradient(135deg, #eee5d1, #faf7ef);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border: 1px solid rgba(184, 138, 53, 0.35);
+            border-radius: 50%;
+            top: -120px;
+            right: -50px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border: 1px solid rgba(24, 60, 46, 0.2);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -35px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            color: var(--green);
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 28px;
+            font-size: 17px;
+            color: #4d5a51;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 14px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.25s;
+            border: 2px solid var(--gold);
+        }
+
+        .button:hover {
+            background: var(--green);
+            border-color: var(--green);
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            display: inline-block;
+            color: var(--green);
+            border: 1px solid var(--green);
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+        .button-outline:hover {
+            background: var(--green);
+            color: var(--white);
+        }
+
+        /* INTRODUCTION */
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 55px 22px 20px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: var(--green);
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .intro p {
+            color: var(--muted);
+            font-size: 15px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .gold-line {
+            width: 65px;
+            height: 4px;
+            background: var(--gold);
+            margin: 17px auto;
+            border-radius: 5px;
+        }
+
+        /* COMMUNITY PORTAL CARDS */
+
+        .portals {
+            padding: 35px 22px 75px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .portal-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 250px;
+            padding: 28px;
+            border-radius: 12px;
+            background:
+                radial-gradient(circle at 100% 0%, rgba(184, 138, 53, 0.16), transparent 38%),
+                linear-gradient(145deg, #ffffff, #f0ecdf);
+            border: 1px solid #e6decc;
+            border-left: 5px solid var(--gold);
+            box-shadow: 0 5px 18px rgba(16, 44, 34, 0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .portal-card::after {
+            content: "";
+            position: absolute;
+            width: 145px;
+            height: 145px;
+            border: 1px solid rgba(24, 60, 46, 0.10);
+            border-radius: 50%;
+            right: -65px;
+            bottom: -75px;
+            pointer-events: none;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 26px rgba(16, 44, 34, 0.12);
+        }
+
+        .portal-number {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .portal-card h3 {
+            color: var(--green);
+            font-size: 22px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .portal-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .portal-link {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            color: var(--green);
+            font-size: 14px;
+            font-weight: bold;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 4px;
+        }
+
+        .portal-link:hover {
+            color: var(--gold);
+        }
+
+        .portal-card.featured {
+            background:
+                radial-gradient(circle at 100% 0%, rgba(230, 196, 106, 0.16), transparent 40%),
+                linear-gradient(145deg, #183c2e, #102c22);
+            border-color: var(--green);
+            border-left: 5px solid var(--light-gold);
+        }
+
+        .portal-card.featured h3 {
+            color: var(--white);
+        }
+
+        .portal-card.featured p {
+            color: #e1e8e2;
+        }
+
+        .portal-card.featured .portal-number {
+            color: var(--light-gold);
+        }
+
+        .portal-card.featured .portal-link {
+            color: var(--light-gold);
+            border-color: var(--light-gold);
+        }
+
+        /* REPORT SECTION */
+
+        .report-section {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 60px 22px;
+            background: var(--green);
+            color: var(--white);
+        }
+
+        .report-section::before {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border: 1px solid rgba(230, 196, 106, 0.22);
+            border-radius: 50%;
+            left: -120px;
+            top: -140px;
+        }
+
+        .report-section h2 {
+            position: relative;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .report-section p {
+            position: relative;
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #e2e9e3;
+            font-size: 15px;
+        }
+
+        .report-section .button {
+            position: relative;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--deep-green);
+            color: #e3e9e4;
+            text-align: center;
+            padding: 28px 18px;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        footer strong {
+            color: var(--light-gold);
+            letter-spacing: 1px;
+        }
+
+        footer a {
+            color: var(--light-gold);
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* MOBILE DISPLAY */
+
+        @media (max-width: 650px) {
+            .banner {
+                height: 190px;
+            }
+
+            header {
+                padding: 22px 12px;
+            }
+
+            .main-nav {
+                gap: 3px;
+                padding: 10px 5px;
+            }
+
+            .main-nav a {
+                padding: 9px 10px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 55px 18px 60px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .intro {
+                padding-top: 40px;
+            }
+
+            .portal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portal-card {
+                min-height: auto;
+                padding: 25px 22px;
+            }
+
+            .report-section h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- EXISTING WEBSITE BANNER -->
+    <div class="banner">
+        <img src="image/unitywatch1.jpeg..jpeg"
+             alt="Unity Watch Nigeria banner">
+    </div>
+
+    <!-- WEBSITE NAME -->
+    <header>
+        <h1>Unity Watch Nigeria</h1>
+        <p>Stronger Together</p>
+    </header>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="policy.html">Our Policy</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">One Nation • Many Voices • Shared Future</span>
+
+            <h2>A United Nigeria<br>Starts <span>With Us</span></h2>
+
+            <p>
+                A safer, fairer Nigeria begins when we stand against discrimination,
+                support one another, recognise positive change and create opportunities
+                for every community.
+            </p>
+
+            <a href="report.html" class="button">Report an Incident</a>
+            &nbsp;
+            <a href="#community" class="button-outline">Explore Our Community</a>
+        </div>
+    </section>
+
+    <!-- COMMUNITY INTRODUCTION -->
+    <section class="intro" id="community">
+        <h2>Explore Our Community</h2>
+        <div class="gold-line"></div>
+
+        <p>
+            Discover the different ways we can protect people, encourage understanding,
+            celebrate positive action and help build a stronger Nigeria.
+        </p>
+    </section>
+
+    <!-- FIVE COMMUNITY PORTALS -->
+    <section class="portals">
+        <div class="portal-grid">
+
+            <article class="portal-card featured">
+                <span class="portal-number">PORTAL 01</span>
+
+                <h3>Ethnic Hate &amp; Discrimination</h3>
+
+                <p>
+                    Learn about ethnic discrimination, document concerns responsibly
+                    and promote dignity, fairness and respect among all communities.
+                </p>
+
+                <a href="ethnic-hate.html" class="portal-link">
+                    Explore Portal &rarr;
+                </a>
+            </article>
+
+            <article class="portal-card">
+                <span class="portal-number">PORTAL 02</span>
+
+                <h3>Religious Extremism</h3>
+
+                <p>
+                    Explore documented incidents, understand harmful conduct and
+                    support peaceful coexistence across religious communities.
+                </p>
+
+                <a href="religious-extremism.html" class="portal-link">
+                    Explore Portal &rarr;
+                </a>
+            </article>
+
+            <article class="portal-card">
+                <span class="portal-number">PORTAL 03</span>
+
+                <h3>Voices of Unity</h3>
+
+                <p>
+                    Discover inspiring people, community projects and positive stories
+                    that bring Nigerians together and encourage hope.
+                </p>
+
+                <a href="voices-of-unity.html" class="portal-link">
+                    Explore Portal &rarr;
+                </a>
+            </article>
+
+            <article class="portal-card">
+                <span class="portal-number">PORTAL 04</span>
+
+                <h3>Abuse &amp; Harm</h3>
+
+                <p>
+                    Find guidance on reporting abuse, understanding harmful behaviour
+                    and seeking appropriate help while protecting people's privacy.
+                </p>
+
+                <a href="abuse-and-harm.html" class="portal-link">
+                    Explore Portal &rarr;
+                </a>
+            </article>
+
+            <article class="portal-card">
+                <span class="portal-number">PORTAL 05</span>
+
+                <h3>Jobs &amp; Skills</h3>
+
+                <p>
+                    Explore employment opportunities, skills training and initiatives
+                    that help people develop their abilities and build their future.
+                </p>
+
+                <a href="jobs-skills.html" class="portal-link">
+                    Explore Portal &rarr;
+                </a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- INCIDENT REPORTING -->
+    <section class="report-section">
+        <h2>Have an Incident to Report?</h2>
+
+        <p>
+            Help us work towards a safer society. Share information responsibly.
+            Please avoid including unnecessary personal or identifying details about
+            victims or other private individuals.
+        </p>
+
+        <a href="report.html" class="button">
+            Go to Incident Reporting
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>UNITY WATCH NIGERIA</strong></p>
+        <p>Report. Support. Build.</p>
+        <p>Together for a safer, fairer and more united Nigeria.</p>
+
+        <p>
+            <a href="about.html">About Us</a> &nbsp;|&nbsp;
+            <a href="policy.html">Our Policy</a> &nbsp;|&nbsp;
+            <a href="contact.html">Contact Us</a>
+        </p>
+
+        <p>&copy; 2026 Unity Watch Nigeria. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

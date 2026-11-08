@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Our Categories | Unity Watch Nigeria</title>
+
+    <meta name="description" content="Explore the causes, stories and community initiatives bringing Nigerians together through Unity Watch Nigeria.">
+
+    <!-- Modern website fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #315b43;
+            --deep-green: #234631;
+            --dark-green: #edf2e9;
+            --gold: #b88a35;
+            --light-gold: #d8b85e;
+            --cream: #f5f2e9;
+            --white: #ffffff;
+            --text: #26372d;
+            --muted: #657267;
+            --border: #dce5d9;
+            --soft-green: #e5ede1;
+            --rust: #a94f32;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--dark-green);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* HEADER */
+
+        .site-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1240px;
+            margin: auto;
+            padding: 16px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            background: var(--green);
+            color: var(--light-gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 21px;
+            font-weight: 900;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .brand-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            line-height: 1.3;
+            letter-spacing: -0.4px;
+            color: var(--deep-green);
+        }
+
+        .brand-subtitle {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 3px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 700;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+
+        .back-link:hover {
+            background: var(--green);
+            color: var(--white);
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(184, 138, 53, 0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #f8f8f1 0%, #e5ede1 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-inner {
+            max-width: 1240px;
+            margin: auto;
+            padding: 76px 5% 70px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            display: inline-block;
+            width: 28px;
+            height: 3px;
+            background: var(--rust);
+            border-radius: 2px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: clamp(36px, 5.4vw, 66px);
+            font-weight: 900;
+            line-height: 1.12;
+            letter-spacing: -2.5px;
+            color: var(--deep-green);
+            margin-bottom: 22px;
+        }
+
+        .hero h1 .heading-accent {
+            color: var(--green);
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.9;
+        }
+
+        .hero-line {
+            margin-top: 34px;
+            width: 76px;
+            height: 5px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        /* CATEGORY SECTION */
+
+        .categories-section {
+            max-width: 1240px;
+            margin: auto;
+            padding: 68px 5% 90px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .section-heading h2 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: clamp(23px, 3vw, 32px);
+            font-weight: 800;
+            line-height: 1.3;
+            letter-spacing: -0.8px;
+            color: var(--deep-green);
+        }
+
+        .section-heading p {
+            max-width: 370px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .category-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 250px;
+            padding: 28px;
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .category-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--green);
+            transition: width 0.25s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: #b9cdb8;
+            box-shadow: 0 14px 35px rgba(35, 70, 49, 0.09);
+        }
+
+        .category-card:hover::before {
+            width: 6px;
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 23px;
+        }
+
+        .category-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--gold);
+        }
+
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: var(--soft-green);
+            color: var(--green);
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .category-card h3 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.45;
+            letter-spacing: -0.4px;
+            color: var(--deep-green);
+            margin-bottom: 12px;
+        }
+
+        .category-card p {
+            font-family: 'Inter', Arial, sans-serif;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.85;
+            margin-bottom: 24px;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: auto;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+            transition: gap 0.2s ease;
+        }
+
+        .card-link:hover {
+            gap: 14px;
+            color: var(--rust);
+        }
+
+        .card-link span {
+            font-size: 17px;
+        }
+
+        /* COMMUNITY CALLOUT */
+
+        .community-callout {
+            max-width: 1240px;
+            margin: 0 auto 80px;
+            padding: 0 5%;
+        }
+
+        .callout-inner {
+            position: relative;
+            overflow: hidden;
+            padding: 38px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+            background: var(--green);
+            border-radius: 10px;
+        }
+
+        .callout-inner::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(216, 184, 94, 0.35);
+            border-radius: 50%;
+            right: 23%;
+            top: -110px;
+            pointer-events: none;
+        }
+
+        .callout-copy {
+            position: relative;
+            z-index: 1;
+        }
+
+        .callout-inner h2 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: clamp(21px, 3vw, 29px);
+            font-weight: 800;
+            line-height: 1.4;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .callout-inner p {
+            max-width: 580px;
+            color: #e0e9df;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .callout-button {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 21px;
+            flex-shrink: 0;
+            background: var(--light-gold);
+            color: var(--deep-green);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .callout-button:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        .site-footer {
+            background: #203b2b;
+            color: #e5ede1;
+            border-top: 3px solid var(--gold);
+        }
+
+        .footer-inner {
+            max-width: 1240px;
+            margin: auto;
+            padding: 27px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: -0.2px;
+        }
+
+        .footer-note {
+            font-size: 11px;
+            color: #c6d5c7;
+        }
+
+        .footer-link {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--light-gold);
+        }
+
+        .footer-link:hover {
+            color: var(--white);
+        }
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+            .category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero-inner {
+                padding-top: 62px;
+                padding-bottom: 58px;
+            }
+
+            .callout-inner {
+                padding: 32px;
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+            .header-inner {
+                padding: 13px 5%;
+                gap: 12px;
+            }
+
+            .brand {
+                gap: 9px;
+            }
+
+            .brand-mark {
+                width: 38px;
+                height: 38px;
+                font-size: 18px;
+            }
+
+            .brand-name {
+                font-size: 12px;
+            }
+
+            .brand-subtitle {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .back-link {
+                padding: 9px 10px;
+                font-size: 11px;
+            }
+
+            .hero-inner {
+                padding: 49px 5% 45px;
+            }
+
+            .eyebrow {
+                font-size: 10px;
+                letter-spacing: 1.5px;
+                margin-bottom: 17px;
+            }
+
+            .hero h1 {
+                font-size: clamp(33px, 9vw, 45px);
+                letter-spacing: -1.5px;
+                margin-bottom: 17px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+                line-height: 1.85;
+            }
+
+            .hero-line {
+                margin-top: 26px;
+            }
+
+            .categories-section {
+                padding: 48px 5% 60px;
+            }
+
+            .section-heading {
+                display: block;
+                margin-bottom: 24px;
+            }
+
+            .section-heading h2 {
+                margin-bottom: 9px;
+            }
+
+            .section-heading p {
+                font-size: 12px;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .category-card {
+                min-height: auto;
+                padding: 23px;
+            }
+
+            .card-top {
+                margin-bottom: 17px;
+            }
+
+            .category-card h3 {
+                font-size: 17px;
+            }
+
+            .category-card p {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            .community-callout {
+                margin-bottom: 55px;
+            }
+
+            .callout-inner {
+                display: block;
+                padding: 28px 23px;
+            }
+
+            .callout-inner h2 {
+                font-size: 22px;
+            }
+
+            .callout-inner p {
+                margin-bottom: 23px;
+            }
+
+            .callout-button {
+                width: 100%;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 24px;
+                padding-bottom: 24px;
+                gap: 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a href="index.html" class="brand" aria-label="Unity Watch Nigeria homepage">
+                <div class="brand-mark">U</div>
+
+                <div>
+                    <div class="brand-name">UNITY WATCH NIGERIA</div>
+                    <span class="brand-subtitle">STRONGER TOGETHER.</span>
+                </div>
+            </a>
+
+            <a href="voices-of-unity.html" class="back-link">
+                <span aria-hidden="true">&larr;</span>
+                Back to Voices
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero">
+            <div class="hero-inner">
+
+                <div class="eyebrow">Our Focus Areas</div>
+
+                <h1>
+                    Explore Our
+                    <span class="heading-accent">Categories</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover the people, ideas and initiatives shaping a
+                    more united Nigeria. Explore the issues that matter,
+                    recognise positive change and find ways to make a
+                    meaningful difference in our communities.
+                </p>
+
+                <div class="hero-line"></div>
+
+            </div>
+        </section>
+
+
+        <!-- CATEGORY CARDS -->
+        <section class="categories-section">
+
+            <div class="section-heading">
+                <h2>What We Stand For</h2>
+
+                <p>
+                    Explore our focus areas and discover how everyday
+                    actions can help build a stronger, more united society.
+                </p>
+            </div>
+
+
+            <div class="category-grid">
+
+                <!-- CATEGORY 1 -->
+                <article class="category-card">
+
+                    <div class="card-top">
+                        <span class="category-number">01 / 08</span>
+                        <div class="category-icon" aria-hidden="true">✦</div>
+                    </div>
+
+                    <h3>Faith That Builds Bridges</h3>
+
+                    <p>
+                        Stories of understanding, respect and cooperation
+                        among people of different faiths and beliefs.
+                    </p>
+
+                    <a href="religious-extremism.html" class="card-link">
+                        Explore Category <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+
+                <!-- CATEGORY 2 -->
+                <article class="category-card">
+
+                    <div class="card-top">
+                        <span class="category-number">02 / 08</span>
+                        <div class="category-icon" aria-hidden="true">✓</div>
+                    </div>
+
+                    <h3>Honesty &amp; Integrity</h3>
+
+                    <p>
+                        Highlighting accountability, ethical conduct,
+                        transparency and people who choose to do what is right.
+                    </p>
+
+                    <a href="ethnic-hate.html" class="card-link">
+                        Explore Category <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+
+                <!-- CATEGORY 3 -->
+                <article class="category-card">
+
+                    <div class="card-top">
+                        <span class="category-number">03 / 08</span>
+                        <div class="category-icon" aria-hidden="true">+</div>
+                    </div>
+
+                    <h3>Acts of Kindness</h3>
+
+                    <p>
+                        Celebrating compassion, generosity and ordinary
+                        people making extraordinary differences.
+                    </p>
+
+                    <a href="abuse-and-harm.html" class="card-link">
+                        Explore Category <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+
+                <!-- CATEGORY 4 -->
+                <article class="category-card">
+
+                    <div class="card-top">
+                        <span class="category-number">04 / 08</span>
+                        <div class="category-icon" aria-hidden="true">↑</div>
+                    </div>
+
+                    <h3>Youth Empowerment</h3>
+
+                    <p>
+                        Opportunities, ideas and initiatives helping
+                        young Nigerians develop skills and reach their potential.
+                    </p>
+
+                    <a href="jobs-skills.html" class="card-link">
+                        Explore Category <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+
+                <!-- CATEGORY 5 -->
+                <article class="category-card">
+
+                    <div class="card-top">
+                        <span class="category-number">05 / 08</span>
+                        <div class="category-icon" aria-hidden="true">◇</div>
+                    </div>
+
+                    <h3>Peace &amp; Reconciliation</h3>
+
+                    <p>
+                        Examining dialogue, conflict resolution and
+                        efforts to rebuild trust between communities.
+                    </p>
+
+                    <a href="voices-of-unity.html" class="card-link">
+                        Explore Category <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+
+                <!-- CATEGORY 6 -->
+                <article class="category-card">
+
+                    <div class="card-top">
+                        <span class="category-number">06 / 08</span>
+                        <div class="category-icon" aria-hidden="true">⌂</div>
+                    </div>
+
+                    <h3>Community Development</h3>
+
+                    <p>
+                        Showcasing community-led projects, local solutions
+                        and collective action that improve everyday life.
+                    </p>
+
+                    <a href="submit-evidence.html" class="card-link">
+                        Explore Category <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+
+                <!-- CATEGORY 7 -->
+                <article class="category-card">
+
+                    <div class="card-top">
+                        <span class="category-number">07 / 08</span>
+                        <div class="category-icon" aria-hidden="true">◎</div>
+                    </div>
+
+                    <h3>Cultural Unity</h3>
+
+                    <p>
+                        Celebrating the traditions, languages and
+                        shared experiences that enrich Nigeria's diversity.
+                    </p>
+
+                    <a href="ethnic-hate.html" class="card-link">
+                        Explore Category <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+
+                <!-- CATEGORY 8 -->
+                <article class="category-card">
+
+                    <div class="card-top">
+                        <span class="category-number">08 / 08</span>
+                        <div class="category-icon" aria-hidden="true">▤</div>
+                    </div>
+
+                    <h3>Education &amp; Opportunity</h3>
+
+                    <p>
+                        Promoting access to knowledge, useful skills
+                        and opportunities for a better future.
+                    </p>
+
+                    <a href="jobs-skills.html" class="card-link">
+                        Explore Category <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMMUNITY CALLOUT -->
+        <section class="community-callout">
+
+            <div class="callout-inner">
+
+                <div class="callout-copy">
+
+                    <h2>Be Part of the Change</h2>
+
+                    <p>
+                        Have a story, an experience or evidence of something
+                        that deserves attention? Your contribution can help
+                        people understand what is happening in their communities.
+                    </p>
+
+                </div>
+
+                <a href="submit-evidence.html" class="callout-button">
+                    Submit Evidence &rarr;
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                UNITY WATCH NIGERIA
+            </div>
+
+            <p class="footer-note">
+                Building understanding. Encouraging accountability. Promoting unity.
+            </p>
+
+            <a href="index.html" class="footer-link">
+                Return Home &rarr;
+            </a>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

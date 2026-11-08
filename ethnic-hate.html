@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethnic Hate Records | Unity Watch Nigeria</title>
+
+    <meta name="description" content="Explore reports of ethnic hate, discrimination and harmful rhetoric reviewed by Unity Watch Nigeria.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #123d2b;
+            --deep-green: #0b2d20;
+            --light-green: #e9f0e9;
+            --gold: #d9a441;
+            --cream: #faf8f1;
+            --white: #ffffff;
+            --text: #26352d;
+            --muted: #6b776f;
+            --border: #e5e8e1;
+            --rust: #a64b32;
+            --shadow: 0 12px 35px rgba(15, 45, 30, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button, input, select {
+            font: inherit;
+        }
+
+        button, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* TOP ANNOUNCEMENT STRIP */
+        .top-strip {
+            background: var(--deep-green);
+            color: #f4e5bd;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        /* HEADER */
+        .site-header {
+            background: rgba(255, 253, 248, 0.97);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 82px;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: var(--green);
+            color: var(--light-gold, #E6C46A);
+            border: none;
+            border-bottom: 3px solid var(--gold);
+            display: grid;
+            place-items: center;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 21px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .brand-name {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.3;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            color: var(--deep-green);
+        }
+
+        .brand-tagline {
+            display: block;
+            margin-top: 4px;
+            color: var(--rust);
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 700;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--rust);
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--green);
+            padding: 8px 12px;
+            border-radius: 7px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: var(--green);
+            color: var(--white);
+            padding: 85px 25px 90px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border: 1px solid rgba(217, 164, 65, 0.22);
+            border-radius: 50%;
+            right: -100px;
+            top: -160px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            border: 1px solid rgba(217, 164, 65, 0.18);
+            border-radius: 50%;
+            right: 20px;
+            bottom: -180px;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            max-width: 750px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 6vw, 67px);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: #e0e8e1;
+            font-size: 16px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 15px;
+            border: 1px solid rgba(217, 164, 65, 0.4);
+            border-radius: 6px;
+            color: #f5e8c9;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .hero-note span {
+            color: var(--gold);
+            font-size: 17px;
+        }
+
+        /* GENERAL SECTION */
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 75px 25px;
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin-bottom: 35px;
+        }
+
+        .section-label {
+            color: var(--rust);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 11px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            color: var(--green);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(29px, 4vw, 42px);
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 14px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* STATISTICS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: -35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 26px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            display: block;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 31px;
+            font-weight: bold;
+            color: var(--green);
+            margin-bottom: 5px;
+        }
+
+        .stat-title {
+            color: var(--text);
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .stat-description {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* RECORDS SECTION */
+        .records-section {
+            background: #f4f4ed;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .records-toolbar {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .search-box input,
+        .filter-box select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #dfe4dc;
+            border-radius: 7px;
+            background: var(--white);
+            color: var(--text);
+            outline: none;
+            font-size: 13px;
+        }
+
+        .search-box input:focus,
+        .filter-box select:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(18, 61, 43, 0.08);
+        }
+
+        .filter-box {
+            width: 210px;
+        }
+
+        .records-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .record-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            padding: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .record-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .record-media {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .record-photo {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            cursor: zoom-in;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .record-photo:hover {
+            opacity: 0.92;
+            transform: scale(1.01);
+        }
+
+        .record-video {
+            width: 100%;
+            max-height: 360px;
+            border-radius: 10px;
+            display: block;
+            background: #000;
+        }
+
+        .video-placeholder {
+            margin-top: 12px;
+            padding: 18px;
+            border: 1px dashed var(--border);
+            border-radius: 10px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* PHOTO LIGHTBOX */
+        .photo-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 5000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 35px;
+            background: rgba(0, 0, 0, 0.88);
+        }
+
+        .photo-lightbox.open {
+            display: flex;
+        }
+
+        .photo-lightbox-image {
+            max-width: 90vw;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+            transform-origin: center center;
+            transition: transform 0.15s ease;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .photo-lightbox-image:active {
+            cursor: grabbing;
+        }
+
+        .photo-lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .photo-lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .photo-lightbox-controls {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .photo-lightbox-controls button {
+            min-width: 42px;
+            height: 38px;
+            padding: 0 12px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 7px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .photo-lightbox-controls button:hover {
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .photo-zoom-level {
+            min-width: 55px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .record-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 17px;
+            flex-wrap: wrap;
+        }
+
+        .record-category {
+            color: var(--rust);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 30px;
+            font-size: 10px;
+            font-weight: 800;
+            background: #fff2d8;
+            color: #8a5b13;
+        }
+
+        .status-badge.verified {
+            background: #e3f3e7;
+            color: #23643b;
+        }
+
+        .status-badge.rejected {
+            background: #fce8e5;
+            color: #a33c2e;
+        }
+
+        .record-card h3 {
+            color: var(--green);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+
+        .record-description {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            overflow-wrap: anywhere;
+        }
+
+        .record-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            background: var(--white);
+            border: 1px dashed #cbd5ca;
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .loading-state {
+            grid-column: 1 / -1;
+            padding: 35px 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* RESPONSIBLE REPORTING */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .principle-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .principle-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: var(--light-green);
+            color: var(--green);
+            font-size: 20px;
+            margin-bottom: 17px;
+        }
+
+        .principle-card h3 {
+            color: var(--green);
+            font-size: 15px;
+            margin-bottom: 9px;
+        }
+
+        .principle-card p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* CALL TO ACTION */
+        .cta-section {
+            background: var(--green);
+            color: var(--white);
+            padding: 65px 25px;
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .cta-section h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(29px, 4vw, 42px);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            color: #dce6de;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 6px;
+            background: var(--gold);
+            color: var(--deep-green);
+            font-size: 13px;
+            font-weight: 800;
+            transition: background 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: #edc36e;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--deep-green);
+            color: #dce5dd;
+            padding: 35px 25px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-copy {
+            font-size: 11px;
+            color: #b8c8bb;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 11px;
+            color: #dce5dd;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        /* MOBILE */
+        @media (max-width: 760px) {
+            .header-inner {
+                min-height: 72px;
+                padding: 12px 17px;
+            }
+
+            .brand-mark {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .brand-name {
+                font-size: 13px;
+            }
+
+            .brand-tagline {
+                font-size: 9px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                background: var(--cream);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hero {
+                padding: 65px 20px 75px;
+            }
+
+            .section {
+                padding: 58px 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                margin-top: -25px;
+            }
+
+            .records-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-box {
+                width: 100%;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .photo-lightbox {
+                padding: 20px;
+            }
+
+            .photo-lightbox-image {
+                max-width: 95vw;
+                max-height: 80vh;
+            }
+
+            .photo-lightbox-close {
+                top: 12px;
+                right: 14px;
+            }
+
+            .photo-lightbox-controls {
+                bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-strip">
+        ONE NATION · MANY VOICES · ONE SHARED FUTURE
+    </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a href="index.html" class="brand">
+                <div class="brand-mark">U</div>
+
+                <div>
+                    <div class="brand-name">Unity Watch Nigeria</div>
+                    <span class="brand-tagline">Stronger Together</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+                ☰
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="#records">Records</a>
+                <a href="submit-evidence.html">Submit Evidence</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-inner">
+
+                <span class="eyebrow">Awareness · Accountability · Unity</span>
+
+                <h1>
+                    Ethnic Hate <span>Records</span>
+                </h1>
+
+                <p class="hero-description">
+                    A public record space dedicated to documenting reports of
+                    ethnic hate, discrimination and harmful rhetoric. Our aim
+                    is to encourage accountability, promote understanding and
+                    protect the dignity of every Nigerian.
+                </p>
+
+                <div class="hero-note">
+                    <span>◆</span>
+                    Reports are subject to review and verification.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-number" id="totalRecords">—</span>
+                    <div class="stat-title">Reports received</div>
+                    <p class="stat-description">
+                        Reports submitted to this category.
+                    </p>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number" id="reviewRecords">—</span>
+                    <div class="stat-title">Under review</div>
+                    <p class="stat-description">
+                        Reports awaiting further assessment.
+                    </p>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number" id="verifiedRecords">—</span>
+                    <div class="stat-title">Verified records</div>
+                    <p class="stat-description">
+                        Records that have completed the verification process.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="records-section" id="records">
+
+            <div class="section">
+
+                <div class="section-heading">
+                    <div class="section-label">Public record</div>
+
+                    <h2>Explore reported incidents</h2>
+
+                    <p>
+                        Search through reports made available in this category.
+                        A report appearing here does not automatically mean
+                        that its allegations have been established as fact.
+                    </p>
+                </div>
+
+                <div class="records-toolbar">
+
+                    <div class="search-box">
+                        <input
+                            type="search"
+                            id="recordSearch"
+                            placeholder="Search reports by title or location..."
+                            aria-label="Search reports"
+                        >
+                    </div>
+
+                    <div class="filter-box">
+                        <select id="statusFilter" aria-label="Filter reports by status">
+                            <option value="all">All statuses</option>
+                            <option value="under review">Under review</option>
+                            <option value="verified">Verified</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="records-grid" id="recordsGrid">
+                    <div class="loading-state">
+                        Loading public records...
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div class="section-label">Our commitment</div>
+                <h2>Responsible reporting matters</h2>
+
+                <p>
+                    Unity Watch Nigeria aims to document concerns responsibly
+                    while respecting the rights and dignity of everyone involved.
+                </p>
+            </div>
+
+            <div class="principles-grid">
+
+                <article class="principle-card">
+                    <div class="principle-icon">◎</div>
+                    <h3>Evidence matters</h3>
+                    <p>
+                        Reports should be supported with relevant information
+                        or evidence wherever possible.
+                    </p>
+                </article>
+
+                <article class="principle-card">
+                    <div class="principle-icon">◇</div>
+                    <h3>Fair assessment</h3>
+                    <p>
+                        Allegations should be reviewed carefully. A submission
+                        is not proof that an incident occurred.
+                    </p>
+                </article>
+
+                <article class="principle-card">
+                    <div class="principle-icon">✦</div>
+                    <h3>Respect for everyone</h3>
+                    <p>
+                        We reject collective blame, discrimination and
+                        dehumanising language against any community.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="cta-section">
+
+            <div class="cta-inner">
+                <h2>Have relevant information to share?</h2>
+
+                <p>
+                    Help us document incidents responsibly. Submit information
+                    for review through our evidence submission page.
+                </p>
+
+                <a href="submit-evidence.html" class="cta-button">
+                    Submit Evidence
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+                <div class="footer-brand">Unity Watch Nigeria</div>
+                <p class="footer-copy">
+                    ©️ <span id="currentYear"></span> Unity Watch Nigeria.
+                    All rights reserved.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="policy.html">Our Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- PHOTO LIGHTBOX -->
+    <div
+        class="photo-lightbox"
+        id="photoLightbox"
+        aria-hidden="true"
+        role="dialog"
+        aria-label="Evidence photo viewer"
+    >
+
+        <button
+            class="photo-lightbox-close"
+            id="photoLightboxClose"
+            type="button"
+            aria-label="Close photo viewer"
+        >
+            ×
+        </button>
+
+        <img
+            id="photoLightboxImage"
+            class="photo-lightbox-image"
+            src=""
+            alt="Enlarged evidence photo"
+        >
+
+        <div class="photo-lightbox-controls">
+
+            <button
+                type="button"
+                id="zoomOutButton"
+                aria-label="Zoom out"
+            >
+                −
+            </button>
+
+            <span
+                class="photo-zoom-level"
+                id="photoZoomLevel"
+            >
+                100%
+            </span>
+
+            <button
+                type="button"
+                id="zoomInButton"
+                aria-label="Zoom in"
+            >
+                +
+            </button>
+
+            <button
+                type="button"
+                id="zoomResetButton"
+                aria-label="Reset zoom"
+            >
+                Reset
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-configs.js"></script>
+
+    <script>
+        // MOBILE NAVIGATION
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("open");
+        });
+
+        // FOOTER YEAR
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        // SUPABASE CONNECTION
+        // Uses the project URL and publishable key from your existing config file.
+        // Keep your actual key out of public messages.
+
+        const supabaseClient = window.supabaseClient;
+
+        // RECORD ELEMENTS
+        const recordsGrid = document.getElementById("recordsGrid");
+        const recordSearch = document.getElementById("recordSearch");
+        const statusFilter = document.getElementById("statusFilter");
+
+        let allRecords = [];
+
+        function escapeHTML(value) {
+            return String(value ?? "").replace(/[&<>"']/g, function (character) {
+                const characters = {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#039;"
+                };
+
+                return characters[character];
+            });
+        }
+
+        function getStatusClass(status) {
+            const cleanStatus = String(status || "").toLowerCase();
+
+            if (cleanStatus === "verified") return "verified";
+            if (cleanStatus === "rejected") return "rejected";
+
+            return "";
+        }
+
+        function updateStatistics(records) {
+            document.getElementById("totalRecords").textContent =
+                records.length;
+
+            document.getElementById("reviewRecords").textContent =
+                records.filter(record =>
+                    String(record.status || "").toLowerCase() === "pending review"
+                ).length;
+
+            document.getElementById("verifiedRecords").textContent =
+                records.filter(record =>
+                    String(record.status || "").toLowerCase() === "verified"
+                ).length;
+        }
+
+        async function displayRecords(records) {
+            if (!records.length) {
+                recordsGrid.innerHTML = `
+                    <div class="empty-state">
+                        No matching public records were found.
+                    </div>
+                `;
+                return;
+            }
+
+            const cards = await Promise.all(records.map(async record => {
+
+                const title = escapeHTML(
+                    record.incident_title || record.title || "Untitled report"
+                );
+
+                const description = escapeHTML(
+                    record.description || "No additional description provided."
+                );
+
+                const location = escapeHTML(
+                    record.location || "Location not provided"
+                );
+
+                const status = escapeHTML(record.status || "Unverified");
+
+                const category = escapeHTML(
+                    record.incident_type || record.category || "Ethnic hate"
+                );
+
+                const date = record.created_at
+                    ? new Date(record.created_at).toLocaleDateString("en-NG", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric"
+                    })
+                    : "Date unavailable";
+
+                let photos = [];
+                let videos = [];
+
+                /*
+                 * Load approved public photographs and videos
+                 * through the same public media function used
+                 * by the working records pages.
+                 */
+
+                try {
+                    const { data: photoData, error: photoError } =
+                        await window.supabaseClient.functions.invoke(
+                            "public-evidence-media",
+                            {
+                                body: {
+                                    report_id: record.id,
+                                    media_type: "photos"
+                                }
+                            }
+                        );
+
+                    if (!photoError && photoData) {
+
+                        if (Array.isArray(photoData)) {
+                            photos = photoData;
+                        } else if (Array.isArray(photoData.media)) {
+                            photos = photoData.media;
+                        } else if (Array.isArray(photoData.files)) {
+                            photos = photoData.files;
+                        } else if (Array.isArray(photoData.results)) {
+                            photos = photoData.results;
+                        }
+
+                    } else if (photoError) {
+                        console.error(
+                            "Photo loading error:",
+                            photoError
+                        );
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "Photo loading failed:",
+                        error
+                    );
+
+                }
+
+                try {
+                    const { data: videoData, error: videoError } =
+                        await window.supabaseClient.functions.invoke(
+                            "public-evidence-media",
+                            {
+                                body: {
+                                    report_id: record.id,
+                                    media_type: "videos"
+                                }
+                            }
+                        );
+
+                    if (!videoError && videoData) {
+
+                        if (Array.isArray(videoData)) {
+                            videos = videoData;
+                        } else if (Array.isArray(videoData.media)) {
+                            videos = videoData.media;
+                        } else if (Array.isArray(videoData.files)) {
+                            videos = videoData.files;
+                        } else if (Array.isArray(videoData.results)) {
+                            videos = videoData.results;
+                        }
+
+                    } else if (videoError) {
+                        console.error(
+                            "Video loading error:",
+                            videoError
+                        );
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "Video loading failed:",
+                        error
+                    );
+
+                }
+
+                function getMediaUrl(item) {
+
+                    if (typeof item === "string") {
+                        return item;
+                    }
+
+                    if (!item) {
+                        return "";
+                    }
+
+                    return (
+                        item.url ||
+                        item.signed_url ||
+                        item.signedUrl ||
+                        item.public_url ||
+                        item.publicUrl ||
+                        item.path ||
+                        item.file_url ||
+                        item.fileUrl ||
+                        ""
+                    );
+
+                }
+
+                const photoHTML = photos
+                    .map(getMediaUrl)
+                    .filter(Boolean)
+                    .map(url => `
+                        <img
+                            src="${url}"
+                            alt="Evidence submitted with this report"
+                            class="record-photo"
+                            loading="lazy"
+                        >
+                    `)
+                    .join("");
+
+                const videoHTML = videos
+                    .map(getMediaUrl)
+                    .filter(Boolean)
+                    .map(url => `
+                        <video
+                            src="${url}"
+                            controls
+                            preload="metadata"
+                            class="record-video"
+                        ></video>
+                    `)
+                    .join("");
+
+                return `
+                    <article class="record-card">
+
+                        <div class="record-top">
+                            <span class="record-category">${category}</span>
+
+                            <span class="status-badge ${getStatusClass(status)}">
+                                ${status}
+                            </span>
+                        </div>
+
+                        <h3>${title}</h3>
+
+                        <p class="record-description">${description}</p>
+
+                        ${photoHTML ? `
+                            <div class="record-media">
+                                ${photoHTML}
+                            </div>
+                        ` : ""}
+
+                        ${videoHTML ? `
+                            <div class="record-media">
+                                ${videoHTML}
+                            </div>
+                        ` : `
+                            <div class="video-placeholder">
+                                No video evidence available for this report.
+                            </div>
+                        `}
+
+                        <div class="record-meta">
+                            <span>Location: ${location}</span>
+                            <span>${date}</span>
+                        </div>
+
+                    </article>
+                `;
+            }));
+
+            recordsGrid.innerHTML = cards.join("");
+
+            /*
+             * PHOTO CLICK FUNCTIONALITY
+             *
+             * The photos are created dynamically after the records
+             * are loaded, so the click event is attached here.
+             */
+
+            document
+                .querySelectorAll(".record-photo")
+                .forEach(photo => {
+
+                    photo.addEventListener("click", function () {
+                        openPhotoLightbox(this.src, this.alt);
+                    });
+
+                });
+        }
+
+        function filterRecords() {
+            const searchTerm = recordSearch.value.toLowerCase().trim();
+            const selectedStatus = statusFilter.value.toLowerCase();
+
+            const filteredRecords = allRecords.filter(record => {
+
+                const searchableText = [
+                    record.title,
+                    record.description,
+                    record.location,
+                    record.category
+                ].join(" ").toLowerCase();
+
+                const matchesSearch =
+                    searchableText.includes(searchTerm);
+
+                const recordStatus = String(
+                    record.status || "unverified"
+                ).toLowerCase();
+
+                const matchesStatus =
+                    selectedStatus === "all" ||
+                    recordStatus === selectedStatus;
+
+                return matchesSearch && matchesStatus;
+            });
+
+            displayRecords(filteredRecords);
+        }
+
+        recordSearch.addEventListener("input", filterRecords);
+        statusFilter.addEventListener("change", filterRecords);
+
+        // PHOTO LIGHTBOX
+        const photoLightbox =
+            document.getElementById("photoLightbox");
+
+        const photoLightboxImage =
+            document.getElementById("photoLightboxImage");
+
+        const photoLightboxClose =
+            document.getElementById("photoLightboxClose");
+
+        const zoomInButton =
+            document.getElementById("zoomInButton");
+
+        const zoomOutButton =
+            document.getElementById("zoomOutButton");
+
+        const zoomResetButton =
+            document.getElementById("zoomResetButton");
+
+        const photoZoomLevel =
+            document.getElementById("photoZoomLevel");
+
+        let photoZoom = 1;
+
+        function updatePhotoZoom() {
+
+            photoLightboxImage.style.transform =
+                `scale(${photoZoom})`;
+
+            photoZoomLevel.textContent =
+                `${Math.round(photoZoom * 100)}%`;
+        }
+
+        function openPhotoLightbox(imageUrl, imageAlt) {
+
+            photoZoom = 1;
+
+            photoLightboxImage.src = imageUrl;
+            photoLightboxImage.alt =
+                imageAlt || "Enlarged evidence photo";
+
+            updatePhotoZoom();
+
+            photoLightbox.classList.add("open");
+            photoLightbox.setAttribute("aria-hidden", "false");
+
+            document.body.style.overflow = "hidden";
+        }
+
+        function closePhotoLightbox() {
+
+            photoLightbox.classList.remove("open");
+            photoLightbox.setAttribute("aria-hidden", "true");
+
+            photoLightboxImage.src = "";
+
+            document.body.style.overflow = "";
+
+            photoZoom = 1;
+            updatePhotoZoom();
+        }
+
+        zoomInButton.addEventListener("click", function () {
+
+            photoZoom = Math.min(
+                photoZoom + 0.25,
+                4
+            );
+
+            updatePhotoZoom();
+
+        });
+
+        zoomOutButton.addEventListener("click", function () {
+
+            photoZoom = Math.max(
+                photoZoom - 0.25,
+                0.5
+            );
+
+            updatePhotoZoom();
+
+        });
+
+        zoomResetButton.addEventListener("click", function () {
+
+            photoZoom = 1;
+
+            updatePhotoZoom();
+
+        });
+
+        photoLightboxClose.addEventListener(
+            "click",
+            closePhotoLightbox
+        );
+
+        photoLightbox.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === photoLightbox) {
+                    closePhotoLightbox();
+                }
+
+            }
+        );
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    photoLightbox.classList.contains("open")
+                ) {
+                    closePhotoLightbox();
+                }
+
+            }
+        );
+
+        // LOAD PUBLIC ETHNIC HATE RECORDS
+        async function loadRecords() {
+
+            if (!supabaseClient) {
+
+                recordsGrid.innerHTML = `
+                    <div class="empty-state">
+                        The records service is not connected yet.
+                        Please check the Supabase project URL and publishable key.
+                    </div>
+                `;
+
+                return;
+            }
+
+            try {
+
+                const { data, error } =
+                    await supabaseClient
+                        .from("public_ethnic_hate_reports")
+                        .select("*")
+                        .order("created_at", {
+                            ascending: false
+                        });
+
+                if (error) {
+                    throw error;
+                }
+
+                allRecords = data || [];
+
+                updateStatistics(allRecords);
+                filterRecords();
+
+            } catch (error) {
+
+                console.error(
+                    "Could not load records:",
+                    error
+                );
+
+                recordsGrid.innerHTML = `
+                    <div class="empty-state">
+                        We could not load the public records at this time.
+                        Please try again later.
+                    </div>
+                `;
+
+            }
+        }
+
+        loadRecords();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Share a Story | Unity Watch Nigeria</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --green: #315b43;
+    --deep-green: #234631;
+    --mid-green: #527b5d;
+    --gold: #b88a35;
+    --light-gold: #d8b85e;
+    --cream: #f5f2e9;
+    --white: #fffdf8;
+    --text: #293a30;
+    --muted: #657267;
+    --border: #dce5d9;
+    --rust: #a94f32;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* HEADER */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 253, 248, 0.97);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    width: min(1160px, 90%);
+    min-height: 82px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.brand-mark {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--green);
+    color: var(--light-gold);
+    border-bottom: 3px solid var(--gold);
+    display: grid;
+    place-items: center;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.brand-name {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    color: var(--deep-green);
+}
+
+.brand-subtitle {
+    display: block;
+    margin-top: 4px;
+    color: var(--rust);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #47564b;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--rust);
+}
+
+/* MOBILE MENU */
+
+.menu-toggle {
+    display: none;
+    width: 43px;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--green);
+    font-size: 23px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    background:
+        radial-gradient(circle at 88% 15%, rgba(216,184,94,0.13), transparent 29%),
+        linear-gradient(125deg, #153526, #234735 66%, #315640);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+    border-bottom: 4px solid var(--gold);
+}
+
+.hero h1 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #e3e9df;
+}
+
+/* FORM */
+
+.container {
+    max-width: 850px;
+    margin: 45px auto;
+    padding: 0 18px;
+}
+
+.form-card {
+    background: var(--white);
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--gold);
+    border-radius: 9px;
+    box-shadow: 0 14px 40px rgba(35,70,49,0.08);
+}
+
+.form-card h2 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: var(--deep-green);
+    font-size: 1.55rem;
+    margin-bottom: 10px;
+}
+
+.intro {
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--deep-green);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #c9cbbd;
+    border-radius: 5px;
+    font-size: 15px;
+    background: white;
+    font-family: inherit;
+}
+
+textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(184,138,53,0.15);
+}
+
+.help-text {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 7px;
+}
+
+.file-box {
+    background: #f7f6ef;
+    padding: 17px;
+    border: 1px dashed var(--gold);
+    border-radius: 6px;
+}
+
+.consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.consent input {
+    width: auto;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+button.submit-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: var(--green);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button.submit-button:hover {
+    background: var(--deep-green);
+}
+
+button.submit-button:disabled {
+    background: #777;
+    cursor: not-allowed;
+}
+
+/* MESSAGES */
+
+#message {
+    display: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.success {
+    display: block !important;
+    background: #e4f2e5;
+    color: #20552b;
+    border: 1px solid #9cc8a1;
+}
+
+.error {
+    display: block !important;
+    background: #f9e6e3;
+    color: #8b2820;
+    border: 1px solid #e3aaa4;
+}
+
+/* PRIVACY */
+
+.privacy {
+    background: #f4f1e6;
+    padding: 18px;
+    border-left: 4px solid var(--gold);
+    margin-top: 25px;
+    font-size: 13px;
+    color: #555;
+}
+
+/* FOOTER */
+
+footer {
+    background: #10291d;
+    color: #e2e8df;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 60px;
+    border-top: 4px solid var(--gold);
+    font-size: 13px;
+}
+
+footer a {
+    color: var(--light-gold);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+    .nav-container {
+        min-height: 72px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+    }
+
+    .brand-name {
+        font-size: 12px;
+    }
+
+    .brand-subtitle {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 5% 20px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 25px rgba(21,53,38,0.08);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 3px;
+        border-bottom: 1px solid #eeeee6;
+    }
+
+    .hero {
+        padding: 55px 18px;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 30px auto;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+
+    <div class="nav-container">
+
+        <a class="brand" href="index.html">
+
+            <div class="brand-mark">U</div>
+
+            <div>
+                <div class="brand-name">Unity Watch Nigeria</div>
+                <span class="brand-subtitle">Stronger Together</span>
+            </div>
+
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="mainNavigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="voices-of-unity.html">Voices of Unity</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>Share a Story</h1>
+
+    <p>
+        Help us recognise kindness, cooperation, reconciliation
+        and the positive actions bringing communities together.
+    </p>
+
+</section>
+
+
+<!-- FORM -->
+
+<main class="container">
+
+<div class="form-card">
+
+    <h2>Tell Us Your Story</h2>
+
+    <p class="intro">
+        Share a positive experience, an inspiring act or a story
+        that promotes peace and understanding in Nigeria.
+    </p>
+
+    <div id="message" role="alert"></div>
+
+    <form id="storyForm">
+
+        <div class="form-group">
+            <label for="storyTitle">Story Title *</label>
+
+            <input
+                type="text"
+                id="storyTitle"
+                maxlength="180"
+                required
+                placeholder="Give your story a title">
+        </div>
+
+
+        <div class="form-group">
+            <label for="storyCategory">Story Category *</label>
+
+            <select id="storyCategory" required>
+
+                <option value="">Select a category</option>
+
+                <option value="Kindness and Compassion">
+                    Kindness and Compassion
+                </option>
+
+                <option value="Community Cooperation">
+                    Community Cooperation
+                </option>
+
+                <option value="Reconciliation">
+                    Reconciliation
+                </option>
+
+                <option value="Cultural Understanding">
+                    Cultural Understanding
+                </option>
+
+                <option value="Peacebuilding">
+                    Peacebuilding
+                </option>
+
+                <option value="Youth and Community Action">
+                    Youth and Community Action
+                </option>
+
+                <option value="Other">Other</option>
+
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="storyDetails">Your Story *</label>
+
+            <textarea
+                id="storyDetails"
+                maxlength="10000"
+                required
+                placeholder="Tell us what happened, where it happened and why the story matters."></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label for="contributorName">
+                Your Name (Optional)
+            </label>
+
+            <input
+                type="text"
+                id="contributorName"
+                maxlength="150"
+                placeholder="Your name">
+        </div>
+
+
+        <div class="form-group">
+            <label for="contributorEmail">
+                Your Email (Optional)
+            </label>
+
+            <input
+                type="email"
+                id="contributorEmail"
+                maxlength="254"
+                placeholder="Your email address">
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="photos">Upload Photos (Optional)</label>
+
+            <div class="file-box">
+
+                <input
+                    type="file"
+                    id="photos"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                    multiple>
+
+                <p class="help-text">
+                    You can select more than one photo.
+                    Maximum size: 15 MB per file.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="videos">Upload Videos (Optional)</label>
+
+            <div class="file-box">
+
+                <input
+                    type="file"
+                    id="videos"
+                    accept="video/mp4,video/webm,video/quicktime"
+                    multiple>
+
+                <p class="help-text">
+                    You can select more than one video.
+                    Maximum size: 15 MB per file.
+                    Larger videos may need to be compressed first.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="consent">
+
+                <input type="checkbox" id="consent" required>
+
+                <span>
+                    I confirm that this story is submitted honestly
+                    and that I have the right to share any attached
+                    photos or videos. I understand that the story
+                    will be reviewed before publication.
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="submit-button"
+            id="submitButton">
+
+            Submit Your Story
+
+        </button>
+
+    </form>
+
+
+    <div class="privacy">
+
+        <strong>Our review process:</strong>
+
+        Your story and uploaded media will remain private while
+        awaiting review. Submission does not mean automatic
+        publication. Unity Watch Nigeria will assess the material
+        before deciding whether it can be published.
+
+    </div>
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p><strong>UNITY WATCH NIGERIA</strong></p>
+
+    <p>
+        Promoting understanding, cooperation and peaceful communities.
+    </p>
+
+    <p>
+        <a href="voices-of-unity.html">Return to Voices of Unity</a>
+    </p>
+
+    <p>
+        &copy; <span id="currentYear"></span> Unity Watch Nigeria
+    </p>
+
+</footer>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+// =====================================
+// SUPABASE CONNECTION
+// =====================================
+
+const supabaseClient = window.supabase.createClient(
+    "https://akeuqofykmhzhetpaxdd.supabase.co",
+    "sb_publishable_1gdEBPvJW6x2ZsMQNCgKDw_SP3R5Njp"
+);
+
+
+// =====================================
+// PAGE ELEMENTS
+// =====================================
+
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+const storyForm = document.getElementById("storyForm");
+const messageBox = document.getElementById("message");
+const submitButton = document.getElementById("submitButton");
+
+const MAX_FILE_SIZE = 15 * 1024 * 1024;
+
+const BUCKET_NAME = "unity-story-media";
+
+
+// =====================================
+// MOBILE NAVIGATION
+// =====================================
+
+const menuToggle = document.getElementById("menuToggle");
+
+const mainNavigation =
+    document.getElementById("mainNavigation");
+
+menuToggle.addEventListener("click", function() {
+
+    const isOpen =
+        mainNavigation.classList.toggle("open");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
+
+    menuToggle.textContent = isOpen ? "×" : "☰";
+
+});
+
+mainNavigation.querySelectorAll("a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        mainNavigation.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.textContent = "☰";
+
+    });
+
+});
+
+
+// =====================================
+// DISPLAY MESSAGES
+// =====================================
+
+function showMessage(message, type) {
+
+    messageBox.textContent = message;
+
+    messageBox.className = type;
+
+    messageBox.style.display = "block";
+
+}
+
+
+// =====================================
+// UPLOAD MEDIA FILES
+// =====================================
+
+async function uploadFiles(files, folder) {
+
+    const uploadedPaths = [];
+
+    for (const file of files) {
+
+        if (file.size > MAX_FILE_SIZE) {
+
+            throw new Error(
+                file.name +
+                " is larger than 15 MB. Please choose a smaller file."
+            );
+
+        }
+
+        const safeName = file.name.replace(
+            /[^a-zA-Z0-9._-]/g,
+            "_"
+        );
+
+        const filePath =
+            folder + "/" +
+            crypto.randomUUID() + "-" +
+            safeName;
+
+        const { data, error } = await supabaseClient
+            .storage
+            .from(BUCKET_NAME)
+            .upload(filePath, file, {
+                cacheControl: "3600",
+                upsert: false
+            });
+
+        if (error) {
+
+            throw new Error(
+                "Could not upload " +
+                file.name +
+                ": " +
+                error.message
+            );
+
+        }
+
+        uploadedPaths.push(data.path);
+
+    }
+
+    return uploadedPaths;
+
+}
+
+
+// =====================================
+// SUBMIT STORY
+// =====================================
+
+storyForm.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    messageBox.style.display = "none";
+
+    const photos = Array.from(
+        document.getElementById("photos").files
+    );
+
+    const videos = Array.from(
+        document.getElementById("videos").files
+    );
+
+    const allFiles = [...photos, ...videos];
+
+    for (const file of allFiles) {
+
+        if (file.size > MAX_FILE_SIZE) {
+
+            showMessage(
+                file.name +
+                " is larger than 15 MB. Please choose a smaller file.",
+                "error"
+            );
+
+            return;
+
+        }
+
+    }
+
+    submitButton.disabled = true;
+
+    submitButton.textContent = "Submitting your story...";
+
+    try {
+
+        // Upload photos.
+
+        const photoPaths = await uploadFiles(
+            photos,
+            "photos"
+        );
+
+
+        // Upload videos.
+
+        const videoPaths = await uploadFiles(
+            videos,
+            "videos"
+        );
+
+
+        // Prepare story information.
+
+        const storyData = {
+
+            story_title:
+                document.getElementById("storyTitle").value.trim(),
+
+            story_category:
+                document.getElementById("storyCategory").value,
+
+            story_details:
+                document.getElementById("storyDetails").value.trim(),
+
+            contributor_name:
+                document.getElementById("contributorName").value.trim() || null,
+
+            contributor_email:
+                document.getElementById("contributorEmail").value.trim() || null,
+
+            photo_paths: photoPaths,
+
+            video_paths: videoPaths
+
+        };
+
+
+        // Submit to Supabase.
+
+        const { error } = await supabaseClient
+            .from("unity_stories")
+            .insert([storyData]);
+
+        if (error) {
+            throw error;
+        }
+
+
+        showMessage(
+            "Thank you! Your story has been submitted successfully. It is now awaiting review by Unity Watch Nigeria.",
+            "success"
+        );
+
+        storyForm.reset();
+
+
+    } catch (error) {
+
+        console.error("Story submission error:", error);
+
+        showMessage(
+            "Your submission could not be completed. " +
+            error.message +
+            " Please check your connection and try again.",
+            "error"
+        );
+
+    } finally {
+
+        submitButton.disabled = false;
+
+        submitButton.textContent = "Submit Your Story";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

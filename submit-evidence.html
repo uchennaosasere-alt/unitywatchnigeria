@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#073b2a">
+
+    <title>Submit Evidence | Unity Watch Nigeria</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --green: #073b2a;
+            --green-light: #105b40;
+            --gold: #e4b84b;
+            --cream: #f8f7f0;
+            --text: #24352d;
+            --muted: #65736b;
+            --border: #dce4dc;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* HEADER: MATCHES EXPLORE OUR CATEGORIES */
+
+        .site-header {
+            background: var(--cream);
+            color: var(--green);
+            padding: 22px 7%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--green);
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            min-width: 0;
+        }
+
+        .brand-mark {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: var(--green);
+            color: var(--gold);
+            border-radius: 11px;
+            border-bottom: 4px solid var(--gold);
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .brand-name {
+            color: var(--green);
+            font-size: 21px;
+            font-weight: 900;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
+        }
+
+        .brand-tagline {
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 1.4;
+        }
+
+        .back-link {
+            color: var(--green);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .back-link:hover {
+            color: var(--green-light);
+        }
+
+        /* SUBMIT EVIDENCE INTRODUCTION */
+
+        .hero {
+            background: linear-gradient(135deg, #073b2a, #105b40);
+            color: white;
+            text-align: center;
+            padding: 55px 20px 65px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(30px, 5vw, 45px);
+            margin-bottom: 14px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #e1eae3;
+            font-size: 16px;
+        }
+
+        main {
+            max-width: 850px;
+            margin: -25px auto 60px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .notice {
+            background: #fff8e7;
+            border-left: 4px solid var(--gold);
+            padding: 18px 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .notice strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--green);
+        }
+
+        .form-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            color: var(--green);
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .field {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .optional {
+            color: var(--muted);
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #ccd7ce;
+            border-radius: 6px;
+            font: inherit;
+            font-size: 14px;
+            background: white;
+            color: var(--text);
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid rgba(228, 184, 75, 0.55);
+            border-color: var(--green-light);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .field-hint {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 7px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+
+        .upload-box {
+            border: 2px dashed #b9c9bb;
+            background: #f8fbf8;
+            padding: 25px 18px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .upload-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .upload-box p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .upload-box input {
+            border: none;
+            background: transparent;
+            padding: 8px 0;
+            max-width: 100%;
+        }
+
+        .file-list {
+            margin-top: 12px;
+            text-align: left;
+            font-size: 13px;
+            overflow-wrap: anywhere;
+        }
+
+        .consent {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 13px;
+            font-weight: normal;
+            margin: 25px 0;
+        }
+
+        .consent input {
+            width: auto;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 6px;
+            background: var(--green);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-button:hover {
+            background: var(--green-light);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.65;
+            cursor: wait;
+        }
+
+        .form-message {
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .privacy-note {
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        footer {
+            background: var(--green);
+            color: #e1eae3;
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 13px;
+            border-top: 3px solid var(--gold);
+        }
+
+        /* PHONE VIEW */
+
+        @media (max-width: 600px) {
+            .site-header {
+                padding: 18px 5%;
+            }
+
+            .header-content {
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .brand {
+                gap: 10px;
+            }
+
+            .brand-mark {
+                width: 42px;
+                height: 42px;
+                font-size: 28px;
+            }
+
+            .brand-name {
+                font-size: 15px;
+            }
+
+            .brand-tagline {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .back-link {
+                margin-left: 52px;
+            }
+
+            .hero {
+                padding: 45px 20px 55px;
+            }
+
+            main {
+                padding: 0 12px;
+            }
+
+            .form-card {
+                padding: 23px 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+    <div class="header-content">
+
+        <a href="index.html" class="brand" aria-label="Unity Watch Nigeria home">
+
+            <span class="brand-mark">U</span>
+
+            <span class="brand-text">
+                <span class="brand-name">UNITY WATCH NIGERIA</span>
+                <span class="brand-tagline">STRONGER TOGETHER.</span>
+            </span>
+
+        </a>
+
+        <a class="back-link" href="voices-of-unity.html">
+            ← Back to Voices of Unity
+        </a>
+
+    </div>
+</header>
+
+<!-- PAGE INTRODUCTION -->
+
+<section class="hero">
+    <div class="hero-label">REPORT AN INCIDENT</div>
+
+    <h1>Submit Evidence</h1>
+
+    <p>
+        Help document incidents that threaten unity, dignity and peaceful
+        coexistence. Provide an account of what happened and attach relevant
+        photographs or videos when it is safe to do so.
+    </p>
+</section>
+
+<main>
+
+    <div class="notice">
+        <strong>Before you submit</strong>
+        Please provide accurate information. Do not put yourself or anyone
+        else at risk to collect evidence. Avoid uploading material that
+        unnecessarily exposes victims, children or witnesses.
+        This form is a draft and is not yet connected to a secure reporting
+        server. Information entered here will not be delivered to our team.
+    </div>
+
+    <form class="form-card" id="evidenceForm">
+
+        <h2 class="section-title">Incident Information</h2>
+
+        <p class="section-description">
+            Tell us the basic details of the incident you want to report.
+        </p>
+
+        <div class="field">
+            <label for="category">Incident category *</label>
+
+            <select id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="ethnic-hate">Ethnic Hate</option>
+                <option value="discrimination">Discrimination</option>
+                <option value="violence">Violence or Threats</option>
+                <option value="religious-intolerance">Religious Intolerance</option>
+                <option value="incitement">Incitement or Dangerous Speech</option>
+                <option value="human-rights">Human Rights Violation</option>
+                <option value="voices-of-unity">Voice of Unity</option>
+<option value="positive-values">Positive Values & Community</option>
+<option value="jobs-skills">Jobs, Skills & Opportunities</option>
+<option value="abuse-and-harm">Abuse & Harm</option>
+<option value="religious-extremism">Religious Extremism</option>
+<option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="title">Incident title *</label>
+
+            <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Briefly describe the incident"
+                maxlength="150"
+                required
+            >
+        </div>
+
+        <div class="field">
+            <label for="location">Location of incident *</label>
+
+            <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="State, town or general area"
+                maxlength="200"
+                required
+            >
+
+            <p class="field-hint">
+                Do not enter a private home address unless it is necessary
+                and safe to do so.
+            </p>
+        </div>
+
+        <div class="field">
+            <label for="incidentDate">Date of incident *</label>
+
+            <input
+                type="date"
+                id="incidentDate"
+                name="incidentDate"
+                required
+            >
+        </div>
+
+        <div class="field">
+            <label for="description">What happened? *</label>
+
+            <textarea
+                id="description"
+                name="description"
+                placeholder="Describe what happened, what you witnessed, and any relevant details..."
+                maxlength="10000"
+                required
+            ></textarea>
+
+            <p class="field-hint">
+                Separate what you personally witnessed from information
+                you heard from other people.
+            </p>
+        </div>
+
+        <hr class="divider">
+
+        <h2 class="section-title">Supporting Evidence</h2>
+
+        <p class="section-description">
+            Attach relevant photographs or video recordings that may help
+            document the incident.
+        </p>
+
+        <div class="field">
+            <label for="photos">
+                Upload photographs
+                <span class="optional">(Optional)</span>
+            </label>
+
+            <div class="upload-box">
+                <div class="upload-icon">📷</div>
+
+                <p>
+                    Select one or more image files from your device.
+                </p>
+
+                <input
+                    type="file"
+                    id="photos"
+                    name="photos"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                    multiple
+                >
+
+                <div class="file-list" id="photoList"></div>
+            </div>
+
+            <p class="field-hint">
+                JPG, PNG, WEBP or GIF. Maximum 5 images, 10 MB each.
+                These limits will be enforced when the backend is connected.
+            </p>
+        </div>
+
+        <div class="field">
+            <label for="videos">
+                Upload videos
+                <span class="optional">(Optional)</span>
+            </label>
+
+            <div class="upload-box">
+                <div class="upload-icon">🎥</div>
+
+                <p>
+                    Select a video file that supports your report.
+                </p>
+
+                <input
+                    type="file"
+                    id="videos"
+                    name="videos"
+                    accept="video/mp4,video/webm,video/quicktime"
+                    multiple
+                >
+
+                <div class="file-list" id="videoList"></div>
+            </div>
+
+            <p class="field-hint">
+                MP4, WEBM or MOV. Maximum 2 videos, 100 MB each.
+                These limits will be enforced when the backend is connected.
+            </p>
+        </div>
+
+        <hr class="divider">
+
+        <h2 class="section-title">Your Contact Details</h2>
+
+        <p class="section-description">
+            These fields are optional. You may leave them blank.
+        </p>
+
+        <div class="field">
+            <label for="reporterName">
+                Your name
+                <span class="optional">(Optional)</span>
+            </label>
+
+            <input
+                type="text"
+                id="reporterName"
+                name="reporterName"
+                autocomplete="name"
+                placeholder="Enter your name"
+                maxlength="100"
+            >
+        </div>
+
+        <div class="field">
+            <label for="reporterEmail">
+                Email address
+                <span class="optional">(Optional)</span>
+            </label>
+
+            <input
+                type="email"
+                id="reporterEmail"
+                name="reporterEmail"
+                autocomplete="email"
+                placeholder="you@example.com"
+                maxlength="254"
+            >
+        </div>
+
+        <label class="consent" for="accuracy">
+            <input
+                type="checkbox"
+                id="accuracy"
+                name="accuracy"
+                required
+            >
+
+            <span>
+                I confirm that the information I have provided is accurate
+                to the best of my knowledge and that I am submitting it
+                in good faith.
+            </span>
+        </label>
+
+        <button type="submit" class="submit-button">
+            Submit Evidence
+        </button>
+
+        <div
+            class="form-message"
+            id="formMessage"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+        <p class="privacy-note">
+            Protect your privacy. Do not upload passwords, identity
+            documents or unrelated personal information.
+        </p>
+
+    
+
+
+
+
+<footer>
+    <p>Unity Watch Nigeria</p>
+    <p>Promoting unity, accountability and peaceful coexistence.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+    window.supabaseClient = window.supabase.createClient(
+        "https://akeuqofykmhzhetpaxdd.supabase.co",
+        "sb_publishable_1gdEBPvJW6x2ZsMQNCgKDw_SP3R5Njp"
+    );
+</script>
+<script>
+    console.log("Supabase library:", typeof window.supabase);
+    console.log("Supabase client:", typeof window.supabaseClient);
+</script>
+<script>
+    const photoInput = document.getElementById("photos");
+    const videoInput = document.getElementById("videos");
+    const photoList = document.getElementById("photoList");
+    const videoList = document.getElementById("videoList");
+    const form = document.getElementById("evidenceForm");
+    const formMessage = document.getElementById("formMessage");
+
+    function showFiles(input, output, maxFiles, maxSize, label) {
+        output.textContent = "";
+
+        const files = Array.from(input.files);
+
+        if (files.length > maxFiles) {
+            alert("Please select no more than " + maxFiles + " " + label + ".");
+            input.value = "";
+            return;
+        }
+
+        for (const file of files) {
+            if (file.size > maxSize) {
+                alert(file.name + " is too large. Please choose a smaller file.");
+                input.value = "";
+                output.textContent = "";
+                return;
+            }
+        }
+
+        if (files.length === 0) {
+            return;
+        }
+
+        const list = document.createElement("ul");
+        list.style.paddingLeft = "20px";
+
+        files.forEach(file => {
+            const item = document.createElement("li");
+            item.textContent =
+                file.name + " (" +
+                (file.size / (1024 * 1024)).toFixed(2) +
+                " MB)";
+            list.appendChild(item);
+        });
+
+        output.appendChild(list);
+    }
+
+    photoInput.addEventListener("change", () => {
+        showFiles(
+            photoInput,
+            photoList,
+            5,
+            10 * 1024 * 1024,
+            "photographs"
+        );
+    });
+
+    videoInput.addEventListener("change", () => {
+        showFiles(
+            videoInput,
+            videoList,
+            2,
+            100 * 1024 * 1024,
+            "videos"
+        );
+    });
+
+    form.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const selectedPhotos = Array.from(photoInput.files);
+    const selectedVideos = Array.from(videoInput.files);
+
+    const selectedFiles = [
+        ...selectedPhotos,
+        ...selectedVideos
+    ];
+
+    formMessage.style.display = "block";
+    formMessage.style.background = "#e8f5e9";
+    formMessage.style.color = "#1b5e20";
+    formMessage.textContent = "Submitting your report. Please wait...";
+
+    try {
+        if (!window.supabaseClient) {
+            throw new Error("Supabase connection not found.");
+        }
+
+        const photoPaths = [];
+        const videoPaths = [];
+
+        for (const file of selectedFiles) {
+
+            const safeFileName = file.name.replace(
+                /[^a-zA-Z0-9.-]/g, ""
+            );
+
+            const filePath =
+                Date.now() + "-" +
+                Math.random().toString(36).slice(2) +
+                "-" + safeFileName;
+
+            const { error } = await window.supabaseClient
+                .storage
+                .from("evidence-files")
+                .upload(filePath, file);
+
+            if (error) {
+                throw error;
+            }
+
+            if (file.type.startsWith("image/")) {
+                photoPaths.push(filePath);
+            } else if (file.type.startsWith("video/")) {
+                videoPaths.push(filePath);
+            }
+        }
+
+        const reportData = {
+            incident_type: document.getElementById("category").value,
+            incident_title: document.getElementById("title").value,
+            description: document.getElementById("description").value,
+            location: document.getElementById("location").value,
+            incident_date: document.getElementById("incidentDate").value,
+            reporter_name: document.getElementById("reporterName").value,
+            contact_email: document.getElementById("reporterEmail").value,
+            evidence_photos: photoPaths,
+            evidence_videos: videoPaths,
+            evidence_files: selectedFiles.map(file => file.name)
+        };
+
+        const { data, error } = await window.supabaseClient
+            .from("evidence_reports")
+            .insert([reportData])
+            .single();
+            
+
+        if (error) {
+            throw error;
+        }
+
+        formMessage.style.background = "#e8f5e9";
+        formMessage.style.color = "#1b5e20";
+
+        formMessage.textContent =
+    "Your report has been submitted successfully!";
+
+        form.reset();
+
+        photoList.textContent = "";
+        videoList.textContent = "";
+
+    } catch (error) {
+
+        console.error("Submission error:", error);
+
+        formMessage.style.background = "#fce8e6";
+        formMessage.style.color = "#b71c1c";
+
+        formMessage.textContent =
+            "Submission failed: " +
+            (error.message || "Please try again.");
+    }
+});
+</script>
+
+</body>
+</html>

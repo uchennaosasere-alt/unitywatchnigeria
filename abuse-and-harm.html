@@ -1,0 +1,3530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abuse and Harm Records | Unity Watch Nigeria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-green: #0b3526;
+            --green: #176b45;
+            --light-green: #eaf4ed;
+            --gold: #d9ad52;
+            --white: #ffffff;
+            --cream: #f3f3e9;
+            --text: #24352c;
+            --muted: #64736a;
+            --border: #dce6de;
+            --pending: #946200;
+            --investigating: #245b9e;
+            --approved: #176b45;
+            --rejected: #a33b3b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 25px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8f5;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        /* TOP BRAND STRIP */
+
+        .top-strip {
+            background: #234735;
+            color: #f3f3e9;
+            text-align: center;
+            padding: 8px 15px;
+            font-family: Inter, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* MAIN NAVIGATION */
+
+        .navbar {
+            background: var(--cream);
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--dark-green);
+            flex-shrink: 0;
+        }
+
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+            background: #234735;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border-bottom: 4px solid var(--gold);
+            font-family: Montserrat, sans-serif;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .brand-name {
+            font-family: Montserrat, sans-serif;
+            color: #153526;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .brand-tagline {
+            color: #b87932;
+            font-family: Inter, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #234735;
+            font-family: Inter, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #b87932;
+        }
+
+        /* HERO */
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(217, 173, 82, 0.16),
+                    transparent 35%
+                ),
+                linear-gradient(135deg, #0b3526, #176b45);
+            color: var(--white);
+            text-align: center;
+            padding: 75px 20px;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .hero-label {
+            display: inline-block;
+            color: var(--gold);
+            border: 1px solid rgba(217, 173, 82, 0.7);
+            border-radius: 30px;
+            padding: 6px 17px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #e5eee8;
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .hero-button.primary {
+            background: var(--gold);
+            color: var(--dark-green);
+        }
+
+        .hero-button.secondary {
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.7);
+        }
+
+        /* GENERAL LAYOUT */
+
+        .container {
+            width: 88%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 65px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .eyebrow {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            color: var(--dark-green);
+            font-size: clamp(26px, 4vw, 35px);
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            max-width: 730px;
+            margin: auto;
+            color: var(--muted);
+        }
+
+        /* GENERAL CARDS */
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(11, 53, 38, 0.06);
+        }
+
+        /* RECORD STATUS LEGEND */
+
+        .status-section {
+            background: #edf4ee;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .status-card {
+            background: var(--white);
+            padding: 20px 17px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            border-top: 4px solid var(--gold);
+        }
+
+        .status-card h3 {
+            font-size: 15px;
+            color: var(--dark-green);
+            margin-bottom: 7px;
+        }
+
+        .status-card p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .pending-dot { background: #d4a017; }
+        .investigating-dot { background: #3978c5; }
+        .approved-dot { background: #258553; }
+        .rejected-dot { background: #c34b4b; }
+
+        /* RECORDS */
+
+        .records-toolbar {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd8ce;
+            border-radius: 6px;
+            color: var(--text);
+            background: var(--white);
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid rgba(23, 107, 69, 0.2);
+            border-color: var(--green);
+        }
+
+        .empty-records {
+            text-align: center;
+            padding: 40px 22px;
+            border: 1px dashed #a8c1ae;
+            border-radius: 10px;
+            background: #fbfdfb;
+        }
+
+        .empty-records h3 {
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+
+        .empty-records p {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 650px;
+            margin: 0 auto 12px;
+        }
+
+        .record-count {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .record-card {
+            padding: 23px;
+            margin-bottom: 17px;
+        }
+
+        .record-card h3 {
+            color: var(--dark-green);
+            margin-bottom: 9px;
+            font-size: 19px;
+        }
+
+        .record-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 13px;
+        }
+
+        .record-status {
+            display: inline-block;
+            padding: 5px 11px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            background: #eaf4ed;
+            color: var(--green);
+        }
+
+        .record-summary {
+            color: var(--text);
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .record-location {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .loading-message,
+        .error-message {
+            text-align: center;
+            padding: 25px;
+            border-radius: 9px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .loading-message {
+            background: #edf4ee;
+            color: var(--green);
+        }
+
+        .error-message {
+            background: #fff0f0;
+            color: #a33b3b;
+        }
+
+        /* REPORT CATEGORIES */
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .category-card {
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid var(--gold);
+        }
+
+        .category-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--light-green);
+            color: var(--green);
+            border: 1px solid #c9dfcf;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .category-card h3 {
+            color: var(--dark-green);
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .category-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .category-card ul {
+            padding-left: 19px;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .category-card li {
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .category-card li::marker {
+            color: var(--green);
+        }
+
+        .button {
+            display: inline-block;
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--green);
+            background: var(--green);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: var(--dark-green);
+        }
+
+        .button.gold {
+            background: var(--gold);
+            color: var(--dark-green);
+            border-color: var(--gold);
+        }
+
+        .button.gold:hover {
+            background: #c69a3d;
+        }
+
+        /* FORMS */
+
+        .forms-section {
+            background: #edf4ee;
+            border-top: 1px solid var(--border);
+        }
+
+        .form-card {
+            padding: 30px;
+            margin-bottom: 25px;
+            scroll-margin-top: 25px;
+        }
+
+        .form-card h3 {
+            color: var(--dark-green);
+            font-size: 23px;
+            margin-bottom: 7px;
+        }
+
+        .form-description {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            color: var(--dark-green);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .demo-notice {
+            background: #fff5d9;
+            color: #6b5725;
+            padding: 13px;
+            margin-top: 20px;
+            border-left: 4px solid var(--gold);
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .checkbox-row {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .checkbox-row input {
+            width: auto;
+            margin-top: 5px;
+        }
+
+        .checkbox-row label {
+            color: var(--muted);
+            font-weight: normal;
+        }
+
+        .form-message {
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        /* APPEALS */
+
+        .appeals-section {
+            background: var(--white);
+        }
+
+        .appeal-intro {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding: 23px;
+            background: #f1f6f1;
+            border-left: 5px solid var(--gold);
+            border-radius: 7px;
+        }
+
+        .appeal-intro h3 {
+            color: var(--dark-green);
+            margin-bottom: 8px;
+        }
+
+        .appeal-intro p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .appeal-types {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .appeal-type {
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+        }
+
+        .appeal-type h3 {
+            color: var(--dark-green);
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .appeal-type p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* FAIRNESS NOTICE */
+
+        .notice {
+            background: #fff9e9;
+            border-left: 5px solid var(--gold);
+            border-radius: 7px;
+            padding: 23px;
+            margin-top: 30px;
+        }
+
+        .notice h3 {
+            color: var(--dark-green);
+            margin-bottom: 8px;
+        }
+
+        .notice p {
+            color: #625b48;
+            font-size: 13px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--green);
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--dark-green);
+            color: #dce9df;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 4px solid var(--gold);
+        }
+
+        footer p {
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        footer strong {
+            color: var(--gold);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 950px) {
+            .category-grid,
+            .appeal-types {
+                grid-template-columns: 1fr;
+            }
+
+            .status-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 15px 6%;
+            }
+
+            .brand-name {
+                font-size: 15px;
+            }
+
+            .brand-logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .container {
+                width: 91%;
+            }
+
+            .hero {
+                padding: 55px 18px;
+            }
+
+            .section {
+                padding: 45px 0;
+            }
+
+            .status-grid,
+            .records-toolbar,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .form-card,
+            .category-card {
+                padding: 22px 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BRAND STRIP -->
+
+    <div class="top-strip">
+        ONE NATION · MANY VOICES · ONE SHARED FUTURE
+    </div>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="brand">
+            <span class="brand-logo">U</span>
+
+            <span class="brand-text">
+                <span class="brand-name">Unity Watch Nigeria</span>
+                <span class="brand-tagline">Stronger Together</span>
+            </span>
+        </a>
+
+        <!-- Existing navigation links preserved -->
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="voices-of-unity.html">Voices of Unity</a>
+            <a href="ethnic-hate.html">Ethnic Hate Records</a>
+        </div>
+
+    </nav>
+
+    <!-- PAGE INTRODUCTION -->
+
+    <header class="hero" id="top">
+        <div class="hero-label">REPORTING AND ACCOUNTABILITY</div>
+
+        <h1>Abuse and Harm Records</h1>
+
+        <p>
+            A structured platform for reporting concerns about abuse,
+            mistreatment and harmful conduct. Browse available records,
+            submit a report, or appeal a decision through the appropriate
+            section below.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#reportCategories" class="hero-button primary">
+                Report an Incident
+            </a>
+
+            <a href="#incidentRecords" class="hero-button secondary">
+                Browse Incident Records
+            </a>
+
+            <a href="#appeals" class="hero-button secondary">
+                Appeals &amp; Review
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- INCIDENT STATUS GUIDE -->
+
+        <section class="section status-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Understanding the process</div>
+
+                    <h2>Incident Review Status</h2>
+
+                    <p>
+                        These labels explain where a report may be in the
+                        review process. They are not counts of actual cases.
+                    </p>
+                </div>
+
+                <div class="status-grid">
+
+                    <article class="status-card">
+                        <h3>
+                            <span class="status-dot pending-dot"></span>
+                            Pending Review
+                        </h3>
+                        <p>A report is awaiting an initial assessment.</p>
+                    </article>
+
+                    <article class="status-card">
+                        <h3>
+                            <span class="status-dot investigating-dot"></span>
+                            Under Investigation
+                        </h3>
+                        <p>Further examination or clarification is in progress.</p>
+                    </article>
+
+                    <article class="status-card">
+                        <h3>
+                            <span class="status-dot approved-dot"></span>
+                            Approved for Publication
+                        </h3>
+                        <p>
+                            A record has passed the platform's publication review.
+                            This label alone does not prove every allegation.
+                        </p>
+                    </article>
+
+                    <article class="status-card">
+                        <h3>
+                            <span class="status-dot rejected-dot"></span>
+                            Rejected
+                        </h3>
+                        <p>
+                            A report did not meet the current reporting or
+                            publication requirements.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INCIDENT RECORDS -->
+
+        <section class="section" id="incidentRecords">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Public records</div>
+
+                    <h2>Incident Records &amp; Status</h2>
+
+                    <p>
+                        Search by reference number or category, or filter
+                        records by their review status.
+                    </p>
+                </div>
+
+                <div class="records-toolbar">
+                    <input
+                        type="search"
+                        id="recordSearch"
+                        placeholder="Search by reference number or category..."
+                        aria-label="Search incident records"
+                    >
+
+                    <select id="recordStatus" aria-label="Filter by status">
+                        <option value="">All statuses</option>
+                        <option value="Pending Review">Pending Review</option>
+                        <option value="Under Investigation">Under Investigation</option>
+                        <option value="Approved for Publication">
+                            Approved for Publication
+                        </option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <p class="record-count" id="recordCount">
+                    Connecting to the records database...
+                </p>
+
+                <div class="loading-message" id="loadingRecords">
+                    Loading public Abuse and Harm records...
+                </div>
+
+                <div class="empty-records" id="emptyRecords" style="display:none;">
+                    <h3>No public incident records available yet</h3>
+
+                    <p>
+                        This section will display records when reports have
+                        been assessed and authorised for publication.
+                    </p>
+
+                    <p>
+                        No incidents have been invented or added as real cases
+                        for demonstration purposes.
+                    </p>
+                </div>
+
+                <div id="recordResults" aria-live="polite"></div>
+
+                <div class="notice">
+                    <h3>How to interpret a record</h3>
+
+                    <p>
+                        A pending or rejected report should not be treated
+                        as proof of wrongdoing. Approval for publication is
+                        a publication decision, not necessarily a legal finding
+                        or confirmation that every allegation is true.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- REPORTING CATEGORIES -->
+
+        <section class="section status-section" id="reportCategories">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Submit a report</div>
+
+                    <h2>Choose a Reporting Category</h2>
+
+                    <p>
+                        Select the category that best matches your concern.
+                        Each option has its own form.
+                    </p>
+                </div>
+
+                <div class="category-grid">
+
+                    <article class="card category-card">
+                        <div class="category-number">01</div>
+
+                        <h3>Social Abuse</h3>
+
+                        <p>
+                            For concerns involving alleged abuse or
+                            harmful behaviour in social, personal or
+                            community settings.
+                        </p>
+
+                        <ul>
+                            <li>Bullying and intimidation</li>
+                            <li>Social harassment</li>
+                            <li>Threatening behaviour</li>
+                            <li>Community-related mistreatment</li>
+                        </ul>
+
+                        <a href="#socialForm" class="button">
+                            Report Social Abuse
+                        </a>
+                    </article>
+
+                    <article class="card category-card">
+                        <div class="category-number">02</div>
+
+                        <h3>Workplace Abuse</h3>
+
+                        <p>
+                            For concerns about alleged mistreatment
+                            involving an employer, supervisor or colleague.
+                        </p>
+
+                        <ul>
+                            <li>Workplace bullying</li>
+                            <li>Harassment and intimidation</li>
+                            <li>Discriminatory treatment</li>
+                            <li>Abuse of workplace authority</li>
+                        </ul>
+
+                        <a href="#workplaceForm" class="button">
+                            Report Workplace Abuse
+                        </a>
+                    </article>
+
+                    <article class="card category-card">
+                        <div class="category-number">03</div>
+
+                        <h3>Report a Company</h3>
+
+                        <p>
+                            For concerns about a company's alleged
+                            business practices or treatment of workers
+                            and customers.
+                        </p>
+
+                        <ul>
+                            <li>Unethical business practices</li>
+                            <li>Employee mistreatment</li>
+                            <li>Customer treatment concerns</li>
+                            <li>Other alleged harmful conduct</li>
+                        </ul>
+
+                        <a href="#companyForm" class="button">
+                            Report a Company
+                        </a>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- REPORTING FORMS -->
+
+        <section class="section forms-section" id="reportForms">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Reporting forms</div>
+
+                    <h2>Provide the Relevant Details</h2>
+
+                    <p>
+                        Describe the incident as accurately as possible.
+                        Include only necessary information.
+                    </p>
+                </div>
+
+                <!-- SOCIAL ABUSE FORM -->
+
+                <form class="card form-card" id="socialForm">
+                    <h3>01 — Social Abuse Report</h3>
+
+                    <p class="form-description">
+                        Report an alleged incident in a social or community
+                        setting.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="socialType">Type of concern</label>
+
+                            <select id="socialType" required>
+                                <option value="">Select a category</option>
+                                <option>Bullying</option>
+                                <option>Harassment</option>
+                                <option>Intimidation or threats</option>
+                                <option>Community-related mistreatment</option>
+                                <option>Other social concern</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="socialDate">Approximate date</label>
+                            <input type="date" id="socialDate">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="socialLocation">
+                                General location (optional)
+                            </label>
+
+                            <input
+                                type="text"
+                                id="socialLocation"
+                                placeholder="For example, a public venue or general area"
+                            >
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="socialDetails">What happened?</label>
+
+                            <textarea
+                                id="socialDetails"
+                                required
+                                placeholder="Describe what you witnessed or experienced."
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="demo-notice">
+    Reports submitted through this form are securely sent for review.
+    All submissions remain private until they have been reviewed.
+</div>
+
+                    <button type="submit" class="button" style="margin-top:18px;">
+                        Submit Demonstration
+                    </button>
+
+                    <p class="form-message" aria-live="polite"></p>
+                </form>
+
+                <!-- WORKPLACE ABUSE FORM -->
+
+                <form class="card form-card" id="workplaceForm">
+                    <h3>02 — Workplace Abuse Report</h3>
+
+                    <p class="form-description">
+                        Report alleged mistreatment in a workplace.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="workplaceType">Type of concern</label>
+
+                            <select id="workplaceType" required>
+                                <option value="">Select a category</option>
+                                <option>Bullying</option>
+                                <option>Harassment</option>
+                                <option>Discrimination</option>
+                                <option>Intimidation or threats</option>
+                                <option>Abuse of authority</option>
+                                <option>Other workplace concern</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="workplaceDate">Approximate date</label>
+                            <input type="date" id="workplaceDate">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="workplaceCompany">
+                                Organisation name (optional)
+                            </label>
+
+                            <input
+                                type="text"
+                                id="workplaceCompany"
+                                placeholder="Enter the organisation's name"
+                            >
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="workplaceDetails">
+                                Describe the incident
+                            </label>
+
+                            <textarea
+                                id="workplaceDetails"
+                                required
+                                placeholder="Describe the incident and any relevant circumstances."
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="demo-notice">
+    Reports submitted through this form are securely sent for review.
+    All submissions remain private until they have been reviewed.
+</div>
+
+                    <button type="submit" class="button" style="margin-top:18px;">
+                        Submit Demonstration
+                    </button>
+
+                    <p class="form-message" aria-live="polite"></p>
+                </form>
+
+                <!-- COMPANY REPORT FORM -->
+
+                <form class="card form-card" id="companyForm">
+                    <h3>03 — Report a Company</h3>
+
+                    <p class="form-description">
+                        Raise a concern about alleged company conduct
+                        or business practices.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="companyName">Company name</label>
+
+                            <input
+                                type="text"
+                                id="companyName"
+                                required
+                                placeholder="Enter company name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyIndustry">
+                                Industry (optional)
+                            </label>
+
+                            <input
+                                type="text"
+                                id="companyIndustry"
+                                placeholder="For example, retail or transport"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyConcern">Type of concern</label>
+
+                            <select id="companyConcern" required>
+                                <option value="">Select a category</option>
+                                <option>Employee mistreatment</option>
+                                <option>Unethical business practice</option>
+                                <option>Customer treatment</option>
+                                <option>Misleading business conduct</option>
+                                <option>Other company-related concern</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyDate">
+                                Approximate date (optional)
+                            </label>
+
+                            <input type="date" id="companyDate">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="companyDetails">
+                                Describe your concern
+                            </label>
+
+                            <textarea
+                                id="companyDetails"
+                                required
+                                placeholder="Explain what happened and distinguish firsthand knowledge from information received from others."
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="demo-notice">
+    Reports submitted through this form are securely sent for review.
+    All submissions remain private until they have been reviewed.
+</div>
+
+                    <button type="submit" class="button" style="margin-top:18px;">
+                        Submit Demonstration
+                    </button>
+
+                    <p class="form-message" aria-live="polite"></p>
+                </form>
+
+            </div>
+        </section>
+
+        <!-- APPEALS AND REVIEW -->
+
+        <section class="section appeals-section" id="appeals">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Fairness and accountability</div>
+
+                    <h2>Appeals &amp; Review</h2>
+
+                    <p>
+                        People and organisations should have a clear way
+                        to challenge decisions and request a fair review.
+                    </p>
+                </div>
+
+                <div class="appeal-intro">
+                    <h3>Your right to request a review</h3>
+
+                    <p>
+                        You may request a review if you believe a report
+                        was rejected unfairly, a published record contains
+                        disputed information, or a decision needs further
+                        consideration. Submitting an appeal does not
+                        guarantee that the original decision will change.
+                    </p>
+                </div>
+
+                <div class="appeal-types">
+
+                    <article class="appeal-type">
+                        <h3>Appeal a Rejected Report</h3>
+                        <p>
+                            Explain why you believe your report should
+                            be reconsidered and provide relevant
+                            additional information.
+                        </p>
+                    </article>
+
+                    <article class="appeal-type">
+                        <h3>Challenge a Published Record</h3>
+                        <p>
+                            Identify the disputed record and explain
+                            which information you believe is inaccurate
+                            or unfairly presented.
+                        </p>
+                    </article>
+
+                    <article class="appeal-type">
+                        <h3>Request Another Review</h3>
+                        <p>
+                            Request reconsideration of a report's status
+                            or handling and explain the reason for your
+                            request.
+                        </p>
+                    </article>
+
+                </div>
+
+                <form class="card form-card" id="appealForm">
+                    <h3>Appeal Submission Form</h3>
+
+                    <p class="form-description">
+                        Provide the reference number if one has been
+                        assigned to the original report.
+                    </p>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="appealType">Type of appeal</label>
+
+                            <select id="appealType" required>
+                                <option value="">Select an option</option>
+                                <option>Appeal a Rejected Report</option>
+                                <option>Challenge a Published Record</option>
+                                <option>Request Another Review</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appealReference">
+                                Incident reference number
+                            </label>
+
+                            <input
+                                type="text"
+                                id="appealReference"
+                                placeholder="For example, UWN-001"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="appealReason">
+                                Why are you requesting an appeal?
+                            </label>
+
+                            <textarea
+                                id="appealReason"
+                                required
+                                placeholder="Explain the decision you are challenging and why you believe a review is appropriate."
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="appealEvidence">
+                                Additional information (optional)
+                            </label>
+
+                            <textarea
+                                id="appealEvidence"
+                                placeholder="Describe any relevant information that should be considered. Do not include passwords, identity documents or unnecessary sensitive information."
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="appealOutcome">
+                                What outcome are you requesting?
+                            </label>
+
+                            <select id="appealOutcome" required>
+                                <option value="">Select an outcome</option>
+                                <option>Reconsider the original decision</option>
+                                <option>Correct disputed information</option>
+                                <option>Review the publication status</option>
+                                <option>Provide an explanation of the decision</option>
+                                <option>Other appropriate outcome</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="demo-notice">
+                        Demonstration only. Appeals are not delivered to
+                        a review team or saved. A secure reporting system
+                        must be connected before real submissions can be
+                        received.
+                    </div>
+
+                    <button type="submit" class="button gold" style="margin-top:18px;">
+                        Submit Demonstration Appeal
+                    </button>
+
+                    <p class="form-message" aria-live="polite"></p>
+                </form>
+
+            </div>
+        </section>
+
+        <!-- PRIVACY AND FAIRNESS -->
+
+        <section class="section status-section" id="fairness">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Responsible reporting</div>
+
+                    <h2>Privacy, Fairness &amp; Accountability</h2>
+                </div>
+
+                <div class="notice">
+                    <h3>Every report deserves fair consideration</h3>
+
+                    <p>
+                        A submitted allegation is not proof of wrongdoing.
+                        Decisions should be based on a fair review of the
+                        available information. Where practicable, an appeal
+                        should be assessed by someone other than the original
+                        decision-maker.
+                    </p>
+                    <br>
+
+                    <p>
+                        Personal information should be protected, and only
+                        appropriate information should be made public.
+                        Records and appeals should not be used to threaten,
+                        harass, retaliate against or expose private details
+                        about another person.
+                    </p>
+                    <br>
+
+                    <p>
+                        This page currently displays authorised public
+                        records from the reporting database. The reporting
+                        and appeals forms still require a secure submission
+                        system before they can accept real submissions.
+                    </p>
+                </div>
+
+                <a href="#top" class="back-link">↑ Back to the top</a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p><strong>UNITY WATCH NIGERIA</strong></p>
+
+        <p>
+            Promoting accountability, fairness and responsible reporting.
+        </p>
+
+        <p>
+            An allegation is not proof. Every record deserves fair assessment.
+        </p>
+
+        <p>&copy; 2026 Unity Watch Nigeria</p>
+    </footer>
+
+    <!-- SUPABASE CONNECTION -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+/*
+ * UNITY WATCH NIGERIA
+ * ABUSE AND HARM RECORDS
+ * CONNECTED REPORTING SYSTEM
+ */
+
+const SUPABASE_URL = "https://akeuqofykmhzhetpaxdd.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_1gdEBPvJW6x2ZsMQNCgKDw_SP3R5Njp";
+
+
+/* --------------------------------------------------
+   SUPABASE CLIENT
+-------------------------------------------------- */
+
+if (!window.supabaseClient) {
+
+    window.supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+}
+
+const supabaseClient = window.supabaseClient;
+
+
+/* --------------------------------------------------
+   ABUSE AND HARM CATEGORIES
+-------------------------------------------------- */
+
+const ABUSE_CATEGORIES = {
+
+    "social-abuse":
+        "Social Abuse",
+
+    "workplace-abuse":
+        "Workplace Abuse",
+
+    "company-misconduct":
+        "Company Misconduct"
+
+};
+
+
+/* --------------------------------------------------
+   PAGE ELEMENTS
+-------------------------------------------------- */
+
+const recordSearch =
+    document.getElementById("recordSearch");
+
+const recordStatus =
+    document.getElementById("recordStatus");
+
+const recordCount =
+    document.getElementById("recordCount");
+
+const emptyRecords =
+    document.getElementById("emptyRecords");
+
+const recordResults =
+    document.getElementById("recordResults");
+
+const loadingRecords =
+    document.getElementById("loadingRecords");
+
+
+let incidentRecords = [];
+
+
+/* --------------------------------------------------
+   STATUS NORMALISATION
+-------------------------------------------------- */
+
+function displayStatus(databaseStatus) {
+
+    const status =
+        String(databaseStatus || "")
+            .trim()
+            .toLowerCase();
+
+    if (status === "under review") {
+        return "Pending Review";
+    }
+
+    if (status === "verified") {
+        return "Approved for Publication";
+    }
+
+    if (status === "under investigation") {
+        return "Under Investigation";
+    }
+
+    if (status === "rejected") {
+        return "Rejected";
+    }
+
+    return databaseStatus || "Status unavailable";
+}
+
+
+/* --------------------------------------------------
+   CATEGORY DISPLAY
+-------------------------------------------------- */
+
+function displayCategory(incidentType) {
+
+    const type =
+        String(incidentType || "")
+            .trim()
+            .toLowerCase();
+
+    return ABUSE_CATEGORIES[type]
+        || "Abuse and Harm";
+}
+
+
+/* --------------------------------------------------
+   NORMALISE MEDIA FIELD
+-------------------------------------------------- */
+
+function normaliseMediaField(value) {
+
+    if (!value) {
+        return [];
+    }
+
+    /*
+     * Supabase may return the field as:
+     *
+     * 1. A real JavaScript array
+     * 2. A JSON string
+     * 3. A single file path
+     */
+
+    if (Array.isArray(value)) {
+        return value;
+    }
+
+    if (typeof value === "string") {
+
+        const trimmed = value.trim();
+
+        if (!trimmed) {
+            return [];
+        }
+
+        try {
+
+            const parsed =
+                JSON.parse(trimmed);
+
+            if (Array.isArray(parsed)) {
+                return parsed;
+            }
+
+        } catch (error) {
+
+            /*
+             * Not JSON.
+             * Treat it as a single storage path.
+             */
+
+        }
+
+        return [trimmed];
+    }
+
+    return [];
+}
+
+
+/* --------------------------------------------------
+   LOAD PUBLIC MEDIA
+-------------------------------------------------- */
+
+async function loadPublicMedia(reportId, mediaType) {
+
+    try {
+
+        const { data, error } =
+            await supabaseClient.functions.invoke(
+                "public-evidence-media",
+                {
+                    body: {
+                        report_id: reportId,
+                        media_type: mediaType
+                    }
+                }
+            );
+
+        if (error) {
+
+            console.error(
+                "Public media error:",
+                mediaType,
+                error
+            );
+
+            return [];
+        }
+
+        if (!data) {
+            return [];
+        }
+
+        /*
+         * The public-evidence-media function may return
+         * the media directly, or inside a "media" property.
+         */
+
+        if (Array.isArray(data)) {
+            return data;
+        }
+
+        if (Array.isArray(data.media)) {
+            return data.media;
+        }
+
+        if (Array.isArray(data.files)) {
+            return data.files;
+        }
+
+        if (Array.isArray(data.results)) {
+            return data.results;
+        }
+
+        return [];
+
+    } catch (error) {
+
+        console.error(
+            "Media loading failed:",
+            mediaType,
+            error
+        );
+
+        return [];
+    }
+
+}
+
+
+/* --------------------------------------------------
+   LOAD PUBLIC ABUSE AND HARM RECORDS
+-------------------------------------------------- */
+
+async function loadIncidentRecords() {
+
+    loadingRecords.style.display = "block";
+
+    loadingRecords.textContent =
+        "Loading public Abuse and Harm records...";
+
+    emptyRecords.style.display = "none";
+
+    recordResults.innerHTML = "";
+
+    recordCount.textContent =
+        "Connecting to the records database...";
+
+
+    try {
+
+        /*
+         * We deliberately query the central
+         * evidence_reports table here because
+         * Abuse and Harm reports are stored there.
+         *
+         * Only verified + public reports are shown.
+         */
+
+        const { data, error } =
+            await supabaseClient
+                .from("public_abuse_and_harm_reports")
+                .select("*")
+                .in(
+                    "incident_type",
+                    [
+                        "social-abuse",
+                        "workplace-abuse",
+                        "company-misconduct"
+                    ]
+                )
+                .eq("is_public", true)
+                .eq("status", "Verified")
+                .order(
+                    "created_at",
+                    {
+                        ascending: false
+                    }
+                );
+
+
+        if (error) {
+            throw error;
+        }
+
+
+        const records =
+            Array.isArray(data)
+                ? data
+                : [];
+
+
+        /*
+         * Load each record together with
+         * its approved photographs and videos.
+         */
+
+        incidentRecords =
+            await Promise.all(
+
+                records.map(async function(record) {
+
+                    const photoPaths =
+                        normaliseMediaField(
+                            record.evidence_photos
+                        );
+
+                    const videoPaths =
+                        normaliseMediaField(
+                            record.evidence_videos
+                        );
+
+
+                    let photos = [];
+
+                    let videos = [];
+
+
+                    /*
+                     * Only request photographs when
+                     * the record actually contains
+                     * photograph paths.
+                     */
+
+                    if (photoPaths.length > 0) {
+
+                        photos =
+                            await loadPublicMedia(
+                                record.id,
+                                "photos"
+                            );
+
+                    }
+
+
+                    /*
+                     * Only request videos when
+                     * the record actually contains
+                     * video paths.
+                     */
+
+                    if (videoPaths.length > 0) {
+
+                        videos =
+                            await loadPublicMedia(
+                                record.id,
+                                "videos"
+                            );
+
+                    }
+
+
+                    return {
+
+                        id:
+                            record.id,
+
+                        reference:
+                            "Report #" + record.id,
+
+                        category:
+                            displayCategory(
+                                record.incident_type
+                            ),
+
+                        status:
+                            displayStatus(
+                                record.status
+                            ),
+
+                        title:
+                            record.incident_title
+                            || "",
+
+                        statement:
+                            record.description
+                            || "No statement provided.",
+
+                        location:
+                            record.location
+                            || "",
+
+                        date:
+                            record.incident_date
+                            || record.created_at
+                            || "",
+
+                        photos:
+                            photos,
+
+                        videos:
+                            videos
+
+                    };
+
+                })
+
+            );
+
+
+        loadingRecords.style.display =
+            "none";
+
+
+        displayRecords();
+
+
+    } catch (error) {
+
+        console.error(
+            "Abuse and Harm records error:",
+            error
+        );
+
+
+        loadingRecords.style.display =
+            "none";
+
+
+        recordCount.textContent =
+            "The public records could not be loaded.";
+
+
+        const errorBox =
+            document.createElement("div");
+
+        errorBox.className =
+            "error-message";
+
+
+        errorBox.textContent =
+            "Supabase error: " +
+            error.message;
+
+
+        recordResults.appendChild(
+            errorBox
+        );
+
+    }
+
+}
+
+
+/* --------------------------------------------------
+   CREATE MEDIA SECTION
+-------------------------------------------------- */
+
+function createMediaSection(
+    title,
+    mediaItems,
+    type
+) {
+
+    if (
+        !Array.isArray(mediaItems)
+        ||
+        mediaItems.length === 0
+    ) {
+
+        return null;
+
+    }
+
+    const section =
+        document.createElement("div");
+
+    section.className =
+        "record-media-section";
+
+    section.style.marginTop = "22px";
+
+    const heading =
+        document.createElement("h4");
+
+    heading.textContent =
+        title;
+
+    heading.style.color =
+        "#0b3526";
+
+    heading.style.marginBottom =
+        "12px";
+
+    section.appendChild(
+        heading
+    );
+
+    /*
+     * Get the actual media URL.
+     *
+     * Different responses can use different
+     * property names, so we check them safely.
+     */
+
+    function getMediaUrl(item) {
+
+        if (
+            typeof item === "string"
+        ) {
+
+            return item;
+
+        }
+
+        if (!item) {
+            return "";
+        }
+
+        return (
+            item.url
+            ||
+            item.signed_url
+            ||
+            item.signedUrl
+            ||
+            item.public_url
+            ||
+            item.publicUrl
+            ||
+            item.path
+            ||
+            item.file_url
+            ||
+            item.fileUrl
+            ||
+            ""
+        );
+
+    }
+
+    /*
+     * PHOTOGRAPHS
+     */
+
+    if (type === "photos") {
+
+        const gallery =
+            document.createElement("div");
+
+        gallery.className =
+            "record-photo-gallery";
+
+        gallery.style.display =
+            "grid";
+
+        gallery.style.gridTemplateColumns =
+            "repeat(auto-fit, minmax(220px, 1fr))";
+
+        gallery.style.gap =
+            "15px";
+
+        mediaItems.forEach(function(item) {
+
+            const url =
+                getMediaUrl(item);
+
+            if (!url) {
+                return;
+            }
+
+            const image =
+                document.createElement("img");
+
+            image.src =
+                url;
+
+            image.alt =
+                "Approved evidence photograph";
+
+            image.loading =
+                "lazy";
+
+            image.style.width =
+                "100%";
+
+            image.style.maxHeight =
+                "350px";
+
+            image.style.objectFit =
+                "cover";
+
+            image.style.borderRadius =
+                "10px";
+
+            image.style.border =
+                "1px solid #dce6de";
+
+            gallery.appendChild(
+                image
+            );
+
+        });
+
+        if (
+            gallery.children.length > 0
+        ) {
+
+            section.appendChild(
+                gallery
+            );
+
+        }
+
+    }
+
+    /*
+     * VIDEOS
+     */
+
+    if (type === "videos") {
+
+        mediaItems.forEach(function(item) {
+
+            const url =
+                getMediaUrl(item);
+
+            if (!url) {
+                return;
+            }
+
+            const player =
+                document.createElement("video");
+
+            player.controls = true;
+
+            player.preload =
+                "metadata";
+
+            player.playsInline =
+                true;
+
+            player.setAttribute(
+                "controlsList",
+                "nodownload"
+            );
+
+            player.style.width =
+                "100%";
+
+            player.style.maxWidth =
+                "700px";
+
+            player.style.display =
+                "block";
+
+            player.style.marginBottom =
+                "15px";
+
+            player.style.borderRadius =
+                "10px";
+
+            player.style.background =
+                "#000";
+
+            /*
+             * Set the source directly.
+             */
+
+            player.src =
+                url;
+
+            /*
+             * Make sure the browser attempts
+             * to load the video.
+             */
+
+            player.load();
+
+            section.appendChild(
+                player
+            );
+
+        });
+
+    }
+
+    /*
+     * If nothing usable was returned,
+     * don't display an empty media box.
+     */
+
+    if (
+        section.children.length <= 1
+    ) {
+
+        return null;
+
+    }
+
+    return section;
+}
+
+
+/* --------------------------------------------------
+   DISPLAY PUBLIC RECORDS
+-------------------------------------------------- */
+
+function displayRecords() {
+
+    const searchTerm =
+        recordSearch.value
+            .trim()
+            .toLowerCase();
+
+
+    const selectedStatus =
+        recordStatus.value;
+
+
+    const filteredRecords =
+        incidentRecords.filter(
+            function(record) {
+
+                const searchableText = [
+
+                    record.reference,
+
+                    record.category,
+
+                    record.title,
+
+                    record.statement,
+
+                    record.location
+
+                ]
+                    .join(" ")
+                    .toLowerCase();
+
+
+                const matchesSearch =
+                    searchableText.includes(
+                        searchTerm
+                    );
+
+
+                const matchesStatus =
+                    !selectedStatus
+                    ||
+                    record.status === selectedStatus;
+
+
+                return (
+                    matchesSearch
+                    &&
+                    matchesStatus
+                );
+
+            }
+        );
+
+
+    recordResults.innerHTML =
+        "";
+
+
+    recordCount.textContent =
+        filteredRecords.length
+        +
+        (
+            filteredRecords.length === 1
+                ? " public record displayed."
+                : " public records displayed."
+        );
+
+
+    emptyRecords.style.display =
+        filteredRecords.length === 0
+            ? "block"
+            : "none";
+
+
+    filteredRecords.forEach(
+        function(record) {
+
+            const article =
+                document.createElement("article");
+
+            article.className =
+                "card record-card";
+
+
+            /*
+             * RECORD TITLE
+             */
+
+            const heading =
+                document.createElement("h3");
+
+            heading.textContent =
+                record.reference
+                +
+                " — "
+                +
+                record.category;
+
+
+            article.appendChild(
+                heading
+            );
+
+
+            /*
+             * STATUS
+             */
+
+            const status =
+                document.createElement("span");
+
+            status.className =
+                "record-status";
+
+            status.textContent =
+                record.status;
+
+
+            article.appendChild(
+                status
+            );
+
+
+            /*
+             * META INFORMATION
+             */
+
+            const meta =
+                document.createElement("div");
+
+            meta.className =
+                "record-meta";
+
+
+            const categoryMeta =
+                document.createElement("span");
+
+            categoryMeta.textContent =
+                "Category: "
+                +
+                record.category;
+
+
+            meta.appendChild(
+                categoryMeta
+            );
+
+
+            if (record.date) {
+
+                const dateMeta =
+                    document.createElement("span");
+
+
+                const parsedDate =
+                    new Date(
+                        record.date
+                    );
+
+
+                dateMeta.textContent =
+                    "Date: "
+                    +
+                    (
+                        isNaN(
+                            parsedDate.getTime()
+                        )
+                            ? record.date
+                            : parsedDate.toLocaleDateString()
+                    );
+
+
+                meta.appendChild(
+                    dateMeta
+                );
+
+            }
+
+
+            article.appendChild(
+                meta
+            );
+
+
+            /*
+             * INCIDENT TITLE
+             */
+
+            if (record.title) {
+
+                const titleLabel =
+                    document.createElement("h4");
+
+
+                titleLabel.textContent =
+                    "Incident Statement";
+
+
+                titleLabel.style.color =
+                    "#0b3526";
+
+
+                titleLabel.style.marginTop =
+                    "12px";
+
+
+                titleLabel.style.marginBottom =
+                    "7px";
+
+
+                article.appendChild(
+                    titleLabel
+                );
+
+
+                const titleText =
+                    document.createElement("p");
+
+
+                titleText.className =
+                    "record-summary";
+
+
+                titleText.textContent =
+                    record.title;
+
+
+                article.appendChild(
+                    titleText
+                );
+
+            }
+
+
+            /*
+             * MAIN STATEMENT
+             */
+
+            const statementLabel =
+                document.createElement("h4");
+
+
+            statementLabel.textContent =
+                "Statement";
+
+
+            statementLabel.style.color =
+                "#0b3526";
+
+
+            statementLabel.style.marginTop =
+                "15px";
+
+
+            statementLabel.style.marginBottom =
+                "7px";
+
+
+            article.appendChild(
+                statementLabel
+            );
+
+
+            const statement =
+                document.createElement("p");
+
+
+            statement.className =
+                "record-summary";
+
+
+            statement.textContent =
+                record.statement;
+
+
+            article.appendChild(
+                statement
+            );
+
+
+            /*
+             * LOCATION
+             */
+
+            if (record.location) {
+
+                const location =
+                    document.createElement("p");
+
+
+                location.className =
+                    "record-location";
+
+
+                location.textContent =
+                    "Location: "
+                    +
+                    record.location;
+
+
+                article.appendChild(
+                    location
+                );
+
+            }
+
+
+            /*
+             * APPROVED PHOTOGRAPHS
+             */
+
+            const photoSection =
+                createMediaSection(
+                    "Approved Photographs",
+                    record.photos,
+                    "photos"
+                );
+
+
+            if (photoSection) {
+
+                article.appendChild(
+                    photoSection
+                );
+
+            }
+
+
+            /*
+             * APPROVED VIDEOS
+             */
+
+            const videoSection =
+                createMediaSection(
+                    "Approved Videos",
+                    record.videos,
+                    "videos"
+                );
+
+
+            if (videoSection) {
+
+                article.appendChild(
+                    videoSection
+                );
+
+            }
+
+
+            recordResults.appendChild(
+                article
+            );
+
+        }
+    );
+
+}
+
+
+/* --------------------------------------------------
+   SEARCH AND STATUS FILTER
+-------------------------------------------------- */
+
+recordSearch.addEventListener(
+    "input",
+    displayRecords
+);
+
+
+recordStatus.addEventListener(
+    "change",
+    displayRecords
+);
+
+
+/* --------------------------------------------------
+   ADD CONTACT AND EVIDENCE FIELDS
+-------------------------------------------------- */
+
+function addExtraFields(
+    formId,
+    prefix
+) {
+
+    const form =
+        document.getElementById(
+            formId
+        );
+
+
+    const grid =
+        form.querySelector(
+            ".form-grid"
+        );
+
+
+    const contactGroup =
+        document.createElement("div");
+
+
+    contactGroup.className =
+        "form-group";
+
+
+    contactGroup.innerHTML = `
+
+        <label for="${prefix}ReporterName">
+            Your name (optional)
+        </label>
+
+        <input
+            type="text"
+            id="${prefix}ReporterName"
+            placeholder="Your name"
+            autocomplete="name"
+        >
+
+    `;
+
+
+    const emailGroup =
+        document.createElement("div");
+
+
+    emailGroup.className =
+        "form-group";
+
+
+    emailGroup.innerHTML = `
+
+        <label for="${prefix}ReporterEmail">
+            Email address (optional)
+        </label>
+
+        <input
+            type="email"
+            id="${prefix}ReporterEmail"
+            placeholder="Your email address"
+            autocomplete="email"
+        >
+
+    `;
+
+
+    const photoGroup =
+        document.createElement("div");
+
+
+    photoGroup.className =
+        "form-group full-width";
+
+
+    photoGroup.innerHTML = `
+
+        <label for="${prefix}Photos">
+            Upload pictures (optional)
+        </label>
+
+        <input
+            type="file"
+            id="${prefix}Photos"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            multiple
+        >
+
+        <small>
+            Maximum 5 pictures.
+            Each picture must be 10 MB or smaller.
+        </small>
+
+        <p id="${prefix}PhotoList"></p>
+
+    `;
+
+
+    const videoGroup =
+        document.createElement("div");
+
+
+    videoGroup.className =
+        "form-group full-width";
+
+
+    videoGroup.innerHTML = `
+
+        <label for="${prefix}Videos">
+            Upload videos (optional)
+        </label>
+
+        <input
+            type="file"
+            id="${prefix}Videos"
+            accept="video/mp4,video/webm,video/quicktime"
+            multiple
+        >
+
+        <small>
+            Maximum 2 videos.
+            Each video must be 50 MB or smaller.
+        </small>
+
+        <p id="${prefix}VideoList"></p>
+
+    `;
+
+
+    grid.appendChild(
+        contactGroup
+    );
+
+    grid.appendChild(
+        emailGroup
+    );
+
+    grid.appendChild(
+        photoGroup
+    );
+
+    grid.appendChild(
+        videoGroup
+    );
+
+
+    const photoInput =
+        document.getElementById(
+            prefix + "Photos"
+        );
+
+
+    const videoInput =
+        document.getElementById(
+            prefix + "Videos"
+        );
+
+
+    photoInput.addEventListener(
+        "change",
+        function() {
+
+            document.getElementById(
+                prefix + "PhotoList"
+            ).textContent =
+
+                Array.from(
+                    photoInput.files
+                )
+                    .map(
+                        file => file.name
+                    )
+                    .join(", ");
+
+        }
+    );
+
+
+    videoInput.addEventListener(
+        "change",
+        function() {
+
+            document.getElementById(
+                prefix + "VideoList"
+            ).textContent =
+
+                Array.from(
+                    videoInput.files
+                )
+                    .map(
+                        file => file.name
+                    )
+                    .join(", ");
+
+        }
+    );
+
+}
+
+
+addExtraFields(
+    "socialForm",
+    "social"
+);
+
+addExtraFields(
+    "workplaceForm",
+    "workplace"
+);
+
+addExtraFields(
+    "companyForm",
+    "company"
+);
+
+
+/* --------------------------------------------------
+   VALIDATE AND UPLOAD EVIDENCE
+-------------------------------------------------- */
+
+const MAX_VIDEO_SIZE =
+    50 * 1024 * 1024;
+
+
+async function uploadEvidence(
+    prefix,
+    category
+) {
+
+    const photoInput =
+        document.getElementById(
+            prefix + "Photos"
+        );
+
+
+    const videoInput =
+        document.getElementById(
+            prefix + "Videos"
+        );
+
+
+    const photos =
+        Array.from(
+            photoInput.files
+        );
+
+
+    const videos =
+        Array.from(
+            videoInput.files
+        );
+
+
+    if (photos.length > 5) {
+
+        throw new Error(
+            "You can upload a maximum of 5 pictures."
+        );
+
+    }
+
+
+    if (videos.length > 2) {
+
+        throw new Error(
+            "You can upload a maximum of 2 videos."
+        );
+
+    }
+
+
+    const maxPhotoSize =
+        10 * 1024 * 1024;
+
+
+    const allowedPhotoTypes = [
+
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+        "image/gif"
+
+    ];
+
+
+    const allowedVideoTypes = [
+
+        "video/mp4",
+        "video/webm",
+        "video/quicktime"
+
+    ];
+
+
+    for (const file of photos) {
+
+        if (
+            !allowedPhotoTypes.includes(
+                file.type
+            )
+        ) {
+
+            throw new Error(
+                "One of your pictures has an unsupported file type."
+            );
+
+        }
+
+
+        if (
+            file.size >
+            maxPhotoSize
+        ) {
+
+            throw new Error(
+                "Each picture must be 10 MB or smaller."
+            );
+
+        }
+
+    }
+
+
+    for (const file of videos) {
+
+        if (
+            !allowedVideoTypes.includes(
+                file.type
+            )
+        ) {
+
+            throw new Error(
+                "One of your videos has an unsupported file type."
+            );
+
+        }
+
+
+        if (
+            file.size >
+            MAX_VIDEO_SIZE
+        ) {
+
+            throw new Error(
+                "Each video must be 50 MB or smaller."
+            );
+
+        }
+
+    }
+
+
+    const photoPaths = [];
+
+    const videoPaths = [];
+
+    const allFiles =
+        [
+            ...photos,
+            ...videos
+        ];
+
+
+    for (
+        const file of allFiles
+    ) {
+
+        const safeFileName =
+            file.name.replace(
+                /[^a-zA-Z0-9.-]/g,
+                ""
+            );
+
+
+        const filePath =
+            "abuse-and-harm/" +
+            category +
+            "/" +
+            Date.now() +
+            "-" +
+            Math.random()
+                .toString(36)
+                .slice(2) +
+            "-" +
+            safeFileName;
+
+
+        const { error } =
+            await supabaseClient
+                .storage
+                .from("evidence-files")
+                .upload(
+                    filePath,
+                    file
+                );
+
+
+        if (error) {
+
+            throw new Error(
+                "Evidence upload failed: " +
+                error.message
+            );
+
+        }
+
+
+        if (
+            file.type.startsWith(
+                "image/"
+            )
+        ) {
+
+            photoPaths.push(
+                filePath
+            );
+
+        }
+
+
+        if (
+            file.type.startsWith(
+                "video/"
+            )
+        ) {
+
+            videoPaths.push(
+                filePath
+            );
+
+        }
+
+    }
+
+
+    return {
+
+        photoPaths,
+        videoPaths,
+
+        fileNames:
+            allFiles.map(
+                file => file.name
+            )
+
+    };
+
+}
+
+
+/* --------------------------------------------------
+   SUBMIT ABUSE REPORT
+-------------------------------------------------- */
+
+async function submitAbuseReport(
+    options
+) {
+
+    const {
+
+        formId,
+        prefix,
+        category,
+        title,
+        description,
+        location,
+        date
+
+    } = options;
+
+
+    const form =
+        document.getElementById(
+            formId
+        );
+
+
+    const message =
+        form.querySelector(
+            ".form-message"
+        );
+
+
+    const button =
+        form.querySelector(
+            'button[type="submit"]'
+        );
+
+
+    message.style.color =
+        "#176b45";
+
+
+    message.textContent =
+        "Submitting your report. Please wait...";
+
+
+    button.disabled =
+        true;
+
+
+    button.textContent =
+        "Submitting...";
+
+
+    try {
+
+        if (
+            !window.supabaseClient
+        ) {
+
+            throw new Error(
+                "The Supabase connection is unavailable."
+            );
+
+        }
+
+
+        const reporterName =
+            document.getElementById(
+                prefix +
+                "ReporterName"
+            )
+                .value
+                .trim();
+
+
+        const reporterEmail =
+            document.getElementById(
+                prefix +
+                "ReporterEmail"
+            )
+                .value
+                .trim();
+
+
+        const evidence =
+            await uploadEvidence(
+                prefix,
+                category
+            );
+
+
+        const reportData = {
+
+            incident_type:
+                category,
+
+            incident_title:
+                title,
+
+            description:
+                description,
+
+            location:
+                location || null,
+
+            incident_date:
+                date || null,
+
+            reporter_name:
+                reporterName || null,
+
+            contact_email:
+                reporterEmail || null,
+
+            evidence_photos:
+                evidence.photoPaths,
+
+            evidence_videos:
+                evidence.videoPaths,
+
+            evidence_files:
+                evidence.fileNames,
+
+            status:
+                "under review",
+
+            is_public:
+                false
+
+        };
+
+
+        const { error } =
+            await supabaseClient
+                .from("evidence_reports")
+                .insert([
+                    reportData
+                ]);
+
+
+        if (error) {
+            throw error;
+        }
+
+
+        message.textContent =
+            "Your report has been submitted successfully. " +
+            "It is private and awaiting review.";
+
+
+        message.style.color =
+            "#176b45";
+
+
+        form.reset();
+
+
+        document.getElementById(
+            prefix +
+            "PhotoList"
+        ).textContent = "";
+
+
+        document.getElementById(
+            prefix +
+            "VideoList"
+        ).textContent = "";
+
+
+    } catch (error) {
+
+        console.error(
+            "Report submission error:",
+            error
+        );
+
+
+        message.style.color =
+            "#a33b3b";
+
+
+        message.textContent =
+            "Your report could not be submitted: " +
+            error.message +
+            ". If evidence uploaded before this error, some files may remain in storage.";
+
+    } finally {
+
+        button.disabled =
+            false;
+
+
+        button.textContent =
+            "Submit Report";
+
+    }
+
+}
+
+
+/* --------------------------------------------------
+   SOCIAL ABUSE
+-------------------------------------------------- */
+
+document.getElementById(
+    "socialForm"
+).addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const type =
+            document.getElementById(
+                "socialType"
+            ).value;
+
+
+        const details =
+            document.getElementById(
+                "socialDetails"
+            )
+                .value
+                .trim();
+
+
+        const location =
+            document.getElementById(
+                "socialLocation"
+            )
+                .value
+                .trim();
+
+
+        const date =
+            document.getElementById(
+                "socialDate"
+            ).value;
+
+
+        submitAbuseReport({
+
+            formId:
+                "socialForm",
+
+            prefix:
+                "social",
+
+            category:
+                "social-abuse",
+
+            title:
+                "Social Abuse — " +
+                type,
+
+            description:
+                details,
+
+            location:
+                location,
+
+            date:
+                date
+
+        });
+
+    }
+);
+
+
+/* --------------------------------------------------
+   WORKPLACE ABUSE
+-------------------------------------------------- */
+
+document.getElementById(
+    "workplaceForm"
+).addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const type =
+            document.getElementById(
+                "workplaceType"
+            ).value;
+
+
+        const details =
+            document.getElementById(
+                "workplaceDetails"
+            )
+                .value
+                .trim();
+
+
+        const organisation =
+            document.getElementById(
+                "workplaceCompany"
+            )
+                .value
+                .trim();
+
+
+        const date =
+            document.getElementById(
+                "workplaceDate"
+            ).value;
+
+
+        const description =
+
+            (
+                organisation
+                    ? "Organisation: " +
+                      organisation +
+                      "\n\n"
+                    : ""
+            )
+
+            +
+
+            details;
+
+
+        submitAbuseReport({
+
+            formId:
+                "workplaceForm",
+
+            prefix:
+                "workplace",
+
+            category:
+                "workplace-abuse",
+
+            title:
+                "Workplace Abuse — " +
+                type,
+
+            description:
+                description,
+
+            location:
+                null,
+
+            date:
+                date
+
+        });
+
+    }
+);
+
+
+/* --------------------------------------------------
+   COMPANY MISCONDUCT
+-------------------------------------------------- */
+
+document.getElementById(
+    "companyForm"
+).addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const company =
+            document.getElementById(
+                "companyName"
+            )
+                .value
+                .trim();
+
+
+        const industry =
+            document.getElementById(
+                "companyIndustry"
+            )
+                .value
+                .trim();
+
+
+        const concern =
+            document.getElementById(
+                "companyConcern"
+            ).value;
+
+
+        const details =
+            document.getElementById(
+                "companyDetails"
+            )
+                .value
+                .trim();
+
+
+        const date =
+            document.getElementById(
+                "companyDate"
+            ).value;
+
+
+        const description =
+
+            "Company: " +
+            company +
+
+            (
+                industry
+                    ? "\nIndustry: " +
+                      industry
+                    : ""
+            )
+
+            +
+
+            "\nConcern: " +
+            concern +
+
+            "\n\nDetails:\n" +
+            details;
+
+
+        submitAbuseReport({
+
+            formId:
+                "companyForm",
+
+            prefix:
+                "company",
+
+            category:
+                "company-misconduct",
+
+            title:
+                "Company Concern — " +
+                company,
+
+            description:
+                description,
+
+            location:
+                null,
+
+            date:
+                date
+
+        });
+
+    }
+);
+
+
+/* --------------------------------------------------
+   APPEALS
+   REMAINS DEMONSTRATION-ONLY
+-------------------------------------------------- */
+
+document.getElementById(
+    "appealForm"
+).addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const message =
+            this.querySelector(
+                ".form-message"
+            );
+
+
+        message.textContent =
+            "Appeals are not connected yet. Nothing has been sent or saved.";
+
+    }
+);
+
+
+/* --------------------------------------------------
+   START
+-------------------------------------------------- */
+
+loadIncidentRecords();
+
+</script>
+
+</body>
+</html>

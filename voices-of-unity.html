@@ -1,0 +1,2772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voices of Unity | Unity Watch Nigeria</title>
+
+<meta name="description" content="Voices of Unity celebrates cooperation, reconciliation, community achievements, and the people building bridges across Nigeria's diverse communities.">
+
+<style>
+:root {
+--green: #176b45;
+--dark-green: #0b3526;
+--light-green: #eaf5ee;
+--gold: #d9ad52;
+--background: #f5f7f5;
+--text: #202923;
+--muted: #66736b;
+--white: #ffffff;
+--border: #e0e7e1;
+--cream: #fbf8ef;
+--rust: #a94f32;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 100px;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: var(--background);
+color: var(--text);
+line-height: 1.7;
+}
+
+a {
+text-decoration: none;
+}
+
+/* ================================
+HEADER
+================================= */
+
+.site-header {
+position: sticky;
+top: 0;
+z-index: 1000;
+background: rgba(251, 248, 239, 0.97);
+border-bottom: 1px solid #e8dfca;
+box-shadow: 0 3px 12px rgba(11, 53, 38, 0.05);
+backdrop-filter: blur(10px);
+}
+
+.nav-container {
+width: 86%;
+max-width: 1180px;
+min-height: 82px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 12px;
+color: var(--dark-green);
+flex-shrink: 0;
+}
+
+.brand-mark {
+width: 44px;
+height: 44px;
+flex: 0 0 44px;
+display: flex;
+justify-content: center;
+align-items: center;
+background: var(--green);
+color: var(--gold);
+border-bottom: 3px solid var(--gold);
+border-radius: 10px;
+font-size: 21px;
+font-weight: 900;
+line-height: 1;
+}
+
+.brand-copy {
+display: flex;
+flex-direction: column;
+line-height: 1.3;
+}
+
+.brand-name {
+color: #234631;
+font-size: 15px;
+font-weight: 800;
+letter-spacing: 0.1px;
+}
+
+.brand-tagline {
+margin-top: 3px;
+color: var(--rust);
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 1.5px;
+}
+
+.menu-toggle {
+display: none;
+background: transparent;
+border: 1px solid var(--gold);
+border-radius: 5px;
+color: var(--dark-green);
+font-size: 24px;
+padding: 4px 10px;
+cursor: pointer;
+}
+
+.nav-links {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.nav-links a {
+color: #34443a;
+font-size: 13px;
+font-weight: 600;
+white-space: nowrap;
+transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+color: var(--green);
+}
+
+.nav-links .nav-button {
+padding: 10px 15px;
+border-radius: 5px;
+font-size: 12px;
+font-weight: 700;
+}
+
+.nav-links .nav-signin {
+border: 1px solid var(--green);
+color: var(--green);
+}
+
+.nav-links .nav-signup {
+background: var(--green);
+border: 1px solid var(--green);
+color: var(--white);
+}
+
+.nav-links .nav-signup:hover {
+background: var(--dark-green);
+color: var(--white);
+}
+
+/* ================================
+HERO
+================================= */
+
+.hero {
+position: relative;
+overflow: hidden;
+padding: 95px 7% 125px;
+color: var(--white);
+background:
+radial-gradient(
+ellipse at 82% 35%,
+rgba(217, 173, 82, 0.24),
+transparent 28%
+),
+radial-gradient(
+ellipse at 100% 100%,
+rgba(73, 145, 100, 0.30),
+transparent 45%
+),
+linear-gradient(
+120deg,
+#082c20 0%,
+#176b45 55%,
+#0b3526 100%
+);
+}
+
+.hero::before,
+.hero::after {
+content: "";
+position: absolute;
+border: 1px solid rgba(255, 255, 255, 0.10);
+border-radius: 50%;
+pointer-events: none;
+}
+
+.hero::before {
+width: 430px;
+height: 430px;
+right: -110px;
+top: -160px;
+}
+
+.hero::after {
+width: 300px;
+height: 300px;
+right: -45px;
+top: -95px;
+}
+
+.hero-content {
+position: relative;
+z-index: 1;
+max-width: 790px;
+}
+
+.eyebrow {
+display: inline-block;
+color: var(--gold);
+font-size: 12px;
+font-weight: 800;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 17px;
+}
+
+.hero h1 {
+font-size: clamp(36px, 5vw, 58px);
+line-height: 1.12;
+margin-bottom: 23px;
+font-weight: 800;
+}
+
+.hero h1 span {
+color: var(--gold);
+}
+
+.hero p {
+max-width: 700px;
+color: #e0eee5;
+font-size: 17px;
+margin-bottom: 30px;
+}
+
+.hero-buttons {
+display: flex;
+flex-wrap: wrap;
+gap: 13px;
+}
+
+.btn {
+display: inline-block;
+padding: 13px 22px;
+border-radius: 5px;
+font-size: 14px;
+font-weight: 800;
+transition: 0.2s ease;
+}
+
+.btn-gold {
+background: var(--gold);
+color: var(--dark-green);
+}
+
+.btn-gold:hover {
+background: #edc976;
+transform: translateY(-2px);
+}
+
+.btn-outline {
+color: var(--white);
+border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.btn-outline:hover {
+background: rgba(255, 255, 255, 0.1);
+}
+
+.container {
+width: 86%;
+max-width: 1180px;
+margin: 0 auto;
+}
+
+/* ================================
+INTRODUCTORY CARDS
+================================= */
+
+.stats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+margin-top: -48px;
+position: relative;
+z-index: 2;
+}
+
+.stat-card {
+background: var(--white);
+padding: 25px;
+border: 1px solid var(--border);
+border-radius: 8px;
+box-shadow: 0 8px 25px rgba(11, 53, 38, 0.06);
+}
+
+.stat-card h3 {
+color: var(--green);
+font-size: 17px;
+margin-bottom: 8px;
+}
+
+.stat-card p {
+color: var(--muted);
+font-size: 14px;
+}
+
+/* ================================
+GENERAL SECTIONS
+================================= */
+
+.section {
+padding: 70px 0;
+}
+
+.section-heading {
+margin-bottom: 28px;
+}
+
+.section-heading .eyebrow {
+color: var(--green);
+margin-bottom: 8px;
+}
+
+.section-heading h2 {
+color: var(--dark-green);
+font-size: clamp(27px, 3vw, 36px);
+line-height: 1.25;
+margin-bottom: 12px;
+}
+
+.section-heading p {
+max-width: 760px;
+color: var(--muted);
+font-size: 15px;
+}
+
+/* ================================
+FEATURED GOOD NEWS
+================================= */
+
+.featured-section {
+padding: 70px 0 30px;
+}
+
+.featured-card {
+display: grid;
+grid-template-columns: 1.15fr 1fr;
+min-height: 360px;
+background: var(--white);
+border: 1px solid var(--border);
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(11, 53, 38, 0.07);
+}
+
+.featured-media {
+min-height: 360px;
+background:
+linear-gradient(
+135deg,
+#0b3526 0%,
+#176b45 60%,
+#42664f 100%
+);
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+overflow: hidden;
+}
+
+.featured-media::before {
+content: "GOOD NEWS";
+position: absolute;
+top: 22px;
+left: 24px;
+color: rgba(255, 255, 255, 0.18);
+font-size: 13px;
+font-weight: 800;
+letter-spacing: 3px;
+z-index: 2;
+pointer-events: none;
+}
+
+.featured-placeholder {
+width: 76px;
+height: 76px;
+border-radius: 50%;
+border: 1px solid rgba(217, 173, 82, 0.7);
+display: flex;
+justify-content: center;
+align-items: center;
+color: var(--gold);
+font-size: 29px;
+font-weight: 400;
+}
+
+.featured-media img,
+.featured-media video {
+width: 100%;
+height: 100%;
+min-height: 360px;
+object-fit: cover;
+display: block;
+}
+
+.featured-content {
+padding: 38px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.featured-label {
+color: var(--green);
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 1.7px;
+text-transform: uppercase;
+margin-bottom: 12px;
+}
+
+.featured-content h2 {
+color: var(--dark-green);
+font-size: 29px;
+line-height: 1.3;
+margin-bottom: 15px;
+}
+
+.featured-content p {
+color: var(--muted);
+font-size: 14px;
+margin-bottom: 20px;
+}
+
+.featured-meta {
+display: flex;
+flex-wrap: wrap;
+gap: 16px;
+color: var(--muted);
+font-size: 12px;
+}
+
+/* ================================
+SEARCH AND FILTERS
+================================= */
+
+.filter-panel {
+background: var(--white);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 22px;
+margin-bottom: 25px;
+}
+
+.filter-panel label {
+display: block;
+color: var(--dark-green);
+font-size: 13px;
+font-weight: 700;
+margin-bottom: 8px;
+}
+
+.filter-controls {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 15px;
+}
+
+.filter-controls input,
+.filter-controls select {
+width: 100%;
+padding: 13px;
+border: 1px solid var(--border);
+border-radius: 5px;
+background: var(--white);
+color: var(--text);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+}
+
+.filter-controls input:focus,
+.filter-controls select:focus {
+outline: 2px solid rgba(23, 107, 69, 0.2);
+border-color: var(--green);
+}
+
+/* ================================
+GOOD NEWS STORY CARDS
+================================= */
+
+.story-list {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+
+.story-card {
+background: var(--white);
+border: 1px solid var(--border);
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 8px 24px rgba(11, 53, 38, 0.07);
+transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.story-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 14px 32px rgba(11, 53, 38, 0.13);
+}
+
+.story-media {
+height: 190px;
+background:
+linear-gradient(
+135deg,
+#eaf5ee,
+#d7e8dc
+);
+display: flex;
+justify-content: center;
+align-items: center;
+color: var(--green);
+position: relative;
+overflow: hidden;
+}
+
+.story-media img,
+.story-media video {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+.story-media video {
+background: #0b3526;
+}
+
+.story-media-placeholder {
+width: 58px;
+height: 58px;
+border: 1px solid rgba(23, 107, 69, 0.45);
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+color: var(--green);
+font-size: 24px;
+}
+
+.story-content {
+padding: 24px;
+}
+
+.story-category {
+display: inline-block;
+color: var(--green);
+background: var(--light-green);
+padding: 5px 10px;
+border-radius: 20px;
+font-size: 11px;
+font-weight: 800;
+margin-bottom: 14px;
+}
+
+.story-card h3 {
+color: var(--dark-green);
+font-size: 20px;
+line-height: 1.35;
+margin-bottom: 10px;
+}
+
+.story-card p {
+color: var(--muted);
+font-size: 14px;
+margin-bottom: 17px;
+}
+
+.story-footer {
+border-top: 1px solid var(--border);
+padding-top: 13px;
+display: flex;
+justify-content: space-between;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.story-footer span {
+color: var(--muted);
+font-size: 12px;
+}
+
+/* ================================
+EMPTY STATE
+================================= */
+
+.empty-state {
+grid-column: 1 / -1;
+text-align: center;
+padding: 55px 30px;
+background: linear-gradient(135deg, #ffffff, #eaf5ee);
+border: 1px solid #d7e8dc;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(11, 53, 38, 0.06);
+}
+
+.empty-state h3 {
+color: var(--dark-green);
+font-size: 22px;
+margin-bottom: 12px;
+}
+
+.empty-state p {
+color: var(--muted);
+font-size: 14px;
+max-width: 650px;
+margin: 0 auto 20px;
+}
+
+/* ================================
+GREEN AND GOLD PLUS BUTTON
+================================= */
+
+.empty-symbol {
+width: 68px;
+height: 68px;
+margin: 0 auto 22px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+background: linear-gradient(135deg, #176b45, #0b3526);
+color: #d9ad52;
+font-size: 36px;
+font-weight: 400;
+box-shadow: 0 8px 20px rgba(11, 53, 38, 0.22);
+border: 2px solid rgba(217, 173, 82, 0.65);
+transition: transform 0.2s ease;
+}
+
+.empty-symbol:hover {
+transform: translateY(-2px);
+}
+
+/* ================================
+REPORT GOOD NEWS
+================================= */
+
+.share-section {
+background: var(--light-green);
+border-top: 1px solid var(--border);
+border-bottom: 1px solid var(--border);
+padding: 70px 0;
+}
+
+.share-panel {
+display: grid;
+grid-template-columns: 1.4fr 0.8fr;
+gap: 35px;
+align-items: center;
+background: var(--white);
+border: 1px solid var(--border);
+border-radius: 12px;
+padding: 38px;
+box-shadow: 0 8px 25px rgba(11, 53, 38, 0.06);
+}
+
+.share-copy .eyebrow {
+color: var(--green);
+margin-bottom: 9px;
+}
+
+.share-copy h2 {
+color: var(--dark-green);
+font-size: 30px;
+line-height: 1.25;
+margin-bottom: 14px;
+}
+
+.share-copy p {
+color: var(--muted);
+font-size: 15px;
+max-width: 700px;
+}
+
+.share-action {
+display: flex;
+justify-content: flex-end;
+}
+
+.share-action .btn {
+text-align: center;
+}
+
+/* ================================
+COMMUNITY HIGHLIGHTS
+================================= */
+
+.highlight-section {
+background: var(--light-green);
+padding: 65px 0;
+border-top: 1px solid var(--border);
+border-bottom: 1px solid var(--border);
+}
+
+.highlight-grid {
+display: grid;
+grid-template-columns: 1.2fr 1fr;
+gap: 35px;
+align-items: start;
+}
+
+.highlight-copy h2 {
+color: var(--dark-green);
+font-size: 32px;
+line-height: 1.25;
+margin-bottom: 17px;
+}
+
+.highlight-copy h3 {
+color: var(--dark-green);
+font-size: 22px;
+margin-bottom: 12px;
+}
+
+.highlight-copy p {
+color: var(--muted);
+font-size: 15px;
+margin-bottom: 18px;
+}
+
+.notice {
+background: #fff9eb;
+border-left: 4px solid var(--gold);
+padding: 17px 20px;
+margin-top: 25px;
+border-radius: 4px;
+color: #62502a;
+font-size: 13px;
+}
+
+.notice p {
+margin-top: 12px;
+}
+
+/* ================================
+FOOTER
+================================= */
+
+footer {
+background: var(--dark-green);
+color: #d9e7dd;
+padding: 35px 7%;
+}
+
+.footer-content {
+display: flex;
+justify-content: space-between;
+gap: 25px;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.footer-brand {
+color: var(--white);
+font-size: 17px;
+font-weight: 800;
+margin-bottom: 8px;
+}
+
+.footer-brand span {
+color: var(--gold);
+}
+
+.footer-content p {
+font-size: 12px;
+color: #c3d5c9;
+}
+
+.footer-links {
+display: flex;
+gap: 18px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #e4eee7;
+font-size: 13px;
+}
+
+.footer-links a:hover {
+color: var(--gold);
+}
+
+/* ================================
+TABLET AND MOBILE
+================================= */
+
+@media (max-width: 1100px) {
+.nav-container {
+width: 90%;
+}
+
+.nav-links {
+gap: 12px;
+}
+
+.nav-links a {
+font-size: 12px;
+}
+
+.nav-links .nav-button {
+padding: 9px 11px;
+}
+}
+
+@media (max-width: 760px) {
+.nav-container {
+width: 90%;
+min-height: 72px;
+position: relative;
+}
+
+.brand-name {
+font-size: 15px;
+}
+
+.brand-tagline {
+font-size: 9px;
+letter-spacing: 1.2px;
+}
+
+.menu-toggle {
+display: block;
+}
+
+.nav-links {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+padding: 15px;
+background: var(--cream);
+border: 1px solid #e8dfca;
+box-shadow: 0 10px 20px rgba(11, 53, 38, 0.10);
+flex-direction: column;
+align-items: stretch;
+gap: 0;
+}
+
+.nav-links.open {
+display: flex;
+}
+
+.nav-links a {
+display: block;
+padding: 12px 8px;
+font-size: 14px;
+white-space: normal;
+}
+
+.nav-links .nav-button {
+margin-top: 5px;
+text-align: center;
+}
+
+.hero {
+padding: 65px 7% 90px;
+}
+
+.container {
+width: 90%;
+}
+
+.stats {
+grid-template-columns: 1fr;
+margin-top: -35px;
+gap: 12px;
+}
+
+.featured-card,
+.filter-controls,
+.story-list,
+.highlight-grid,
+.share-panel {
+grid-template-columns: 1fr;
+}
+
+.featured-media {
+min-height: 260px;
+}
+
+.featured-media img,
+.featured-media video {
+min-height: 260px;
+}
+
+.featured-content {
+padding: 28px;
+}
+
+.share-action {
+justify-content: flex-start;
+}
+
+.section {
+padding: 50px 0;
+}
+
+.featured-section {
+padding: 50px 0 20px;
+}
+
+.highlight-section,
+.share-section {
+padding: 50px 0;
+}
+}
+
+@media (max-width: 400px) {
+.brand-name {
+font-size: 13px;
+}
+
+.brand-tagline {
+font-size: 8px;
+letter-spacing: 1px;
+}
+
+.brand-mark {
+width: 40px;
+height: 40px;
+flex-basis: 40px;
+font-size: 20px;
+}
+
+.brand {
+gap: 9px;
+}
+
+.hero h1 {
+font-size: 36px;
+}
+
+.featured-content h2 {
+font-size: 25px;
+}
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<!-- ================================
+HEADER
+================================= -->
+
+<header class="site-header">
+<div class="nav-container">
+
+<a class="brand" href="index.html" aria-label="Unity Watch Nigeria homepage">
+
+<div class="brand-mark" aria-hidden="true">
+U
+</div>
+
+<div class="brand-copy">
+<div class="brand-name">
+Unity Watch Nigeria
+</div>
+
+<span class="brand-tagline">
+Stronger Together
+</span>
+</div>
+
+</a>
+
+<button
+class="menu-toggle"
+id="menuToggle"
+type="button"
+aria-label="Open navigation menu"
+aria-controls="mainNavigation"
+aria-expanded="false"
+>☰</button>
+
+<nav
+class="nav-links"
+id="mainNavigation"
+aria-label="Main navigation"
+>
+
+<a href="index.html">Home</a>
+
+<a href="categories.html">Categories</a>
+
+<a href="voices-of-unity.html">Voices of Unity</a>
+
+<a href="index.html#spotlight">Spotlight</a>
+
+<a href="index.html#events">Events</a>
+
+</nav>
+
+</div>
+</header>
+
+
+<!-- ================================
+HERO
+================================= -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+One Nation • Many Voices • Shared Future
+</div>
+
+<h1>
+Voices of <span>Unity</span>
+</h1>
+
+<p>
+Beyond our differences are stories of kindness, cooperation,
+courage, and shared humanity. This is a space dedicated to
+highlighting people and communities working together to
+build understanding and strengthen peaceful coexistence
+across Nigeria.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#stories" class="btn btn-gold">
+Explore Good News
+</a>
+
+<a href="#share" class="btn btn-outline">
+Report Good News
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- ================================
+INTRODUCTORY CARDS
+================================= -->
+
+<div class="container">
+
+<section class="stats">
+
+<div class="stat-card">
+
+<h3>Shared Humanity</h3>
+
+<p>
+Stories that remind us that dignity, compassion,
+and kindness cross every boundary.
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Community Action</h3>
+
+<p>
+Highlighting people who work together to improve
+lives and solve shared problems.
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Hope for Tomorrow</h3>
+
+<p>
+Recognising constructive efforts that encourage
+trust, dialogue, and peaceful coexistence.
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- ================================
+FEATURED GOOD NEWS
+================================= -->
+
+<section class="featured-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Featured Good News
+</div>
+
+<h2>
+Stories Worth Sharing
+</h2>
+
+<p>
+Approved stories, photographs, and videos highlighting
+constructive actions and positive contributions from
+people and communities across Nigeria will appear here.
+</p>
+
+</div>
+
+
+<div class="featured-card">
+
+<div class="featured-media" id="featuredMedia">
+
+<div class="featured-placeholder">
++
+</div>
+
+</div>
+
+
+<div class="featured-content" id="featuredContent">
+
+<div class="featured-label">
+Awaiting Approved Feature
+</div>
+
+<h2>
+Good News From Our Communities
+</h2>
+
+<p>
+This space will feature a carefully reviewed story
+about people working together, helping others,
+encouraging reconciliation, protecting dignity,
+or making a constructive contribution to their
+community.
+</p>
+
+<div class="featured-meta">
+
+<span>Nigeria</span>
+
+<span>Community &amp; Unity</span>
+
+<span>Verified submissions will appear here</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+GOOD NEWS STORIES
+================================= -->
+
+<section class="section" id="stories">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Good News Records
+</div>
+
+<h2>
+Discover the Good We Share
+</h2>
+
+<p>
+Unity is built through everyday actions: neighbours
+helping neighbours, communities solving problems
+together, young people learning from one another,
+and individuals choosing understanding over division.
+</p>
+
+</div>
+
+
+<!-- SEARCH AND FILTERS -->
+
+<div class="filter-panel">
+
+<div class="filter-controls">
+
+<div>
+
+<label for="storySearch">
+Search good news
+</label>
+
+<input
+type="search"
+id="storySearch"
+placeholder="Search stories, locations or themes..."
+>
+
+</div>
+
+
+<div>
+
+<label for="storyCategory">
+Story category
+</label>
+
+<select id="storyCategory">
+
+<option value="all">
+All categories
+</option>
+
+<option value="community">
+Community Action
+</option>
+
+<option value="reconciliation">
+Reconciliation
+</option>
+
+<option value="youth">
+Youth &amp; Education
+</option>
+
+<option value="humanity">
+Acts of Kindness
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STORY COLLECTION -->
+
+<div class="story-list" id="storyList">
+
+<div class="empty-state" id="emptyState">
+
+<a
+href="categories.html"
+class="empty-symbol"
+aria-label="Explore our categories"
+title="Explore our categories"
+>+</a>
+
+<h3>
+Good News Is Worth Recording
+</h3>
+
+<p>
+Our public collection is being prepared.
+Approved stories, photographs, and videos
+about positive contributions and acts of unity
+will appear here as they are reviewed.
+</p>
+
+<a
+href="share-story.html"
+class="btn btn-gold"
+>
+Report Good News
+</a>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+<strong>Our commitment:</strong>
+
+Stories published here should be handled respectfully
+and responsibly. We will not invent stories, fabricate
+quotations, or identify people without appropriate
+justification and consent.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+REPORT GOOD NEWS
+================================= -->
+
+<section class="share-section" id="share">
+
+<div class="container">
+
+<div class="share-panel">
+
+<div class="share-copy">
+
+<div class="eyebrow">
+Your Community, Your Voice
+</div>
+
+<h2>
+Know Someone Doing Good?
+</h2>
+
+<p>
+Good things happen every day across Nigeria.
+If you know about an act of kindness, community
+service, reconciliation, cooperation, courage,
+or another constructive contribution, tell us
+about it. Your submission will be reviewed before
+anything is published publicly.
+</p>
+
+</div>
+
+
+<div class="share-action">
+
+<a
+href="share-story.html"
+class="btn btn-gold"
+>
+Report Good News
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+COMMUNITY HIGHLIGHTS
+================================= -->
+
+<section class="highlight-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+The Good We Share
+</div>
+
+<h2>
+Recognising the Good in Our Communities
+</h2>
+
+<p>
+Across Nigeria, people from different backgrounds are
+making positive contributions to society. From religious
+leaders who preach peace to teachers who inspire students,
+and ordinary citizens who demonstrate honesty and kindness,
+positive change begins with people choosing to do good.
+</p>
+
+</div>
+
+
+<div class="highlight-grid">
+
+<div class="highlight-copy">
+
+<div class="eyebrow">
+Faith That Builds Bridges
+</div>
+
+<h3>
+Leadership That Inspires Peace
+</h3>
+
+<p>
+We recognise constructive contributions from pastors,
+priests, imams, traditional leaders, and people of
+different beliefs who encourage compassion, honesty,
+peaceful coexistence, and respect for human dignity.
+</p>
+
+<p>
+Our focus is not on titles, religious affiliation,
+or popularity. We are interested in positive messages,
+meaningful actions, and contributions that help people
+live together in peace.
+</p>
+
+</div>
+
+
+<div class="highlight-copy">
+
+<div class="eyebrow">
+Character in Action
+</div>
+
+<h3>
+Honesty, Kindness and Service
+</h3>
+
+<p>
+Goodness is not limited to people in positions of
+influence. It can be found in students who stand for
+honesty, teachers who support their learners, workers
+who act with integrity, neighbours who show kindness,
+and citizens who help others without expecting a reward.
+</p>
+
+<p>
+We aim to highlight credible examples of integrity,
+compassion, courage, responsibility, and service
+to the community.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+<strong>
+Recognition Is Not a Verdict:
+</strong>
+
+Being featured on Unity Watch Nigeria does not mean that
+someone is better than everyone else. Equally, a person's
+absence from our platform must never be taken as evidence
+that they are dishonest, unkind, or a bad person.
+
+<p>
+Many people do good things quietly and may never receive
+public recognition. Our stories represent selected,
+constructive contributions supported by appropriate
+information. They are not a complete list of every good
+person in Nigeria, nor are they a declaration that anyone
+is perfect.
+</p>
+
+<strong>
+We highlight positive contributions to inspire others,
+not to judge the worth of individuals.
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================================
+FOOTER
+================================= -->
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+
+<div class="footer-brand">
+UNITY WATCH <span>NIGERIA</span>
+</div>
+
+<p>
+Promoting accountability, dignity, and peaceful coexistence.
+</p>
+
+<p>
+&copy;
+<span id="currentYear"></span>
+Unity Watch Nigeria.
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About Us</a>
+
+<a href="policy.html">Our Policy</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="report.html">Report a Concern</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ================================
+JAVASCRIPT
+================================= -->
+
+<script>
+
+// ==========================================
+// SUPABASE CONNECTION
+// ==========================================
+
+const SUPABASE_URL =
+"https://akeuqofykmhzhetpaxdd.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+"sb_publishable_1gdEBPvJW6x2ZsMQNCgKDw_SP3R5Njp";
+
+const supabaseClient =
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_PUBLISHABLE_KEY
+);
+
+
+// ==========================================
+// CURRENT YEAR
+// ==========================================
+
+document.getElementById("currentYear").textContent =
+new Date().getFullYear();
+
+
+// ==========================================
+// MOBILE NAVIGATION
+// ==========================================
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const mainNavigation =
+document.getElementById("mainNavigation");
+
+menuToggle.addEventListener("click", function () {
+
+const isOpen =
+mainNavigation.classList.toggle("open");
+
+menuToggle.setAttribute(
+"aria-expanded",
+String(isOpen)
+);
+
+menuToggle.setAttribute(
+"aria-label",
+isOpen
+? "Close navigation menu"
+: "Open navigation menu"
+);
+
+menuToggle.textContent =
+isOpen ? "✕" : "☰";
+
+});
+
+
+mainNavigation
+.querySelectorAll("a")
+.forEach(function (link) {
+
+link.addEventListener("click", function () {
+
+mainNavigation.classList.remove("open");
+
+menuToggle.setAttribute(
+"aria-expanded",
+"false"
+);
+
+menuToggle.setAttribute(
+"aria-label",
+"Open navigation menu"
+);
+
+menuToggle.textContent = "☰";
+
+});
+
+});
+
+
+// ==========================================
+// GOOD NEWS / SUPABASE
+// ==========================================
+
+function getField(row, names) {
+
+for (const name of names) {
+
+if (
+row &&
+row[name] !== undefined &&
+row[name] !== null
+) {
+
+return row[name];
+
+}
+
+}
+
+return "";
+
+}
+
+
+// ==========================================
+// MEDIA PATH HANDLING
+// ==========================================
+
+function getMediaPaths(value) {
+
+if (!value) {
+return [];
+}
+
+let items = value;
+
+if (!Array.isArray(items)) {
+items = [items];
+}
+
+const paths = [];
+
+items.forEach(function (item) {
+
+if (!item) {
+return;
+}
+
+if (typeof item === "object") {
+
+const possiblePath =
+item.path ||
+item.url ||
+item.name ||
+item.file ||
+"";
+
+if (possiblePath) {
+
+paths.push(
+String(possiblePath).trim()
+);
+
+}
+
+} else {
+
+const path =
+String(item).trim();
+
+if (path) {
+
+paths.push(path);
+
+}
+
+}
+
+});
+
+return paths;
+
+}
+
+
+function getPublicMediaUrl(value) {
+
+if (!value) {
+return "";
+}
+
+let path = value;
+
+if (typeof path === "object") {
+
+path =
+path.path ||
+path.url ||
+path.name ||
+path.file ||
+"";
+
+}
+
+path =
+String(path).trim();
+
+if (!path) {
+return "";
+}
+
+
+// If the database already contains
+// a complete public URL, use it.
+
+if (
+path.startsWith("http://") ||
+path.startsWith("https://")
+) {
+
+return path;
+
+}
+
+
+// Remove leading slash.
+
+path =
+path.replace(/^\/+/, "");
+
+
+return (
+SUPABASE_URL +
+"/storage/v1/object/public/unity-story-media/" +
+path
+);
+
+}
+
+
+// ==========================================
+// STORY MEDIA
+// ==========================================
+
+function getStoryPhoto(row) {
+
+const photoValue =
+getField(row, [
+"photo_paths",
+"photo_path",
+"photos"
+]);
+
+const photoPaths =
+getMediaPaths(photoValue);
+
+if (!photoPaths.length) {
+return "";
+}
+
+return getPublicMediaUrl(
+photoPaths[0]
+);
+
+}
+
+
+function getStoryVideo(row) {
+
+const videoValue =
+getField(row, [
+"video_paths",
+"video_path",
+"videos"
+]);
+
+const videoPaths =
+getMediaPaths(videoValue);
+
+if (!videoPaths.length) {
+
+console.log(
+"NO VIDEO PATH FOUND:",
+videoValue
+);
+
+return "";
+
+}
+
+const videoUrl =
+getPublicMediaUrl(
+videoPaths[0]
+);
+
+console.log(
+"VIDEO PATH FROM DATABASE:",
+videoPaths[0]
+);
+
+console.log(
+"PUBLIC VIDEO URL:",
+videoUrl
+);
+
+return videoUrl;
+
+}
+
+
+// ==========================================
+// CREATE MEDIA ELEMENT
+// ==========================================
+
+
+
+
+// ==========================================
+// DISPLAY FEATURED STORY
+// ==========================================
+
+function displayFeaturedStory(row) {
+
+const featuredMedia =
+document.getElementById(
+"featuredMedia"
+);
+
+const featuredContent =
+document.getElementById(
+"featuredContent"
+);
+
+if (
+!featuredMedia ||
+!featuredContent
+) {
+
+console.error(
+"Featured story elements not found."
+);
+
+return;
+
+}
+
+
+featuredMedia.innerHTML = "";
+
+
+// Create featured media
+
+const videoUrl =
+getStoryVideo(row);
+
+const photoUrl =
+getStoryPhoto(row);
+
+
+if (videoUrl) {
+
+const video =
+document.createElement("video");
+
+video.src =
+videoUrl;
+
+video.controls = true;
+video.muted = true;
+video.autoplay = true;
+video.loop = true;
+video.playsInline = true;
+video.preload = "auto";
+
+video.setAttribute(
+"playsinline",
+""
+);
+
+video.style.width = "100%";
+video.style.height = "100%";
+video.style.minHeight = "360px";
+video.style.objectFit = "cover";
+video.style.display = "block";
+
+video.addEventListener(
+"loadeddata",
+function () {
+
+console.log(
+"FEATURED VIDEO LOADED"
+);
+
+}
+);
+
+video.addEventListener(
+"error",
+function () {
+
+console.error(
+"FEATURED VIDEO ERROR:",
+video.error
+);
+
+}
+);
+
+featuredMedia.appendChild(
+video
+);
+
+} else if (photoUrl) {
+
+const img =
+document.createElement("img");
+
+img.src =
+photoUrl;
+
+img.alt =
+getField(row, [
+"story_title",
+"title"
+]) ||
+"Unity Watch Nigeria story";
+
+featuredMedia.appendChild(
+img
+);
+
+} else {
+
+const placeholder =
+document.createElement("div");
+
+placeholder.className =
+"featured-placeholder";
+
+placeholder.textContent =
+"+";
+
+featuredMedia.appendChild(
+placeholder
+);
+
+}
+
+
+// Featured text
+
+const title =
+getField(row, [
+"story_title",
+"title"
+]) ||
+"Good News From Our Communities";
+
+
+const category =
+getField(row, [
+"story_category",
+"category"
+]) ||
+"Community & Unity";
+
+
+const contributor =
+getField(row, [
+"contributor_name",
+"reporters_name",
+"reporter_name"
+]) ||
+"Unity Watch Community";
+
+
+const details =
+getField(row, [
+"story_details",
+"description"
+]) ||
+"";
+
+
+featuredContent.innerHTML = `
+
+<div class="featured-label">
+Verified Community Story
+</div>
+
+<h2>
+${escapeHtml(title)}
+</h2>
+
+<p>
+${escapeHtml(details)}
+</p>
+
+<div class="featured-meta">
+
+<span>Nigeria</span>
+
+<span>${escapeHtml(category)}</span>
+
+<span>By ${escapeHtml(contributor)}</span>
+
+</div>
+
+`;
+
+}
+
+
+// ==========================================
+// ESCAPE HTML
+// ==========================================
+
+function escapeHtml(value) {
+
+return String(value)
+.replace(/&/g, "&amp;")
+.replace(/</g, "&lt;")
+.replace(/>/g, "&gt;")
+.replace(/"/g, "&quot;")
+.replace(/'/g, "&#039;");
+
+}
+
+
+// ==========================================
+// DISPLAY STORY CARDS
+// ==========================================
+
+function displayStoryCards(
+stories
+) {
+
+const storyList =
+document.getElementById(
+"storyList"
+);
+
+if (!storyList) {
+return;
+}
+
+storyList.innerHTML = "";
+
+
+if (!stories.length) {
+
+storyList.innerHTML = `
+
+<div class="empty-state">
+
+<a
+href="categories.html"
+class="empty-symbol"
+aria-label="Explore our categories"
+title="Explore our categories"
+>+</a>
+
+<h3>
+No Approved Stories Found
+</h3>
+
+<p>
+There are currently no approved public
+stories matching your search or category.
+</p>
+
+<a
+href="share-story.html"
+class="btn btn-gold"
+>
+Report Good News
+</a>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+stories.forEach(function (row) {
+
+const card =
+document.createElement("article");
+
+card.className =
+"story-card";
+
+
+// MEDIA
+
+const media =
+document.createElement("div");
+
+media.className =
+"story-media";
+
+const videoUrl =
+getStoryVideo(row);
+
+const photoUrl =
+getStoryPhoto(row);
+
+
+if (videoUrl) {
+
+const video =
+document.createElement("video");
+
+video.src =
+videoUrl;
+
+video.controls = true;
+video.muted = true;
+video.playsInline = true;
+video.preload = "metadata";
+
+video.setAttribute(
+"playsinline",
+""
+);
+
+media.appendChild(
+video
+);
+
+} else if (photoUrl) {
+
+const img =
+document.createElement("img");
+
+img.src =
+photoUrl;
+
+img.alt =
+getField(row, [
+"story_title",
+"title"
+]) ||
+"Unity Watch Nigeria story";
+
+img.style.cursor = "pointer";
+
+img.addEventListener(
+"click",
+function () {
+
+const overlay =
+document.createElement("div");
+
+overlay.style.position = "fixed";
+overlay.style.top = "0";
+overlay.style.left = "0";
+overlay.style.right = "0";
+overlay.style.bottom = "0";
+overlay.style.background =
+"rgba(0, 0, 0, 0.85)";
+overlay.style.display = "flex";
+overlay.style.justifyContent = "center";
+overlay.style.alignItems = "center";
+overlay.style.padding = "30px";
+overlay.style.boxSizing = "border-box";
+overlay.style.zIndex = "99999";
+overlay.style.cursor = "zoom-out";
+
+const largeImage =
+document.createElement("img");
+
+largeImage.src =
+photoUrl;
+
+largeImage.alt =
+img.alt;
+
+largeImage.style.maxWidth = "95%";
+largeImage.style.maxHeight = "95%";
+largeImage.style.objectFit = "contain";
+largeImage.style.display = "block";
+
+overlay.appendChild(
+largeImage
+);
+
+overlay.addEventListener(
+"click",
+function () {
+overlay.remove();
+}
+);
+
+document.body.appendChild(
+overlay
+);
+
+}
+);
+
+media.appendChild(
+img
+);
+
+} else {
+
+const placeholder =
+document.createElement("div");
+
+placeholder.className =
+"story-media-placeholder";
+
+placeholder.textContent =
+"+";
+
+media.appendChild(
+placeholder
+);
+
+}
+
+
+// CONTENT
+
+const content =
+document.createElement("div");
+
+content.className =
+"story-content";
+
+
+const category =
+getField(row, [
+"story_category",
+"category"
+]) ||
+"Community";
+
+
+const title =
+getField(row, [
+"story_title",
+"title"
+]) ||
+"Untitled Good News Story";
+
+
+const details =
+getField(row, [
+"story_details",
+"description"
+]) ||
+"";
+
+
+const location =
+getField(row, [
+"location",
+"story_location"
+]) ||
+"Nigeria";
+
+
+const contributor =
+getField(row, [
+"contributor_name",
+"reporters_name",
+"reporter_name"
+]) ||
+"Unity Watch Community";
+
+
+content.innerHTML = `
+
+<span class="story-category">
+${escapeHtml(category)}
+</span>
+
+<h3>
+${escapeHtml(title)}
+</h3>
+
+<p>
+${escapeHtml(details)}
+</p>
+
+<div class="story-footer">
+
+<span>
+${escapeHtml(location)}
+</span>
+
+<span>
+By ${escapeHtml(contributor)}
+</span>
+
+</div>
+
+`;
+
+card.appendChild(
+media
+);
+
+card.appendChild(
+content
+);
+
+storyList.appendChild(
+card
+);
+
+});
+
+}
+
+
+// ==========================================
+// SEARCH AND FILTER
+// ==========================================
+
+let approvedStories = [];
+
+
+function applyStoryFilters() {
+
+const searchInput =
+document.getElementById(
+"storySearch"
+);
+
+const categorySelect =
+document.getElementById(
+"storyCategory"
+);
+
+const searchTerm =
+searchInput
+? searchInput.value.trim().toLowerCase()
+: "";
+
+
+const selectedCategory =
+categorySelect
+? categorySelect.value.toLowerCase()
+: "all";
+
+
+const filteredStories =
+approvedStories.filter(
+function (story) {
+
+const title =
+String(
+getField(story, [
+"story_title",
+"title"
+])
+).toLowerCase();
+
+const details =
+String(
+getField(story, [
+"story_details",
+"description"
+])
+).toLowerCase();
+
+const location =
+String(
+getField(story, [
+"location",
+"story_location"
+])
+).toLowerCase();
+
+const category =
+String(
+getField(story, [
+"story_category",
+"category"
+])
+).toLowerCase();
+
+
+const matchesSearch =
+!searchTerm ||
+title.includes(searchTerm) ||
+details.includes(searchTerm) ||
+location.includes(searchTerm) ||
+category.includes(searchTerm);
+
+
+let matchesCategory =
+true;
+
+
+if (
+selectedCategory !== "all"
+) {
+
+matchesCategory =
+category.includes(
+selectedCategory
+);
+
+}
+
+
+return (
+matchesSearch &&
+matchesCategory
+);
+
+}
+);
+
+
+displayStoryCards(
+filteredStories
+);
+
+}
+
+
+// ==========================================
+// DEBUG INFORMATION
+// ==========================================
+
+window.__unityWatchDebug = {
+
+totalRows: 0,
+
+approvedStories: [],
+
+firstStory: null,
+
+firstVideoPath: "",
+
+firstVideoUrl: ""
+
+};
+
+
+// ==========================================
+// LOAD APPROVED STORIES
+// ==========================================
+
+async function loadApprovedStories() {
+
+
+
+
+// IMPORTANT:
+// First retrieve the rows without applying
+// status/is_public filters in the database.
+// This allows us to see what Supabase
+// is actually returning.
+
+const {
+data,
+error
+} =
+await supabaseClient
+.from("unity_stories")
+.select("*")
+.order(
+"created_at",
+{
+ascending: false
+}
+);
+
+
+if (error) {
+
+console.error(
+"UNITY_STORIES QUERY ERROR:",
+error
+);
+
+console.error(
+"UNITY_STORIES ERROR MESSAGE:",
+error.message
+);
+
+console.error(
+"UNITY_STORIES ERROR DETAILS:",
+error.details
+);
+
+console.error(
+"UNITY_STORIES ERROR HINT:",
+error.hint
+);
+
+return;
+
+}
+
+
+const rows =
+Array.isArray(data)
+? data
+: [];
+
+
+window.__unityWatchDebug.totalRows =
+rows.length;
+
+
+
+
+
+// ==========================================
+// FILTER IN JAVASCRIPT
+// ==========================================
+
+approvedStories =
+rows.filter(function (row) {
+
+const statusValue =
+getField(
+row,
+["status"]
+);
+
+const status =
+String(
+statusValue
+)
+.trim()
+.toLowerCase();
+
+
+const isPublicValue =
+getField(
+row,
+["is_public"]
+);
+
+const isPublic =
+isPublicValue === true ||
+String(
+isPublicValue
+)
+.trim()
+.toLowerCase() === "true";
+
+
+
+return (
+isPublic &&
+status === "verified"
+);
+
+});
+
+
+window.__unityWatchDebug.approvedStories =
+approvedStories;
+
+
+console.log(
+"APPROVED PUBLIC STORIES AFTER JAVASCRIPT FILTER:",
+approvedStories.length
+);
+
+
+// ==========================================
+// IF STORIES EXIST
+// ==========================================
+
+if (
+approvedStories.length
+) {
+
+window.__unityWatchDebug.firstStory =
+approvedStories[0];
+
+
+window.__unityWatchDebug.firstVideoPath =
+getField(
+approvedStories[0],
+[
+"video_paths",
+"video_path",
+"videos"
+]
+);
+
+
+window.__unityWatchDebug.firstVideoUrl =
+getStoryVideo(
+approvedStories[0]
+);
+
+
+console.log(
+"=========================================="
+);
+
+console.log(
+"FIRST APPROVED STORY:",
+approvedStories[0]
+);
+
+console.log(
+"FIRST VIDEO PATH:",
+window.__unityWatchDebug.firstVideoPath
+);
+
+console.log(
+"FIRST VIDEO URL:",
+window.__unityWatchDebug.firstVideoUrl
+);
+
+console.log(
+"FIRST PHOTO PATH:",
+getField(
+approvedStories[0],
+[
+"photo_paths",
+"photo_path",
+"photos"
+]
+)
+);
+
+console.log(
+"=========================================="
+);
+
+
+// FEATURED STORY
+
+displayFeaturedStory(
+approvedStories[0]
+);
+
+
+// STORY CARDS
+
+displayStoryCards(
+approvedStories
+);
+
+} else {
+
+console.log(
+"=========================================="
+);
+
+console.log(
+"NO APPROVED PUBLIC STORIES FOUND."
+);
+
+console.log(
+"TOTAL DATABASE ROWS:",
+rows.length
+);
+
+if (rows.length) {
+
+console.log(
+"FIRST DATABASE ROW:",
+rows[0]
+);
+
+console.log(
+"FIRST DATABASE ROW STATUS:",
+getField(
+rows[0],
+["status"]
+)
+);
+
+console.log(
+"FIRST DATABASE ROW IS_PUBLIC:",
+getField(
+rows[0],
+["is_public"]
+)
+);
+
+}
+
+console.log(
+"=========================================="
+);
+
+}
+
+}
+
+
+// ==========================================
+// SEARCH EVENTS
+// ==========================================
+
+document
+.getElementById("storySearch")
+.addEventListener(
+"input",
+applyStoryFilters
+);
+
+
+document
+.getElementById("storyCategory")
+.addEventListener(
+"change",
+applyStoryFilters
+);
+
+
+// ==========================================
+// START LOADING STORIES
+// ==========================================
+
+loadApprovedStories();
+
+</script>
+
+</body>
+</html>

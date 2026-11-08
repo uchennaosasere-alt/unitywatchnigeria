@@ -1,0 +1,2688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jobs & Skills Gateway | Unity Watch Nigeria</title>
+
+<meta name="description" content="Explore employment opportunities, responsible employers, workplace accountability, professional skills and creative development through Unity Watch Nigeria.">
+
+<style>
+:root {
+--green: #315b43;
+--deep-green: #234631;
+--mid-green: #527b5d;
+--light-green: #e8f0e8;
+--gold: #b88a35;
+--light-gold: #d8b85e;
+--cream: #f5f2e9;
+--white: #fffdf8;
+--text: #293a30;
+--muted: #657267;
+--border: #dce5d9;
+--red: #a83232;
+--yellow: #8b6500;
+--rust: #a94f32;
+--shadow: 0 14px 40px rgba(35, 70, 49, 0.08);
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behaviour: smooth;
+scroll-padding-top: 100px;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: var(--cream);
+color: var(--text);
+line-height: 1.7;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+font: inherit;
+}
+
+button,
+.button {
+cursor: pointer;
+}
+
+/* TOP LINE */
+
+.top-line {
+height: 4px;
+background: var(--green);
+}
+
+/* HEADER */
+
+header {
+background: rgba(255, 253, 248, 0.98);
+color: var(--deep-green);
+border-bottom: 1px solid var(--border);
+position: sticky;
+top: 0;
+z-index: 1000;
+backdrop-filter: blur(12px);
+}
+
+.nav-container {
+max-width: 1200px;
+min-height: 82px;
+margin: auto;
+padding: 18px 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 25px;
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 12px;
+flex-shrink: 0;
+}
+
+/* U LOGO — PRESERVED */
+
+.brand-mark {
+width: 44px;
+height: 44px;
+flex-shrink: 0;
+border-radius: 10px;
+background: var(--green);
+color: var(--light-gold);
+border: none;
+border-bottom: 3px solid var(--gold);
+display: grid;
+place-items: center;
+font-family: 'Montserrat', Arial, sans-serif;
+font-size: 21px;
+font-weight: 900;
+line-height: 1;
+}
+
+.brand-name {
+font-family: 'Montserrat', Arial, sans-serif;
+font-size: 15px;
+line-height: 1.3;
+font-weight: 800;
+letter-spacing: -0.4px;
+color: var(--deep-green);
+}
+
+.brand-subtitle {
+display: block;
+margin-top: 4px;
+color: var(--rust);
+font-family: 'Inter', Arial, sans-serif;
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+}
+
+nav {
+display: flex;
+align-items: center;
+gap: 19px;
+flex-wrap: wrap;
+font-size: 13px;
+color: var(--deep-green);
+}
+
+nav a:hover {
+color: var(--green);
+}
+
+.nav-highlight {
+padding: 9px 14px;
+border: 1px solid var(--green);
+border-radius: 5px;
+color: var(--green);
+font-weight: bold;
+}
+
+.nav-highlight:hover {
+background: var(--green);
+color: var(--white);
+}
+
+/* HERO */
+
+/*
+The hero is intentionally light now:
+soft grey + subtle green glow.
+This keeps the section professional without
+making it too dark or too bright.
+*/
+
+.hero {
+background:
+radial-gradient(
+circle at 82% 30%,
+rgba(82, 123, 93, 0.18),
+rgba(82, 123, 93, 0.07) 24%,
+transparent 48%
+),
+linear-gradient(
+135deg,
+#eef1ee 0%,
+#f2f4f1 52%,
+#e9efeb 100%
+);
+color: var(--deep-green);
+padding: 80px 24px 75px;
+position: relative;
+overflow: hidden;
+border-bottom: 1px solid #d9e2dc;
+}
+
+.hero::after {
+content: "";
+position: absolute;
+right: -100px;
+bottom: -180px;
+width: 400px;
+height: 400px;
+border: 1px solid rgba(82, 123, 93, 0.18);
+border-radius: 50%;
+box-shadow:
+0 0 0 35px rgba(82, 123, 93, 0.035),
+0 0 0 70px rgba(82, 123, 93, 0.02);
+pointer-events: none;
+}
+
+.hero-inner {
+max-width: 1100px;
+margin: auto;
+position: relative;
+z-index: 1;
+}
+
+.eyebrow {
+display: inline-block;
+color: var(--green);
+border: 1px solid rgba(49, 91, 67, 0.35);
+background: rgba(255, 255, 255, 0.38);
+border-radius: 30px;
+padding: 6px 13px;
+font-size: 11px;
+font-weight: bold;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+margin-bottom: 20px;
+}
+
+.hero h1 {
+font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+font-size: clamp(34px, 5vw, 58px);
+line-height: 1.13;
+max-width: 800px;
+margin-bottom: 22px;
+font-weight: 800;
+letter-spacing: -1px;
+color: #294536;
+}
+
+.hero h1 span {
+color: var(--green);
+}
+
+.hero p {
+max-width: 690px;
+color: #53645a;
+font-size: 17px;
+margin-bottom: 28px;
+}
+
+.hero-actions {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+}
+
+.button {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border: 1px solid transparent;
+border-radius: 5px;
+padding: 12px 19px;
+font-size: 14px;
+font-weight: bold;
+transition: 0.2s;
+}
+
+/* GOLD BUTTON — PRESERVED */
+
+.button-gold {
+background: var(--gold);
+color: var(--deep-green);
+}
+
+.button-gold:hover {
+background: var(--light-gold);
+transform: translateY(-2px);
+}
+
+.button-outline {
+color: var(--deep-green);
+border-color: rgba(35, 70, 49, 0.42);
+background: rgba(255, 255, 255, 0.32);
+}
+
+.button-outline:hover {
+border-color: var(--green);
+color: var(--green);
+background: rgba(255, 255, 255, 0.55);
+}
+
+/* NOTICE */
+
+.notice-strip {
+background: #f7f1df;
+border-bottom: 1px solid #e5d8b7;
+padding: 15px 24px;
+}
+
+.notice-inner {
+max-width: 1100px;
+margin: auto;
+font-size: 13px;
+color: #604f27;
+}
+
+.notice-inner strong {
+color: #443813;
+}
+
+/* GENERAL */
+
+.container {
+max-width: 1100px;
+margin: auto;
+padding: 65px 24px;
+}
+
+.section-heading {
+max-width: 740px;
+margin-bottom: 32px;
+}
+
+.section-label {
+color: var(--green);
+text-transform: uppercase;
+letter-spacing: 1.7px;
+font-size: 11px;
+font-weight: bold;
+margin-bottom: 9px;
+}
+
+.section-heading h2 {
+color: var(--deep-green);
+font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+font-size: clamp(27px, 4vw, 38px);
+line-height: 1.25;
+margin-bottom: 13px;
+font-weight: 750;
+letter-spacing: -0.5px;
+}
+
+.section-heading p {
+color: var(--muted);
+font-size: 15px;
+}
+
+/* FOUR PHASES */
+
+.phase-grid {
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 17px;
+}
+
+.phase-card {
+background: var(--white);
+border: 1px solid var(--border);
+border-top: 4px solid var(--green);
+padding: 24px 19px;
+border-radius: 7px;
+box-shadow: var(--shadow);
+transition:
+transform 0.2s,
+border-color 0.2s,
+box-shadow 0.2s;
+}
+
+.phase-card:hover {
+transform: translateY(-4px);
+border-color: var(--green);
+box-shadow: 0 18px 42px rgba(35, 70, 49, 0.12);
+}
+
+/* RECTANGULAR PHASE NUMBERS */
+
+.phase-number {
+color: var(--white);
+background: var(--green);
+width: 48px;
+height: 34px;
+display: grid;
+place-items: center;
+border-radius: 5px;
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 0.8px;
+margin-bottom: 17px;
+border-left: 3px solid var(--mid-green);
+}
+
+.phase-card h3 {
+color: var(--deep-green);
+font-size: 17px;
+line-height: 1.4;
+margin-bottom: 10px;
+}
+
+.phase-card p {
+color: var(--muted);
+font-size: 13px;
+margin-bottom: 15px;
+}
+
+.text-link {
+color: var(--green);
+font-size: 13px;
+font-weight: bold;
+}
+
+.text-link:hover {
+color: var(--rust);
+}
+
+/* SECTIONS */
+
+.section-green {
+background: var(--light-green);
+border-top: 1px solid #d6e2d7;
+border-bottom: 1px solid #d6e2d7;
+}
+
+/* RICHER GREEN — BUT NOT TOO DARK */
+
+.section-dark {
+background:
+linear-gradient(
+135deg,
+#294d39 0%,
+#315b43 100%
+);
+color: var(--white);
+}
+
+.section-dark .section-label {
+color: var(--light-gold);
+}
+
+.section-dark .section-heading h2 {
+color: var(--white);
+}
+
+.section-dark .section-heading p {
+color: #d9e5dc;
+}
+
+/* JOB LAYOUT */
+
+.job-layout {
+display: grid;
+grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+gap: 25px;
+align-items: start;
+}
+
+.panel {
+background: var(--white);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 26px;
+box-shadow: var(--shadow);
+}
+
+.panel h3 {
+color: var(--deep-green);
+margin-bottom: 12px;
+font-size: 20px;
+}
+
+.panel p {
+color: var(--muted);
+font-size: 14px;
+margin-bottom: 15px;
+}
+
+/* FILTERS */
+
+.filter-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 13px;
+margin: 20px 0;
+}
+
+.field {
+margin-bottom: 17px;
+}
+
+.field label {
+display: block;
+color: var(--deep-green);
+font-size: 13px;
+font-weight: bold;
+margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+width: 100%;
+min-width: 0;
+padding: 12px;
+border: 1px solid #cbd8ce;
+border-radius: 5px;
+background: var(--white);
+color: var(--text);
+outline: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+border-color: var(--green);
+box-shadow: 0 0 0 3px rgba(49, 91, 67, 0.09);
+}
+
+.field textarea {
+min-height: 110px;
+resize: vertical;
+}
+
+.full-width {
+grid-column: 1 / -1;
+}
+
+.button-green {
+background: var(--green);
+color: var(--white);
+}
+
+.button-green:hover {
+background: #426b50;
+}
+
+.button-light {
+background: var(--light-green);
+color: var(--green);
+border: 1px solid #cbded0;
+}
+
+.button-light:hover {
+background: #d8eadd;
+}
+
+/* STATUS */
+
+.status-list {
+list-style: none;
+display: grid;
+gap: 15px;
+margin-top: 20px;
+}
+
+.status-list li {
+display: flex;
+gap: 12px;
+align-items: flex-start;
+padding-bottom: 14px;
+border-bottom: 1px solid var(--border);
+}
+
+.status-list li:last-child {
+border-bottom: 0;
+}
+
+.status-dot {
+flex: 0 0 12px;
+height: 12px;
+border-radius: 50%;
+margin-top: 7px;
+}
+
+.status-list strong {
+display: block;
+color: var(--deep-green);
+font-size: 14px;
+margin-bottom: 3px;
+}
+
+.status-list span:last-child {
+color: var(--muted);
+font-size: 12px;
+}
+
+.status-verified {
+background: #24764a;
+}
+
+.status-pending {
+background: #c99627;
+}
+
+.status-failed {
+background: #b64040;
+}
+
+.status-expired {
+background: #89918b;
+}
+
+/* DISCLAIMER */
+
+.disclaimer {
+padding: 16px;
+background: #f7f1df;
+color: #654e13;
+border-left: 4px solid var(--green);
+border-radius: 4px;
+font-size: 13px;
+margin-top: 20px;
+}
+
+/* FORMS */
+
+.form-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0 18px;
+}
+
+.pledge-box {
+background: #f6f9f5;
+border: 1px solid #dce7dc;
+padding: 23px;
+border-radius: 7px;
+margin: 20px 0;
+}
+
+.pledge-box h3 {
+color: var(--green);
+font-size: 19px;
+margin-bottom: 12px;
+}
+
+.pledge-box p {
+color: #48584c;
+font-size: 14px;
+margin-bottom: 12px;
+}
+
+.pledge-check {
+display: flex;
+gap: 10px;
+align-items: flex-start;
+margin-top: 17px;
+color: var(--deep-green);
+font-size: 13px;
+}
+
+.pledge-check input {
+margin-top: 5px;
+accent-color: var(--green);
+flex: 0 0 auto;
+}
+
+.pledge-check label {
+cursor: pointer;
+}
+
+.small-note {
+color: var(--muted);
+font-size: 12px;
+margin-top: 12px;
+}
+
+/* PRINCIPLES */
+
+.principles-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 18px;
+}
+
+.principle {
+padding: 22px;
+border-radius: 7px;
+background: var(--white);
+border: 1px solid var(--border);
+}
+
+.principle h3 {
+color: var(--green);
+font-size: 17px;
+margin-bottom: 8px;
+}
+
+.principle p {
+color: var(--muted);
+font-size: 13px;
+}
+
+/* ACCOUNTABILITY PROCESS */
+
+.process-list {
+list-style: none;
+counter-reset: process;
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 20px;
+}
+
+.process-list li {
+counter-increment: process;
+position: relative;
+padding: 23px;
+background: rgba(255, 255, 255, 0.06);
+border: 1px solid rgba(82, 123, 93, 0.65);
+border-radius: 7px;
+}
+
+.process-list li::before {
+content: "0" counter(process);
+display: inline-grid;
+place-items: center;
+min-width: 48px;
+height: 34px;
+padding: 0 10px;
+background: var(--green);
+border: 1px solid var(--mid-green);
+border-radius: 5px;
+color: var(--white);
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 0.8px;
+margin-bottom: 13px;
+}
+
+.process-list h3 {
+font-size: 17px;
+margin-bottom: 9px;
+}
+
+.process-list p {
+color: #d2e0d6;
+font-size: 13px;
+}
+
+/* SKILLS */
+
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 18px;
+}
+
+.skill-card {
+display: flex;
+flex-direction: column;
+background: var(--white);
+border: 1px solid var(--border);
+border-radius: 8px;
+overflow: hidden;
+box-shadow: var(--shadow);
+}
+
+/* STRONGER, CLEANER GREEN HEADERS */
+
+.skill-top {
+min-height: 92px;
+display: flex;
+align-items: center;
+padding: 22px;
+background: #315b43;
+border-bottom: 3px solid var(--mid-green);
+color: var(--white);
+font-size: 13px;
+font-weight: bold;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.skill-body {
+padding: 23px;
+display: flex;
+flex-direction: column;
+flex: 1;
+}
+
+.skill-body h3 {
+color: var(--deep-green);
+font-size: 19px;
+margin-bottom: 10px;
+}
+
+.skill-body p {
+color: var(--muted);
+font-size: 13px;
+margin-bottom: 18px;
+}
+
+.skill-body .text-link {
+margin-top: auto;
+}
+
+.music-card {
+border: 2px solid var(--green);
+}
+
+.music-card .skill-top {
+background: linear-gradient(135deg, #315b43, #527b5d);
+border-bottom-color: var(--green);
+}
+
+.tag {
+display: inline-block;
+width: fit-content;
+padding: 5px 9px;
+background: #eef3ed;
+color: var(--green);
+border-radius: 3px;
+font-size: 10px;
+font-weight: bold;
+letter-spacing: 0.5px;
+margin-bottom: 12px;
+text-transform: uppercase;
+}
+
+/* CONTACT */
+
+.contact-banner {
+background: linear-gradient(135deg, #426b50, var(--deep-green));
+color: var(--white);
+border: 1px solid var(--green);
+border-radius: 8px;
+padding: 35px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 25px;
+flex-wrap: wrap;
+}
+
+.contact-banner h2 {
+font-size: 26px;
+margin-bottom: 9px;
+}
+
+.contact-banner p {
+color: #d8e6dc;
+font-size: 14px;
+max-width: 620px;
+}
+
+.contact-banner .button {
+flex-shrink: 0;
+}
+
+/* FOOTER */
+
+footer {
+background: #173427;
+color: #d7e2da;
+border-top: 3px solid var(--green);
+padding: 38px 24px 20px;
+}
+
+.footer-inner {
+max-width: 1100px;
+margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 30px;
+flex-wrap: wrap;
+}
+
+.footer-brand {
+max-width: 420px;
+}
+
+.footer-brand h3 {
+color: var(--light-gold);
+margin-bottom: 10px;
+}
+
+.footer-brand p {
+color: #bdcfc2;
+font-size: 13px;
+}
+
+.footer-links {
+display: flex;
+flex-wrap: wrap;
+gap: 16px;
+font-size: 12px;
+}
+
+.footer-links a:hover {
+color: var(--light-gold);
+}
+
+.footer-bottom {
+max-width: 1100px;
+margin: 28px auto 0;
+padding-top: 18px;
+border-top: 1px solid rgba(255, 255, 255, 0.13);
+font-size: 11px;
+color: #9fb5a5;
+}
+
+/* MESSAGES */
+
+.message {
+display: none;
+padding: 13px;
+margin-top: 16px;
+border-radius: 5px;
+background: #f7f1df;
+color: #674c0b;
+border: 1px solid #ead59a;
+font-size: 13px;
+}
+
+.message.show {
+display: block;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+.phase-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.skills-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.job-layout {
+grid-template-columns: 1fr;
+}
+
+.principles-grid,
+.process-list {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+nav {
+gap: 12px;
+}
+}
+
+@media (max-width: 600px) {
+.nav-container {
+padding: 15px 17px;
+align-items: flex-start;
+}
+
+.brand-name {
+font-size: 13px;
+}
+
+.brand-subtitle {
+font-size: 8px;
+letter-spacing: 1.2px;
+}
+
+nav {
+width: 100%;
+gap: 10px 15px;
+}
+
+.hero {
+padding: 60px 19px;
+}
+
+.hero p {
+font-size: 15px;
+}
+
+.container {
+padding: 46px 18px;
+}
+
+.phase-grid,
+.skills-grid,
+.principles-grid,
+.process-list,
+.form-grid,
+.filter-row {
+grid-template-columns: 1fr;
+}
+
+.full-width {
+grid-column: auto;
+}
+
+.panel {
+padding: 20px;
+}
+
+.contact-banner {
+padding: 25px;
+}
+
+.contact-banner h2 {
+font-size: 23px;
+}
+}
+</style>
+</head>
+
+<body>
+<div class="top-line"></div>
+
+<header>
+<div class="nav-container">
+
+<a class="brand" href="index.html" aria-label="Unity Watch Nigeria homepage">
+<div class="brand-mark" aria-hidden="true">U</div>
+
+<div>
+<div class="brand-name">Unity Watch Nigeria</div>
+<span class="brand-subtitle">Stronger Together</span>
+</div>
+</a>
+
+<nav aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="#opportunities">Jobs</a>
+<a href="#employers">Employers</a>
+<a href="#accountability">Accountability</a>
+<a href="#development">Skills & Training</a>
+<a class="nav-highlight" href="#employers">Employer Registration</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="hero-inner">
+
+<div class="eyebrow">Jobs • Skills • Fair Work</div>
+
+<h1>
+Connecting opportunity<br>
+with <span>integrity.</span>
+</h1>
+
+<p>
+A gateway for job seekers, responsible employers, professional
+development, and creative talent. Our goal is to encourage
+transparent recruitment, respectful workplaces, and opportunities
+for people to develop their potential.
+</p>
+
+<div class="hero-actions">
+
+<a class="button button-gold" href="#opportunities">
+Explore Job Opportunities →
+</a>
+
+<a class="button button-outline" href="#employers">
+Register as an Employer
+</a>
+
+</div>
+</div>
+</section>
+
+<div class="notice-strip">
+<div class="notice-inner">
+
+<strong>Transparency matters:</strong>
+Verification labels should reflect documented checks. No job,
+company, or employer should be described as verified until the
+relevant review has actually been completed.
+
+</div>
+</div>
+
+<!-- GATEWAY PHASES -->
+
+<section class="container" id="phases">
+
+<div class="section-heading">
+
+<div class="section-label">The Gateway Framework</div>
+
+<h2>Four phases. One shared commitment.</h2>
+
+<p>
+Explore the different areas of the gateway, from discovering
+opportunities to promoting responsible employment and developing
+practical skills.
+</p>
+
+</div>
+
+<div class="phase-grid">
+
+<article class="phase-card">
+
+<div class="phase-number">01</div>
+
+<h3>Job Opportunities & Verification</h3>
+
+<p>
+Explore employment opportunities and understand the verification
+status attached to each listing.
+</p>
+
+<a class="text-link" href="#opportunities">
+Explore opportunities →
+</a>
+
+</article>
+
+<article class="phase-card">
+
+<div class="phase-number">02</div>
+
+<h3>Responsible Employer Registration</h3>
+
+<p>
+Companies can introduce their organisations and commit to
+respectful, fair, and professional workplace conduct.
+</p>
+
+<a class="text-link" href="#employers">
+Employer registration →
+</a>
+
+</article>
+
+<article class="phase-card">
+
+<div class="phase-number">03</div>
+
+<h3>Workplace Accountability</h3>
+
+<p>
+Learn how workplace concerns may be submitted, assessed, and
+reviewed through a fair process.
+</p>
+
+<a class="text-link" href="#accountability">
+View accountability process →
+</a>
+
+</article>
+
+<article class="phase-card">
+
+<div class="phase-number">04</div>
+
+<h3>Skills & Development</h3>
+
+<p>
+Explore training, career guidance, entrepreneurship, and
+creative development opportunities.
+</p>
+
+<a class="text-link" href="#development">
+Explore development →
+</a>
+
+</article>
+
+</div>
+</section>
+
+<!-- PHASE 1 -->
+
+<section class="section-green" id="opportunities">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">Phase 01</div>
+
+<h2>Job Opportunities & Verification</h2>
+
+<p>
+Job seekers deserve clear information. A well-organised listing
+should explain the role, identify the employer, state the
+application deadline, and show the current verification status.
+</p>
+
+</div>
+
+<div class="job-layout">
+
+<div class="panel">
+
+<h3>Explore the opportunities gateway</h3>
+
+<p>
+Search tools can help visitors organise opportunities by
+keyword, location, and category. Live vacancies will appear
+here when a genuine listing system has been connected.
+</p>
+
+<div class="filter-row">
+
+<div class="field">
+
+<label for="jobKeyword">Job title or keyword</label>
+
+<input
+type="search"
+id="jobKeyword"
+placeholder="e.g. Accountant, Designer"
+>
+
+</div>
+
+<div class="field">
+
+<label for="jobLocation">Location</label>
+
+<input
+type="text"
+id="jobLocation"
+placeholder="e.g. Lagos, Abuja"
+>
+
+</div>
+
+<div class="field">
+
+<label for="jobCategory">Opportunity category</label>
+
+<select id="jobCategory">
+
+<option value="">All categories</option>
+<option>Full-time employment</option>
+<option>Part-time employment</option>
+<option>Internship</option>
+<option>Apprenticeship</option>
+<option>Remote work</option>
+<option>Training opportunity</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label for="jobStatus">Verification status</label>
+
+<select id="jobStatus">
+
+<option value="">All statuses</option>
+<option>Verified</option>
+<option>Pending Verification</option>
+<option>Verification Failed</option>
+<option>Verification Expired</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button
+class="button button-green"
+id="jobSearchButton"
+type="button"
+>
+Search Opportunities
+</button>
+
+<div
+class="message"
+id="jobSearchMessage"
+role="status"
+></div>
+
+<div class="disclaimer">
+
+<strong>Demo notice:</strong>
+This search interface is a design preview. It is not connected
+to a live vacancy database, and it does not currently retrieve
+or submit job applications.
+
+</div>
+
+</div>
+
+<aside class="panel">
+
+<h3>Understand the verification badges</h3>
+
+<p>
+Every status must have a defined meaning so visitors can
+understand what has, and has not, been checked.
+</p>
+
+<ul class="status-list">
+
+<li>
+
+<span class="status-dot status-verified"></span>
+
+<div>
+
+<strong>Verified</strong>
+
+<span>
+Required checks have been completed and documented,
+including confirmation of the vacancy with an
+appropriate employer contact.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-pending"></span>
+
+<div>
+
+<strong>Pending Verification</strong>
+
+<span>
+The listing has been received, but the required checks
+are incomplete.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-failed"></span>
+
+<div>
+
+<strong>Verification Failed</strong>
+
+<span>
+The listing did not meet the published verification
+requirements. The reason should be documented.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-expired"></span>
+
+<div>
+
+<strong>Verification Expired</strong>
+
+<span>
+The previous check is no longer current, or the vacancy
+needs to be reconfirmed.
+</span>
+
+</div>
+
+</li>
+
+</ul>
+
+</aside>
+
+</div>
+
+<div class="panel" style="margin-top: 24px;">
+
+<h3>Submit an opportunity for review</h3>
+
+<p>
+Employers or authorised representatives may eventually use this
+form to propose a vacancy for review. Submission alone does not
+mean that the job is verified or published.
+</p>
+
+<form id="jobSubmissionForm">
+
+<div class="form-grid">
+
+<div class="field">
+
+<label for="vacancyTitle">Job title *</label>
+
+<input
+id="vacancyTitle"
+name="vacancyTitle"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="vacancyCompany">Company name *</label>
+
+<input
+id="vacancyCompany"
+name="vacancyCompany"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="vacancyLocation">Job location *</label>
+
+<input
+id="vacancyLocation"
+name="vacancyLocation"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="vacancyContact">
+Official company contact *
+</label>
+
+<input
+id="vacancyContact"
+name="vacancyContact"
+type="email"
+placeholder="Work email address"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="vacancyType">Employment type *</label>
+
+<select
+id="vacancyType"
+name="vacancyType"
+required
+>
+
+<option value="">Choose one</option>
+<option>Full-time</option>
+<option>Part-time</option>
+<option>Contract</option>
+<option>Internship</option>
+<option>Apprenticeship</option>
+<option>Remote</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label for="vacancyDeadline">
+Application deadline
+</label>
+
+<input
+id="vacancyDeadline"
+name="vacancyDeadline"
+type="date"
+>
+
+</div>
+
+<div class="field full-width">
+
+<label for="vacancyDetails">
+Job description and requirements *
+</label>
+
+<textarea
+id="vacancyDetails"
+name="vacancyDetails"
+required
+placeholder="Describe the responsibilities, qualifications, and application process."
+></textarea>
+
+</div>
+
+</div>
+
+<button
+class="button button-green"
+type="submit"
+>
+Prepare Submission
+</button>
+
+<div
+class="message"
+id="jobSubmissionMessage"
+role="status"
+></div>
+
+</form>
+
+<p class="small-note">
+This demonstration does not transmit or save the information.
+A secure submission service and verification procedure must be
+connected before this form is used publicly.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PHASE 2 -->
+
+<section class="container" id="employers">
+
+<div class="section-heading">
+
+<div class="section-label">Phase 02</div>
+
+<h2>Responsible Employers & Workplace Standards</h2>
+
+<p>
+Responsible employment goes beyond offering a job. It includes
+dignity, fair treatment, clear communication, and a willingness
+to address workplace concerns professionally.
+</p>
+
+</div>
+
+<div class="job-layout">
+
+<div class="panel">
+
+<h3>Company registration</h3>
+
+<p>
+Organisations can provide their details and indicate their
+commitment to responsible workplace practices.
+</p>
+
+<form id="employerForm">
+
+<div class="form-grid">
+
+<div class="field">
+
+<label for="companyName">
+Registered company or business name *
+</label>
+
+<input
+id="companyName"
+name="companyName"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="companyNumber">
+Registration number, if applicable
+</label>
+
+<input
+id="companyNumber"
+name="companyNumber"
+>
+
+</div>
+
+<div class="field">
+
+<label for="companySector">
+Industry or sector *
+</label>
+
+<select
+id="companySector"
+name="companySector"
+required
+>
+
+<option value="">Select a sector</option>
+<option>Agriculture</option>
+<option>Education</option>
+<option>Finance</option>
+<option>Healthcare</option>
+<option>Manufacturing</option>
+<option>Technology</option>
+<option>Media & Entertainment</option>
+<option>Construction</option>
+<option>Retail & Commerce</option>
+<option>Professional Services</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label for="companyWebsite">
+Official website, if available
+</label>
+
+<input
+id="companyWebsite"
+name="companyWebsite"
+type="url"
+placeholder="https://"
+>
+
+</div>
+
+<div class="field full-width">
+
+<label for="companyAddress">
+Business address *
+</label>
+
+<input
+id="companyAddress"
+name="companyAddress"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="representativeName">
+Authorised representative *
+</label>
+
+<input
+id="representativeName"
+name="representativeName"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="representativeRole">
+Position in the company *
+</label>
+
+<input
+id="representativeRole"
+name="representativeRole"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="companyEmail">
+Official contact email *
+</label>
+
+<input
+id="companyEmail"
+name="companyEmail"
+type="email"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="companyPhone">
+Business phone number
+</label>
+
+<input
+id="companyPhone"
+name="companyPhone"
+type="tel"
+>
+
+</div>
+
+</div>
+
+<div class="pledge-box">
+
+<h3>Our Commitment to Responsible Employment</h3>
+
+<p>
+We pledge to treat employees, applicants, interns, and other
+workers with dignity, fairness, and respect.
+</p>
+
+<p>
+We commit to promoting a workplace free from discrimination,
+harassment, intimidation, and unlawful retaliation. We will
+communicate employment terms clearly, respect applicable
+labour laws, and make reasonable efforts to maintain safe
+and professional working conditions.
+</p>
+
+<p>
+We will provide appropriate channels for workplace concerns
+and make reasonable efforts to address them fairly and
+professionally.
+</p>
+
+<div class="pledge-check">
+
+<input
+id="pledgeAcceptance"
+name="pledgeAcceptance"
+type="checkbox"
+required
+>
+
+<label for="pledgeAcceptance">
+
+I confirm that I am authorised to submit this registration
+on behalf of the organisation, and I agree to the
+Responsible Employment Pledge above. I understand that
+registration and acceptance of the pledge do not
+automatically establish verified or endorsed employer status.
+
+</label>
+
+</div>
+
+</div>
+
+<button
+class="button button-green"
+type="submit"
+>
+Prepare Employer Registration
+</button>
+
+<div
+class="message"
+id="employerMessage"
+role="status"
+></div>
+
+<p class="small-note">
+This form is a demonstration only. It does not register the
+company, store the pledge, or award any employer status.
+</p>
+
+</form>
+
+</div>
+
+<aside class="panel">
+
+<h3>Employer participation stages</h3>
+
+<p>
+Each stage should have clear requirements and documented
+decisions before a company receives a public status.
+</p>
+
+<ul class="status-list">
+
+<li>
+
+<span class="status-dot status-pending"></span>
+
+<div>
+
+<strong>Registration Submitted</strong>
+
+<span>
+Company information has been provided for review.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-pending"></span>
+
+<div>
+
+<strong>Identity Under Review</strong>
+
+<span>
+The organisation's identity and representative are being
+checked.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-verified"></span>
+
+<div>
+
+<strong>Pledge Accepted</strong>
+
+<span>
+An authorised representative has accepted the published
+workplace pledge.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-verified"></span>
+
+<div>
+
+<strong>Participating Employer</strong>
+
+<span>
+The organisation has met the published participation
+requirements. This is not a guarantee of future conduct.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-failed"></span>
+
+<div>
+
+<strong>Under Review or Suspended</strong>
+
+<span>
+Participation may be reviewed or suspended in accordance
+with published rules and a fair process.
+</span>
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="disclaimer">
+A company's registration, pledge, and participation status
+should be displayed separately from the verification status
+of its individual job listings.
+</div>
+
+</aside>
+
+</div>
+
+</section>
+
+<!-- WORKPLACE STANDARDS -->
+
+<section class="section-green">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">Our Principles</div>
+
+<h2>What responsible employment should look like</h2>
+
+<p>
+These principles provide a starting point for encouraging
+professional relationships between employers and workers.
+</p>
+
+</div>
+
+<div class="principles-grid">
+
+<article class="principle">
+
+<h3>Respect & Dignity</h3>
+
+<p>
+Workers should be treated professionally, without humiliation,
+intimidation, harassment, or abuse.
+</p>
+
+</article>
+
+<article class="principle">
+
+<h3>Fair Opportunity</h3>
+
+<p>
+Recruitment and workplace decisions should be transparent,
+relevant to the role, and free from unlawful discrimination.
+</p>
+
+</article>
+
+<article class="principle">
+
+<h3>Clear Employment Terms</h3>
+
+<p>
+Workers should receive clear information about their roles,
+responsibilities, remuneration, and working arrangements.
+</p>
+
+</article>
+
+<article class="principle">
+
+<h3>Safe Working Conditions</h3>
+
+<p>
+Employers should take reasonable steps to provide safe and
+appropriate working environments.
+</p>
+
+</article>
+
+<article class="principle">
+
+<h3>Accountability</h3>
+
+<p>
+Workplace concerns should be considered fairly, with suitable
+opportunities to respond and correct mistakes.
+</p>
+
+</article>
+
+<article class="principle">
+
+<h3>Privacy & Confidentiality</h3>
+
+<p>
+Personal information and workplace reports should be handled
+carefully and shared only when there is an appropriate basis.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PHASE 3 -->
+
+<section class="section-dark" id="accountability">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">Phase 03</div>
+
+<h2>Workplace Accountability & Fair Review</h2>
+
+<p>
+People should have a clear way to raise concerns about
+recruitment and workplace conduct. Every concern deserves
+appropriate consideration, but an allegation must not
+automatically be treated as a proven finding.
+</p>
+
+</div>
+
+<ol class="process-list">
+
+<li>
+
+<h3>Concern Received</h3>
+
+<p>
+The concern is submitted through a designated channel, with
+only the information reasonably necessary for assessment.
+</p>
+
+</li>
+
+<li>
+
+<h3>Assessment & Response</h3>
+
+<p>
+Relevant information is reviewed, and an appropriate
+opportunity to respond may be provided where necessary.
+</p>
+
+</li>
+
+<li>
+
+<h3>Outcome & Review</h3>
+
+<p>
+The matter is handled according to published procedures,
+with appropriate privacy protections and a route to request
+review where available.
+</p>
+
+</li>
+
+</ol>
+
+<div style="margin-top: 28px; max-width: 760px;">
+
+<h3 style="color: var(--light-gold); margin-bottom: 10px;">
+Types of workplace concerns
+</h3>
+
+<p style="color: #d6e5dc; font-size: 14px;">
+
+Unpaid wages or disputed payments • Bullying and harassment •
+Discrimination • Misleading recruitment adverts • Unclear
+employment terms • Unsafe working conditions • Unprofessional
+recruitment practices.
+
+</p>
+
+<div class="disclaimer">
+
+<strong>Fairness notice:</strong>
+This page does not currently receive or investigate complaints.
+Before launching a reporting service, Unity Watch Nigeria should
+establish secure handling procedures, evidence standards,
+privacy safeguards, response opportunities, and an appeal
+or review process.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PHASE 4 -->
+
+<section class="container" id="development">
+
+<div class="section-heading">
+
+<div class="section-label">Phase 04</div>
+
+<h2>Skills, Training & Personal Development</h2>
+
+<p>
+Opportunity is not only about finding a job. It is also about
+developing practical skills, building confidence, creating
+sustainable businesses, and supporting emerging talent.
+</p>
+
+</div>
+
+<div class="skills-grid">
+
+<article class="skill-card">
+
+<div class="skill-top">Professional Growth</div>
+
+<div class="skill-body">
+
+<h3>Career Guidance</h3>
+
+<p>
+Support for CV preparation, interview readiness, career
+planning, professional communication, and workplace skills.
+</p>
+
+<a class="text-link" href="#contact">
+Explore career support →
+</a>
+
+</div>
+
+</article>
+
+<article class="skill-card">
+
+<div class="skill-top">Practical Learning</div>
+
+<div class="skill-body">
+
+<h3>Skills & Vocational Training</h3>
+
+<p>
+A pathway for vocational learning, digital skills,
+apprenticeships, and practical training opportunities.
+</p>
+
+<a class="text-link" href="#contact">
+Explore skills development →
+</a>
+
+</div>
+
+</article>
+
+<article class="skill-card">
+
+<div class="skill-top">Enterprise</div>
+
+<div class="skill-body">
+
+<h3>Entrepreneurship & Business</h3>
+
+<p>
+Encourage business development, practical enterprise skills,
+self-employment, and sustainable small-business growth.
+</p>
+
+<a class="text-link" href="#contact">
+Explore enterprise support →
+</a>
+
+</div>
+
+</article>
+
+<article class="skill-card">
+
+<div class="skill-top">Youth Empowerment</div>
+
+<div class="skill-body">
+
+<h3>Youth Opportunity Pathways</h3>
+
+<p>
+Promote access to mentorship, practical experience,
+development programmes, and constructive opportunities
+for young people.
+</p>
+
+<a class="text-link" href="#contact">
+Explore youth development →
+</a>
+
+</div>
+
+</article>
+
+<article class="skill-card">
+
+<div class="skill-top">Creative Industries</div>
+
+<div class="skill-body">
+
+<h3>Creative & Digital Skills</h3>
+
+<p>
+Support people interested in music, media, digital content,
+creative entrepreneurship, and related technical skills.
+</p>
+
+<a class="text-link" href="#music">
+Explore music development →
+</a>
+
+</div>
+
+</article>
+
+<article class="skill-card">
+
+<div class="skill-top">Work Readiness</div>
+
+<div class="skill-body">
+
+<h3>Internships & Apprenticeships</h3>
+
+<p>
+Encourage structured learning, supervised practical experience,
+mentorship, and pathways into professional work.
+</p>
+
+<a class="text-link" href="#contact">
+Explore work readiness →
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- MUSIC PROGRAMME -->
+
+<section class="section-green" id="music">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">
+Creative Development Programme
+</div>
+
+<h2>Music Production & Creative Development</h2>
+
+<p>
+Supporting emerging artists and independent creatives through
+practical music education, recording opportunities, and
+foundational audio skills.
+</p>
+
+</div>
+
+<div class="job-layout">
+
+<article class="panel music-card">
+
+<span class="tag">
+Accessible Creative Learning
+</span>
+
+<h3>
+Develop your sound. Build your skills.
+</h3>
+
+<p>
+We aim to create pathways for aspiring musicians, songwriters,
+vocalists, and independent artists to learn, practise, and
+develop their creative potential.
+</p>
+
+<ul
+style="padding-left: 20px; margin-bottom: 20px; color: #48584c;"
+>
+
+<li>
+Music production and beat-making fundamentals.
+</li>
+
+<li>
+Song arrangement and creative development.
+</li>
+
+<li>
+Vocal recording and recording techniques.
+</li>
+
+<li>
+Basic mixing and vocal processing.
+</li>
+
+<li>
+Access to recording sessions at a subsidised rate, subject
+to programme availability and confirmed terms.
+</li>
+
+</ul>
+
+<p>
+The aim is to make practical creative development more
+accessible without compromising professionalism or quality.
+</p>
+
+<a
+class="button button-green"
+href="#music-interest"
+>
+Register Your Interest
+</a>
+
+</article>
+
+<aside class="panel">
+
+<h3>Who can benefit?</h3>
+
+<ul class="status-list">
+
+<li>
+
+<span class="status-dot status-verified"></span>
+
+<div>
+
+<strong>Aspiring Musicians</strong>
+
+<span>
+People who want to understand how songs and beats are
+created.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-verified"></span>
+
+<div>
+
+<strong>Independent Artists</strong>
+
+<span>
+Artists developing their sound, recording skills, and
+musical identity.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-verified"></span>
+
+<div>
+
+<strong>Songwriters & Vocalists</strong>
+
+<span>
+Creatives interested in recording, arrangement, and
+presenting their work professionally.
+</span>
+
+</div>
+
+</li>
+
+<li>
+
+<span class="status-dot status-verified"></span>
+
+<div>
+
+<strong>Emerging Producers</strong>
+
+<span>
+Learners interested in production software, audio
+techniques, and studio fundamentals.
+</span>
+
+</div>
+
+</li>
+
+</ul>
+
+<div class="disclaimer">
+
+Programme dates, actual prices, available sessions, and
+eligibility requirements must be confirmed before registration
+opens. No specific fee or guaranteed placement is promised here.
+
+</div>
+
+</aside>
+
+</div>
+
+<div
+class="panel"
+id="music-interest"
+style="margin-top: 24px;"
+>
+
+<h3>Creative development interest form</h3>
+
+<p>
+Tell us which area interests you. This demonstration form does
+not save or transmit your information.
+</p>
+
+<form id="musicForm">
+
+<div class="form-grid">
+
+<div class="field">
+
+<label for="musicName">
+Your name *
+</label>
+
+<input
+id="musicName"
+name="musicName"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="musicEmail">
+Email address *
+</label>
+
+<input
+id="musicEmail"
+name="musicEmail"
+type="email"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="musicInterest">
+Area of interest *
+</label>
+
+<select
+id="musicInterest"
+name="musicInterest"
+required
+>
+
+<option value="">
+Choose an area
+</option>
+
+<option>
+Music production and beat-making
+</option>
+
+<option>
+Vocal recording
+</option>
+
+<option>
+Subsidised recording sessions
+</option>
+
+<option>
+Mixing and audio engineering
+</option>
+
+<option>
+Songwriting and arrangement
+</option>
+
+<option>
+Creative development
+</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label for="musicExperience">
+Current experience
+</label>
+
+<select
+id="musicExperience"
+name="musicExperience"
+>
+
+<option value="">
+Choose one
+</option>
+
+<option>Beginner</option>
+<option>Learning already</option>
+<option>Intermediate</option>
+<option>Experienced artist or producer</option>
+
+</select>
+
+</div>
+
+<div class="field full-width">
+
+<label for="musicGoals">
+What would you like to learn?
+</label>
+
+<textarea
+id="musicGoals"
+name="musicGoals"
+placeholder="Briefly describe your creative goals."
+></textarea>
+
+</div>
+
+</div>
+
+<button
+class="button button-green"
+type="submit"
+>
+Prepare Interest Form
+</button>
+
+<div
+class="message"
+id="musicMessage"
+role="status"
+></div>
+
+</form>
+
+<p class="small-note">
+This form is not yet connected to a registration system.
+Please do not enter sensitive personal information.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT / NEXT STEPS -->
+
+<section class="container" id="contact">
+
+<div class="contact-banner">
+
+<div>
+
+<h2>
+Building a more responsible world of work.
+</h2>
+
+<p>
+Unity Watch Nigeria aims to connect opportunity with
+accountability, support responsible employers, and encourage
+the development of practical skills and creative talent.
+</p>
+
+</div>
+
+<a
+class="button button-gold"
+href="index.html"
+>
+Return to Home →
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="footer-brand">
+
+<h3>UNITY WATCH NIGERIA</h3>
+
+<p>
+Promoting transparency, responsible conduct, opportunity,
+and community development.
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+
+<a href="#opportunities">
+Job Opportunities
+</a>
+
+<a href="#employers">
+Employers
+</a>
+
+<a href="#accountability">
+Accountability
+</a>
+
+<a href="#development">
+Skills & Development
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© <span id="currentYear"></span> Unity Watch Nigeria.
+All rights reserved.
+</p>
+
+<p style="margin-top: 7px;">
+Verification labels and employer participation statuses must reflect
+actual checks and published review procedures. This page is currently
+a front-end demonstration and does not process submissions.
+</p>
+
+</div>
+
+</footer>
+
+<script>
+// Update the copyright year.
+document.getElementById("currentYear").textContent =
+new Date().getFullYear();
+
+// The following forms are demonstrations only.
+// They do not save, transmit, or submit any information.
+
+function showDemoMessage(elementId, message) {
+const element = document.getElementById(elementId);
+element.textContent = message;
+element.classList.add("show");
+}
+
+// Job search demonstration.
+document.getElementById("jobSearchButton").addEventListener("click", function () {
+const keyword = document.getElementById("jobKeyword").value.trim();
+const location = document.getElementById("jobLocation").value.trim();
+const category = document.getElementById("jobCategory").value;
+const status = document.getElementById("jobStatus").value;
+
+const hasSearch = keyword || location || category || status;
+
+showDemoMessage(
+"jobSearchMessage",
+hasSearch
+? "Your search filters have been selected, but a live job database is not connected yet. No vacancies have been searched."
+: "A live vacancy database has not been connected yet. No vacancies are currently being retrieved by this page."
+);
+});
+
+// Job submission demonstration.
+document.getElementById("jobSubmissionForm").addEventListener("submit", function (event) {
+event.preventDefault();
+
+showDemoMessage(
+"jobSubmissionMessage",
+"Demonstration only: your information has not been sent or saved. A secure submission and verification service must be connected before this form can accept real vacancies."
+);
+});
+
+// Employer registration demonstration.
+document.getElementById("employerForm").addEventListener("submit", function (event) {
+event.preventDefault();
+
+showDemoMessage(
+"employerMessage",
+"Demonstration only: no company registration or pledge has been transmitted or saved. You have not been registered or awarded an employer status."
+);
+});
+
+// Music interest form demonstration.
+document.getElementById("musicForm").addEventListener("submit", function (event) {
+event.preventDefault();
+
+showDemoMessage(
+"musicMessage",
+"Demonstration only: your interest form has not been sent or saved. A secure registration service must be connected before applications can be received."
+);
+});
+</script>
+
+</body>
+</html>
