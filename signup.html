@@ -521,7 +521,10 @@ document.getElementById("signupForm").addEventListener("submit", async function(
  full_name: fullName
  },
 
- emailRedirectTo: "http://localhost:5500/signin.html"
+ emailRedirectTo: window.location.origin +
+    (window.location.pathname.includes("/unitywatchnigeria/")
+        ? "/unitywatchnigeria/signin.html"
+        : "/signin.html")
  }
 
  });
